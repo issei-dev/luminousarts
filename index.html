@@ -1,0 +1,608 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luminous Arts Inc. | 株式会社ルミナス・アーツ</title>
+<meta name="description" content="1996年設立。女優・舞台女優・声優・アイドル・ライバー・YouTuber・グラビアアイドルが所属する女性専門総合プロダクション。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0c;
+    --bg-2:#13131a;
+    --ink:#f5f1ea;
+    --ink-mute:#a8a29b;
+    --gold:#c9a96a;
+    --gold-2:#e8d4a8;
+    --line:rgba(245,241,234,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Serif JP','Shippori Mincho',serif;
+    font-weight:300;
+    line-height:1.8;
+    letter-spacing:.04em;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:24px 48px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:linear-gradient(180deg,rgba(10,10,12,.85),rgba(10,10,12,0));
+    backdrop-filter:blur(8px);
+    transition:padding .3s ease;
+  }
+  header.scrolled{
+    padding:16px 48px;
+    background:rgba(10,10,12,.92);
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;font-weight:500;letter-spacing:.3em;
+    color:var(--gold-2);
+  }
+  .logo small{display:block;font-size:9px;letter-spacing:.4em;color:var(--ink-mute);margin-top:2px}
+  nav ul{display:flex;gap:36px;list-style:none}
+  nav a{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--ink-mute);transition:color .3s;
+  }
+  nav a:hover{color:var(--gold-2)}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    height:100vh;min-height:720px;
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 30% 40%,rgba(201,169,106,.18),transparent 50%),
+      radial-gradient(circle at 70% 60%,rgba(232,212,168,.12),transparent 50%),
+      linear-gradient(135deg,#0a0a0c 0%,#1a1410 50%,#0a0a0c 100%);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(245,241,234,.02) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(245,241,234,.02) 1px,transparent 1px);
+    background-size:80px 80px;
+  }
+  .hero-content{
+    position:relative;z-index:2;text-align:center;padding:0 24px;
+    animation:fadeUp 1.8s ease;
+  }
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .hero-tag{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.6em;color:var(--gold);
+    margin-bottom:32px;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(48px,8vw,108px);
+    font-weight:300;letter-spacing:.05em;
+    line-height:1;color:var(--ink);
+    margin-bottom:24px;
+  }
+  .hero h1 span{
+    display:block;font-size:.4em;letter-spacing:.4em;
+    color:var(--gold-2);margin-top:16px;font-weight:400;
+  }
+  .hero-jp{
+    font-family:'Shippori Mincho',serif;
+    font-size:14px;letter-spacing:.5em;color:var(--ink-mute);
+    margin-top:40px;
+  }
+  .hero-scroll{
+    position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.4em;color:var(--ink-mute);
+    writing-mode:vertical-rl;
+  }
+  .hero-scroll::after{
+    content:"";display:block;width:1px;height:60px;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    margin:16px auto 0;
+  }
+
+  /* ---------- Section common ---------- */
+  section{padding:140px 48px;position:relative}
+  .section-head{text-align:center;margin-bottom:80px}
+  .section-head .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;letter-spacing:.6em;color:var(--gold);
+    margin-bottom:16px;
+  }
+  .section-head h2{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(28px,4vw,42px);font-weight:400;
+    letter-spacing:.15em;
+  }
+  .section-head .line{
+    width:40px;height:1px;background:var(--gold);
+    margin:32px auto 0;
+  }
+
+  /* ---------- About ---------- */
+  .about{background:var(--bg-2)}
+  .about-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  }
+  .about-text p{margin-bottom:24px;color:var(--ink-mute);font-size:15px}
+  .about-text .lead{
+    font-size:22px;color:var(--ink);line-height:2;
+    font-family:'Shippori Mincho',serif;font-weight:400;
+    margin-bottom:40px;
+  }
+  .about-stats{
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  }
+  .stat{
+    border-left:1px solid var(--gold);
+    padding-left:24px;
+  }
+  .stat .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:56px;font-weight:300;color:var(--gold-2);line-height:1;
+  }
+  .stat .label{
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
+    margin-top:8px;
+  }
+
+  /* ---------- Divisions ---------- */
+  .divisions{background:var(--bg)}
+  .div-grid{
+    max-width:1200px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .div-card{
+    border:1px solid var(--line);
+    padding:40px 24px;text-align:center;
+    transition:all .4s ease;cursor:pointer;
+    background:linear-gradient(180deg,transparent,rgba(201,169,106,.03));
+  }
+  .div-card:hover{
+    border-color:var(--gold);
+    transform:translateY(-4px);
+    background:linear-gradient(180deg,transparent,rgba(201,169,106,.08));
+  }
+  .div-card .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.4em;color:var(--gold);
+    margin-bottom:24px;
+  }
+  .div-card .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;letter-spacing:.15em;color:var(--ink);
+    margin-bottom:8px;
+  }
+  .div-card .jp{
+    font-size:13px;letter-spacing:.2em;color:var(--ink-mute);
+  }
+  .div-card .count{
+    margin-top:24px;padding-top:24px;
+    border-top:1px solid var(--line);
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;color:var(--gold-2);
+  }
+  .div-card .count small{font-size:11px;letter-spacing:.3em;margin-left:4px;color:var(--ink-mute)}
+
+  /* ---------- Talents (featured) ---------- */
+  .talents{background:var(--bg-2)}
+  .talent-grid{
+    max-width:1280px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  }
+  .talent-card{
+    position:relative;overflow:hidden;cursor:pointer;
+    aspect-ratio:3/4;background:#1a1a20;
+  }
+  .talent-card .ph{
+    width:100%;height:100%;
+    background:linear-gradient(135deg,#2a2520 0%,#1a1410 100%);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .8s ease;
+  }
+  .talent-card:hover .ph{transform:scale(1.05)}
+  .talent-card .ph::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.15),transparent 60%);
+  }
+  .talent-card .ph span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:80px;color:rgba(201,169,106,.3);font-weight:300;
+  }
+  .talent-info{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:24px;
+    background:linear-gradient(180deg,transparent,rgba(10,10,12,.95));
+  }
+  .talent-info .div-tag{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.4em;color:var(--gold);
+    margin-bottom:8px;
+  }
+  .talent-info .name-jp{
+    font-family:'Shippori Mincho',serif;
+    font-size:22px;letter-spacing:.15em;
+  }
+  .talent-info .name-en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.3em;color:var(--ink-mute);
+    margin-top:4px;
+  }
+  .talent-cta{text-align:center;margin-top:64px}
+  .btn{
+    display:inline-block;padding:18px 56px;
+    border:1px solid var(--gold);
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.4em;color:var(--gold-2);
+    transition:all .3s;
+  }
+  .btn:hover{background:var(--gold);color:var(--bg)}
+
+  /* ---------- News ---------- */
+  .news{background:var(--bg)}
+  .news-list{max-width:900px;margin:0 auto}
+  .news-item{
+    display:grid;grid-template-columns:140px 120px 1fr;gap:32px;
+    padding:28px 0;border-bottom:1px solid var(--line);
+    align-items:center;
+  }
+  .news-date{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;letter-spacing:.2em;color:var(--gold);
+  }
+  .news-cat{
+    font-size:10px;letter-spacing:.3em;color:var(--ink-mute);
+    border:1px solid var(--line);padding:6px 12px;text-align:center;
+  }
+  .news-title{font-size:14px;color:var(--ink)}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:#06060a;padding:80px 48px 40px;
+    border-top:1px solid var(--line);
+  }
+  .foot-grid{
+    max-width:1200px;margin:0 auto;
+    display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+    margin-bottom:60px;
+  }
+  .foot-grid h4{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.4em;color:var(--gold);
+    margin-bottom:20px;
+  }
+  .foot-grid li{list-style:none;margin-bottom:10px;font-size:13px;color:var(--ink-mute)}
+  .foot-grid a:hover{color:var(--gold-2)}
+  .copyright{
+    text-align:center;font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
+    padding-top:32px;border-top:1px solid var(--line);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    header{padding:20px 24px}
+    nav ul{display:none}
+    section{padding:80px 24px}
+    .about-grid{grid-template-columns:1fr;gap:48px}
+    .div-grid{grid-template-columns:repeat(2,1fr)}
+    .talent-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+    .news-item{grid-template-columns:1fr;gap:8px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+  }
+  @media (max-width:560px){
+    .talent-grid{grid-template-columns:1fr}
+    .div-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="logo">
+    LUMINOUS ARTS
+    <small>EST. 1996 TOKYO</small>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#divisions">Divisions</a></li>
+      <li><a href="#talents">Talents</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">SINCE 1996 — 30TH ANNIVERSARY</div>
+    <h1>
+      Luminous Arts
+      <span>Light Your Own Stage.</span>
+    </h1>
+    <div class="hero-jp">灯 せ 、 自 分 だ け の 光 を 。</div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-head">
+    <div class="en">ABOUT</div>
+    <h2>私たちについて</h2>
+    <div class="line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="lead">
+        女性表現者が、<br>
+        ジャンルを越えて<br>
+        長く輝けるために。
+      </p>
+      <p>
+        株式会社ルミナス・アーツは、1996年の創業以来、女優・舞台女優・声優・アイドル・ライバー・YouTuber・グラビアアイドルといった多彩な女性表現者のキャリアを支えてきた総合プロダクションです。
+      </p>
+      <p>
+        ジャンルを横断できる「クロスキャスト制度」、女性マネージャー中心の体制、専属心理士によるメンタルケア。30年間積み重ねてきた仕組みのすべては、所属タレント一人ひとりが「自分だけの光」を見つけ、灯し続けるためにあります。
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat">
+        <div class="num">30</div>
+        <div class="label">YEARS / 創業年数</div>
+      </div>
+      <div class="stat">
+        <div class="num">30</div>
+        <div class="label">TALENTS / 所属タレント</div>
+      </div>
+      <div class="stat">
+        <div class="num">07</div>
+        <div class="label">DIVISIONS / 部門数</div>
+      </div>
+      <div class="stat">
+        <div class="num">48</div>
+        <div class="label">STAFF / 従業員数</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVISIONS -->
+<section class="divisions" id="divisions">
+  <div class="section-head">
+    <div class="en">DIVISIONS</div>
+    <h2>所 属 部 門</h2>
+    <div class="line"></div>
+  </div>
+  <div class="div-grid">
+    <div class="div-card">
+      <div class="num">01</div>
+      <div class="en">Actors</div>
+      <div class="jp">女優</div>
+      <div class="count">6<small>名</small></div>
+    </div>
+    <div class="div-card">
+      <div class="num">02</div>
+      <div class="en">Stage</div>
+      <div class="jp">舞台女優</div>
+      <div class="count">4<small>名</small></div>
+    </div>
+    <div class="div-card">
+      <div class="num">03</div>
+      <div class="en">Voice</div>
+      <div class="jp">声優</div>
+      <div class="count">7<small>名</small></div>
+    </div>
+    <div class="div-card">
+      <div class="num">04</div>
+      <div class="en">Idol</div>
+      <div class="jp">アイドル</div>
+      <div class="count">5<small>名</small></div>
+    </div>
+    <div class="div-card">
+      <div class="num">05</div>
+      <div class="en">Liver</div>
+      <div class="jp">ライバー</div>
+      <div class="count">3<small>名</small></div>
+    </div>
+    <div class="div-card">
+      <div class="num">06</div>
+      <div class="en">YouTuber</div>
+      <div class="jp">クリエイター</div>
+      <div class="count">3<small>名</small></div>
+    </div>
+    <div class="div-card">
+      <div class="num">07</div>
+      <div class="en">Gravure</div>
+      <div class="jp">グラビア</div>
+      <div class="count">2<small>名</small></div>
+    </div>
+    <div class="div-card" style="display:flex;flex-direction:column;justify-content:center;border-style:dashed">
+      <div class="en" style="color:var(--gold)">Cross Cast</div>
+      <div class="jp" style="margin-top:8px">部門横断制度</div>
+    </div>
+  </div>
+</section>
+
+<!-- TALENTS -->
+<section class="talents" id="talents">
+  <div class="section-head">
+    <div class="en">TALENTS</div>
+    <h2>所 属 タ レ ン ト</h2>
+    <div class="line"></div>
+  </div>
+  <div class="talent-grid">
+    <a href="talent-tsukishiro-rin.html" class="talent-card">
+      <div class="ph"><span>R</span></div>
+      <div class="talent-info">
+        <div class="div-tag">ACTORS / STAGE</div>
+        <div class="name-jp">月城 凛</div>
+        <div class="name-en">TSUKISHIRO RIN</div>
+      </div>
+    </a>
+    <a href="talent-nanase-kotone.html" class="talent-card">
+      <div class="ph"><span>K</span></div>
+      <div class="talent-info">
+        <div class="div-tag">VOICE / YOUTUBER</div>
+        <div class="name-jp">七瀬 ことね</div>
+        <div class="name-en">NANASE KOTONE</div>
+      </div>
+    </a>
+    <a href="talent-misono-hiyori.html" class="talent-card">
+      <div class="ph"><span>H</span></div>
+      <div class="talent-info">
+        <div class="div-tag">IDOL</div>
+        <div class="name-jp">美園 ひより</div>
+        <div class="name-en">MISONO HIYORI</div>
+      </div>
+    </a>
+    <a href="talent-kagurazaka-ran.html" class="talent-card">
+      <div class="ph"><span>R</span></div>
+      <div class="talent-info">
+        <div class="div-tag">STAGE</div>
+        <div class="name-jp">神楽坂 蘭</div>
+        <div class="name-en">KAGURAZAKA RAN</div>
+      </div>
+    </a>
+    <a href="talent-aoi-noa.html" class="talent-card">
+      <div class="ph"><span>N</span></div>
+      <div class="talent-info">
+        <div class="div-tag">LIVER / GRAVURE</div>
+        <div class="name-jp">葵井 のあ</div>
+        <div class="name-en">AOI NOA</div>
+      </div>
+    </a>
+    <a href="talent-shirase-mio.html" class="talent-card">
+      <div class="ph"><span>M</span></div>
+      <div class="talent-info">
+        <div class="div-tag">YOUTUBER</div>
+        <div class="name-jp">白瀬 みお</div>
+        <div class="name-en">SHIRASE MIO</div>
+      </div>
+    </a>
+  </div>
+  <div class="talent-cta">
+    <a href="talents.html" class="btn">VIEW ALL TALENTS</a>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news" id="news">
+  <div class="section-head">
+    <div class="en">NEWS</div>
+    <h2>お 知 ら せ</h2>
+    <div class="line"></div>
+  </div>
+  <div class="news-list">
+    <div class="news-item">
+      <div class="news-date">2026.10.15</div>
+      <div class="news-cat">ANNIVERSARY</div>
+      <div class="news-title">創立30周年記念ドキュメンタリー映画『Bloom』全国公開決定</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026.09.02</div>
+      <div class="news-cat">EVENT</div>
+      <div class="news-title">『LUMINOUS GALA 2026』東京国際フォーラムにて開催</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026.07.20</div>
+      <div class="news-cat">AUDITION</div>
+      <div class="news-title">新人発掘オーディション『Next Bloom Audition』エントリー受付開始</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026.06.01</div>
+      <div class="news-cat">MEDIA</div>
+      <div class="news-title">月城 凛、NHK大河ドラマ『鳴神』ヒロイン役で出演決定</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026.05.10</div>
+      <div class="news-cat">RELEASE</div>
+      <div class="news-title">LUMINA✦8 ニューシングル『Bloom Again』リリース</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="foot-grid">
+    <div>
+      <div class="logo" style="margin-bottom:24px">
+        LUMINOUS ARTS
+        <small>EST. 1996 TOKYO</small>
+      </div>
+      <p style="font-size:12px;color:var(--ink-mute);line-height:2">
+        〒107-0062<br>
+        東京都港区南青山3-X-XX<br>
+        Luminous Arts Building 5F<br>
+        TEL: 03-XXXX-XXXX
+      </p>
+    </div>
+    <div>
+      <h4>COMPANY</h4>
+      <ul>
+        <li><a href="#">企業情報</a></li>
+        <li><a href="#">代表挨拶</a></li>
+        <li><a href="#">沿革</a></li>
+        <li><a href="#">アクセス</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>CONTACT</h4>
+      <ul>
+        <li><a href="#">お仕事のご依頼</a></li>
+        <li><a href="#">取材・出演依頼</a></li>
+        <li><a href="#">オーディション</a></li>
+        <li><a href="#">採用情報</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>SOCIAL</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">X (Twitter)</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">
+    © 1996—2026 LUMINOUS ARTS INC. ALL RIGHTS RESERVED.
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+</script>
+
+</body>
+</html>
