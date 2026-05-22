@@ -1,0 +1,413 @@
+<!-- File: talent-tsukishiro-rin.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>月城 凛 TSUKISHIRO RIN | Luminous Arts Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0c;--bg-2:#13131a;--ink:#f5f1ea;
+    --ink-mute:#a8a29b;--gold:#c9a96a;--gold-2:#e8d4a8;
+    --line:rgba(245,241,234,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Noto Serif JP','Shippori Mincho',serif;
+    font-weight:300;line-height:1.8;letter-spacing:.04em;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ---------- Header (simplified) ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:20px 48px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(10,10,12,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;font-weight:500;letter-spacing:.3em;color:var(--gold-2);
+  }
+  .back-link{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.3em;color:var(--ink-mute);
+  }
+  .back-link:hover{color:var(--gold-2)}
+
+  /* ---------- Hero (large key visual) ---------- */
+  .talent-hero{
+    height:100vh;min-height:760px;
+    position:relative;display:flex;align-items:flex-end;
+    padding:80px 48px;overflow:hidden;
+  }
+  .talent-hero-bg{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg,rgba(10,10,12,.3) 0%,rgba(10,10,12,.95) 100%),
+      linear-gradient(135deg,#2a1f15 0%,#1a1410 50%,#0a0a0c 100%);
+  }
+  .talent-hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at 70% 40%,rgba(201,169,106,.2),transparent 60%);
+  }
+  .talent-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
+  .talent-hero .tag{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.5em;color:var(--gold);
+    margin-bottom:24px;
+  }
+  .talent-hero .name-en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(56px,9vw,128px);font-weight:300;
+    letter-spacing:.04em;line-height:1;color:var(--ink);
+  }
+  .talent-hero .name-jp{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(20px,2.5vw,28px);letter-spacing:.4em;
+    color:var(--gold-2);margin-top:24px;
+  }
+  .talent-hero .meta{
+    display:flex;gap:48px;margin-top:48px;
+    padding-top:32px;border-top:1px solid var(--line);
+    max-width:600px;flex-wrap:wrap;
+  }
+  .talent-hero .meta div{font-size:13px}
+  .talent-hero .meta .label{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:6px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:120px 48px}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.6em;color:var(--gold);margin-bottom:14px;
+  }
+  .section-head h2{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(24px,3vw,34px);font-weight:400;letter-spacing:.2em;
+  }
+  .section-head .line{width:32px;height:1px;background:var(--gold);margin:24px auto 0}
+
+  /* ---------- Profile ---------- */
+  .profile{background:var(--bg-2)}
+  .profile-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:center;
+  }
+  .profile-portrait{
+    aspect-ratio:3/4;
+    background:linear-gradient(135deg,#2a2520,#1a1410);
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .profile-portrait span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:140px;color:rgba(201,169,106,.25);font-weight:300;
+  }
+  .profile-table{width:100%;border-collapse:collapse}
+  .profile-table tr{border-bottom:1px solid var(--line)}
+  .profile-table th{
+    width:140px;text-align:left;padding:18px 0;
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--gold);font-weight:400;
+  }
+  .profile-table td{padding:18px 0;font-size:14px;color:var(--ink)}
+  .bio{
+    margin-top:40px;font-size:14px;color:var(--ink-mute);line-height:2.2;
+  }
+
+  /* ---------- Gallery (large mosaic) ---------- */
+  .gallery{background:var(--bg)}
+  .gallery-mosaic{
+    max-width:1400px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:180px;gap:12px;
+  }
+  .ph-box{
+    background:linear-gradient(135deg,#2a2520,#1a1410);
+    position:relative;overflow:hidden;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .5s ease;
+  }
+  .ph-box::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 40%,rgba(201,169,106,.18),transparent 65%);
+  }
+  .ph-box span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;color:rgba(201,169,106,.4);font-weight:300;
+    position:relative;z-index:1;
+  }
+  .ph-box:hover{transform:scale(1.02)}
+  /* Mosaic layout */
+  .ph-1{grid-column:span 3;grid-row:span 2}
+  .ph-2{grid-column:span 3;grid-row:span 1}
+  .ph-3{grid-column:span 2;grid-row:span 1}
+  .ph-4{grid-column:span 1;grid-row:span 1}
+  .ph-5{grid-column:span 2;grid-row:span 2}
+  .ph-6{grid-column:span 2;grid-row:span 1}
+  .ph-7{grid-column:span 2;grid-row:span 2}
+  .ph-8{grid-column:span 2;grid-row:span 1}
+  .ph-9{grid-column:span 4;grid-row:span 2}
+  .ph-10{grid-column:span 2;grid-row:span 1}
+  .ph-11{grid-column:span 3;grid-row:span 1}
+  .ph-12{grid-column:span 3;grid-row:span 1}
+
+  /* ---------- Works ---------- */
+  .works{background:var(--bg-2)}
+  .works-list{max-width:1000px;margin:0 auto}
+  .work-row{
+    display:grid;grid-template-columns:90px 100px 1fr 1fr;gap:32px;
+    padding:28px 0;border-bottom:1px solid var(--line);align-items:center;
+  }
+  .work-year{
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;color:var(--gold);letter-spacing:.1em;
+  }
+  .work-cat{
+    font-size:10px;letter-spacing:.3em;color:var(--ink-mute);
+    border:1px solid var(--line);padding:6px 10px;text-align:center;
+  }
+  .work-title{font-size:15px;color:var(--ink);font-family:'Shippori Mincho',serif}
+  .work-role{font-size:12px;color:var(--ink-mute)}
+
+  /* ---------- Editorial photo (full-width) ---------- */
+  .editorial{
+    padding:0;background:var(--bg);
+  }
+  .editorial-img{
+    width:100%;height:80vh;min-height:600px;
+    background:
+      linear-gradient(180deg,rgba(10,10,12,.4),rgba(10,10,12,.7)),
+      linear-gradient(135deg,#2a1f15,#1a1410 60%,#0a0a0c);
+    position:relative;display:flex;align-items:center;justify-content:center;
+  }
+  .editorial-img::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 50%,rgba(201,169,106,.15),transparent 60%);
+  }
+  .editorial-quote{
+    position:relative;z-index:2;text-align:center;padding:0 24px;
+    max-width:800px;
+  }
+  .editorial-quote p{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(20px,2.5vw,32px);line-height:2.2;
+    letter-spacing:.15em;color:var(--ink);
+  }
+  .editorial-quote .author{
+    margin-top:32px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.4em;color:var(--gold);
+  }
+
+  /* ---------- Contact CTA ---------- */
+  .contact-cta{
+    background:var(--bg);text-align:center;padding:120px 48px;
+  }
+  .contact-cta p{
+    font-size:14px;color:var(--ink-mute);margin-bottom:32px;letter-spacing:.2em;
+  }
+  .btn{
+    display:inline-block;padding:18px 56px;
+    border:1px solid var(--gold);
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.4em;color:var(--gold-2);
+    transition:all .3s;
+  }
+  .btn:hover{background:var(--gold);color:var(--bg)}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:#06060a;padding:48px;border-top:1px solid var(--line);
+    text-align:center;
+  }
+  footer .copyright{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    header{padding:16px 24px}
+    section{padding:80px 24px}
+    .talent-hero{padding:80px 24px}
+    .profile-grid{grid-template-columns:1fr;gap:40px}
+    .gallery-mosaic{
+      grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;
+    }
+    .ph-1,.ph-2,.ph-3,.ph-4,.ph-5,.ph-6,.ph-7,.ph-8,.ph-9,.ph-10,.ph-11,.ph-12{
+      grid-column:span 1;grid-row:span 1;
+    }
+    .ph-1,.ph-5,.ph-9{grid-column:span 2;grid-row:span 2}
+    .work-row{grid-template-columns:1fr 1fr;gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">LUMINOUS ARTS</div>
+  <a href="index.html" class="back-link">← BACK TO TALENTS</a>
+</header>
+
+<!-- HERO -->
+<section class="talent-hero">
+  <div class="talent-hero-bg"></div>
+  <div class="talent-hero-content">
+    <div class="tag">ACTORS / STAGE — TALENT NO.001</div>
+    <h1 class="name-en">TSUKISHIRO<br>RIN</h1>
+    <div class="name-jp">月 城  凛</div>
+    <div class="meta">
+      <div>
+        <div class="label">BIRTH</div>
+        <div>1984.11.08</div>
+      </div>
+      <div>
+        <div class="label">HEIGHT</div>
+        <div>168 cm</div>
+      </div>
+      <div>
+        <div class="label">BLOOD</div>
+        <div>A</div>
+      </div>
+      <div>
+        <div class="label">FROM</div>
+        <div>Kyoto, Japan</div>
+      </div>
+      <div>
+        <div class="label">DEBUT</div>
+        <div>2006</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="profile">
+  <div class="section-head">
+    <div class="en">PROFILE</div>
+    <h2>プ ロ フ ィ ー ル</h2>
+    <div class="line"></div>
+  </div>
+  <div class="profile-grid">
+    <div class="profile-portrait"><span>R</span></div>
+    <div>
+      <table class="profile-table">
+        <tr><th>NAME</th><td>月城 凛 / Tsukishiro Rin</td></tr>
+        <tr><th>BIRTHDAY</th><td>1984年11月8日（41歳）</td></tr>
+        <tr><th>HEIGHT</th><td>168cm</td></tr>
+        <tr><th>BIRTHPLACE</th><td>京都府京都市</td></tr>
+        <tr><th>HOBBY</th><td>茶道、能楽鑑賞、写真</td></tr>
+        <tr><th>SKILL</th><td>クラシックバレエ、英語（TOEIC 920）、乗馬</td></tr>
+        <tr><th>DIVISION</th><td>女優部門 / 舞台女優部門（クロスキャスト）</td></tr>
+      </table>
+      <p class="bio">
+        2006年、舞台『真夏の夜の夢』ティターニア役で本格デビュー。京都の伝統芸能に育まれた感性と、ロンドンRADAでの留学経験を併せ持つ、唯一無二の実力派女優。NHK大河ドラマ『鳴神』(2026) ヒロイン役、舞台『マクベス』『冬物語』など、映像と舞台を縦横に往復する稀有なキャリアを築いている。第48回紀伊國屋演劇賞、第32回読売演劇大賞優秀女優賞。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="section-head">
+    <div class="en">GALLERY</div>
+    <h2>フ ォ ト ギ ャ ラ リ ー</h2>
+    <div class="line"></div>
+  </div>
+  <div class="gallery-mosaic">
+    <div class="ph-box ph-1"><span>01</span></div>
+    <div class="ph-box ph-2"><span>02</span></div>
+    <div class="ph-box ph-3"><span>03</span></div>
+    <div class="ph-box ph-4"><span>04</span></div>
+    <div class="ph-box ph-5"><span>05</span></div>
+    <div class="ph-box ph-6"><span>06</span></div>
+    <div class="ph-box ph-7"><span>07</span></div>
+    <div class="ph-box ph-8"><span>08</span></div>
+    <div class="ph-box ph-9"><span>09</span></div>
+    <div class="ph-box ph-10"><span>10</span></div>
+    <div class="ph-box ph-11"><span>11</span></div>
+    <div class="ph-box ph-12"><span>12</span></div>
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="editorial">
+  <div class="editorial-img">
+    <div class="editorial-quote">
+      <p>「 灯 す こ と は 、<br>生 き る こ と 。 」</p>
+      <div class="author">— TSUKISHIRO RIN</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="works">
+  <div class="section-head">
+    <div class="en">WORKS</div>
+    <h2>出 演 作 品</h2>
+    <div class="line"></div>
+  </div>
+  <div class="works-list">
+    <div class="work-row">
+      <div class="work-year">2026</div>
+      <div class="work-cat">TV DRAMA</div>
+      <div class="work-title">NHK大河ドラマ『鳴神』</div>
+      <div class="work-role">ヒロイン・千代役</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2025</div>
+      <div class="work-cat">STAGE</div>
+      <div class="work-title">『マクベス』（演出：野々村香澄）</div>
+      <div class="work-role">レディ・マクベス役</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2024</div>
+      <div class="work-cat">FILM</div>
+      <div class="work-title">映画『静謐な夜』</div>
+      <div class="work-role">主演・霧子役</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2023</div>
+      <div class="work-cat">STAGE</div>
+      <div class="work-title">『冬物語』新国立劇場</div>
+      <div class="work-role">ハーマイオニ役</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2022</div>
+      <div class="work-cat">TV DRAMA</div>
+      <div class="work-title">『東京タワーの灯る夜に』TBS</div>
+      <div class="work-role">主演・水城涼子役</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2020</div>
+      <div class="work-cat">CM</div>
+      <div class="work-title">資生堂『SHISEIDO Future Solution』</div>
+      <div class="work-role">メインモデル</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-cta">
+  <p>お 仕 事 の ご 依 頼 は こ ち ら</p>
+  <a href="mailto:contact@luminous-arts.jp" class="btn">CONTACT FOR BOOKING</a>
+</section>
+
+<footer>
+  <div class="copyright">© 1996—2026 LUMINOUS ARTS INC.</div>
+</footer>
+
+</body>
+</html>
