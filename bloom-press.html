@@ -1,0 +1,978 @@
+<!-- File: bloom-press.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLOOM PRESS 公式雑誌 | Luminous Arts Inc.</title>
+<meta name="description" content="株式会社ルミナス・アーツが半期に一度発行する公式雑誌『BLOOM PRESS』。所属タレントのインタビュー・プロフィール・写真集を収録。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0c;--bg-2:#13131a;--bg-3:#1a1a22;--ink:#f5f1ea;
+    --ink-mute:#a8a29b;--gold:#c9a96a;--gold-2:#e8d4a8;
+    --line:rgba(245,241,234,.12);--line-strong:rgba(245,241,234,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Noto Serif JP','Shippori Mincho',serif;
+    font-weight:300;line-height:1.9;letter-spacing:.04em;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit;cursor:pointer;border:none;color:inherit}
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:20px 48px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(10,10,12,.9);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;font-weight:500;letter-spacing:.3em;color:var(--gold-2);
+  }
+  .logo small{display:block;font-size:9px;letter-spacing:.4em;color:var(--ink-mute);margin-top:2px}
+  nav ul{display:flex;gap:36px;list-style:none}
+  nav a{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--ink-mute);transition:color .3s;
+  }
+  nav a:hover,nav a.active{color:var(--gold-2)}
+
+  /* HERO */
+  .page-hero{
+    padding:200px 48px 80px;text-align:center;position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% 30%,rgba(201,169,106,.18),transparent 60%),
+      linear-gradient(180deg,#0a0a0c 0%,#13131a 100%);
+  }
+  .page-hero > *{position:relative;z-index:1}
+  .page-hero::before{
+    content:"BLOOM";
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(180px,28vw,360px);
+    font-weight:700;color:rgba(201,169,106,.05);letter-spacing:.05em;
+    pointer-events:none;z-index:0;
+  }
+  .page-hero .tag{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.6em;color:var(--gold);margin-bottom:24px;
+  }
+  .page-hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(60px,9vw,128px);
+    font-weight:700;letter-spacing:.04em;line-height:1;color:var(--ink);
+  }
+  .page-hero h1 span{
+    display:block;font-size:.32em;letter-spacing:.5em;color:var(--gold-2);
+    margin-top:16px;font-weight:400;
+  }
+  .page-hero .jp{
+    font-family:'Shippori Mincho',serif;
+    font-size:14px;letter-spacing:.5em;color:var(--ink-mute);margin-top:32px;
+  }
+  .page-hero .desc{
+    max-width:640px;margin:48px auto 0;
+    font-size:14px;color:var(--ink-mute);line-height:2.2;
+  }
+
+  .breadcrumb{
+    background:var(--bg-2);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:18px 48px;
+  }
+  .breadcrumb-inner{
+    max-width:1200px;margin:0 auto;
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
+  }
+  .breadcrumb-inner a:hover{color:var(--gold-2)}
+  .breadcrumb-inner .sep{margin:0 12px;color:var(--gold)}
+  .breadcrumb-inner .current{color:var(--gold-2)}
+
+  section{padding:120px 48px}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.6em;color:var(--gold);margin-bottom:16px;
+  }
+  .section-head h2{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(24px,3vw,34px);font-weight:400;letter-spacing:.2em;
+  }
+  .section-head .line{width:32px;height:1px;background:var(--gold);margin:24px auto 0}
+
+  /* Latest issue */
+  .latest{background:var(--bg)}
+  .latest-grid{
+    max-width:1200px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  }
+  .cover-wrap{
+    position:relative;
+    aspect-ratio:3/4;
+    box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 1px var(--gold);
+    background:
+      linear-gradient(135deg,#2a1f15 0%,#1a1410 50%,#0a0a0c 100%);
+    overflow:hidden;
+    transition:transform .5s ease;
+  }
+  .cover-wrap:hover{transform:translateY(-8px)}
+  .cover-wrap::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 35%,rgba(201,169,106,.22),transparent 60%);
+  }
+  .cover-content{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:48px 36px;
+  }
+  .cover-top{text-align:center}
+  .cover-top .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;letter-spacing:.5em;color:var(--gold);
+    font-weight:500;margin-bottom:8px;
+  }
+  .cover-top .vol{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.4em;color:var(--ink-mute);
+  }
+  .cover-center{
+    flex:1;display:flex;align-items:center;justify-content:center;
+  }
+  .cover-portrait{
+    font-family:'Cormorant Garamond',serif;
+    font-size:200px;color:rgba(201,169,106,.4);font-weight:300;
+  }
+  .cover-bottom{text-align:center}
+  .cover-bottom .feat{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.4em;color:var(--gold);margin-bottom:12px;
+  }
+  .cover-bottom .name{
+    font-family:'Shippori Mincho',serif;
+    font-size:28px;letter-spacing:.2em;color:var(--ink);
+  }
+  .cover-bottom .name-en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);margin-top:6px;
+  }
+
+  .latest-info .tag{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.5em;color:var(--gold);margin-bottom:16px;
+  }
+  .latest-info h3{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(28px,4vw,42px);font-weight:400;
+    letter-spacing:.15em;line-height:1.6;margin-bottom:24px;
+  }
+  .latest-info .meta{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;
+    padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-bottom:32px;
+  }
+  .latest-info .meta-item .label{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:6px;
+  }
+  .latest-info .meta-item .value{font-size:14px;color:var(--ink)}
+  .latest-info .lead{
+    font-size:14px;color:var(--ink-mute);line-height:2.1;margin-bottom:32px;
+  }
+  .latest-cta{
+    display:flex;gap:16px;flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;padding:16px 36px;
+    border:1px solid var(--gold);
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.4em;color:var(--gold-2);
+    transition:all .3s;cursor:pointer;background:transparent;
+  }
+  .btn:hover{background:var(--gold);color:var(--bg)}
+  .btn.primary{background:var(--gold);color:var(--bg)}
+  .btn.primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
+
+  /* Preview content */
+  .preview{background:var(--bg-2)}
+  .preview-tabs{
+    max-width:1200px;margin:0 auto 48px;
+    display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
+  }
+  .tab-btn{
+    padding:12px 24px;
+    border:1px solid var(--line);background:transparent;
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
+    transition:all .3s;
+  }
+  .tab-btn:hover{color:var(--gold-2);border-color:var(--line-strong)}
+  .tab-btn.active{
+    background:var(--gold);color:var(--bg);border-color:var(--gold);
+  }
+  .tab-content{display:none;max-width:1200px;margin:0 auto}
+  .tab-content.active{display:block}
+
+  /* Interview */
+  .interview-block{
+    max-width:900px;margin:0 auto;
+  }
+  .interview-head{
+    text-align:center;margin-bottom:48px;
+    padding-bottom:32px;border-bottom:1px solid var(--line);
+  }
+  .interview-head .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.4em;color:var(--gold);margin-bottom:12px;
+  }
+  .interview-head .ttl{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(24px,3vw,32px);letter-spacing:.15em;color:var(--ink);
+    line-height:1.7;
+  }
+  .interview-qa{margin-bottom:40px}
+  .interview-q{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;letter-spacing:.2em;color:var(--gold);
+    margin-bottom:16px;line-height:1.7;
+  }
+  .interview-q::before{
+    content:"Q. ";font-weight:500;
+  }
+  .interview-a{
+    font-size:14px;color:var(--ink);line-height:2.3;
+    padding-left:24px;border-left:1px solid var(--line);
+  }
+  .interview-a::before{
+    content:"A. ";color:var(--gold);font-family:'Cormorant Garamond',serif;
+  }
+  .preview-fade{
+    margin-top:48px;text-align:center;
+    padding:64px 24px;
+    background:linear-gradient(180deg,transparent,rgba(10,10,12,.95) 60%);
+    margin-left:-48px;margin-right:-48px;
+    border-top:1px solid var(--line);
+    position:relative;
+  }
+  .preview-fade::before{
+    content:"";position:absolute;top:-100px;left:0;right:0;height:100px;
+    background:linear-gradient(180deg,transparent,rgba(19,19,26,.9));
+    pointer-events:none;
+  }
+  .preview-fade .label{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.4em;color:var(--gold);margin-bottom:16px;
+  }
+  .preview-fade p{font-size:13px;color:var(--ink-mute);margin-bottom:24px}
+
+  /* Profile preview */
+  .profile-preview{max-width:900px;margin:0 auto}
+  .pp-grid{
+    display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start;
+  }
+  .pp-img{
+    aspect-ratio:3/4;
+    background:linear-gradient(135deg,#2a2520,#1a1410);
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pp-img::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.18),transparent 60%);
+  }
+  .pp-img span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:120px;color:rgba(201,169,106,.32);font-weight:300;
+    position:relative;z-index:1;
+  }
+  .pp-content h4{
+    font-family:'Shippori Mincho',serif;
+    font-size:26px;letter-spacing:.2em;color:var(--ink);margin-bottom:8px;
+  }
+  .pp-content .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.3em;color:var(--gold);margin-bottom:24px;
+  }
+  .pp-content p{
+    font-size:13px;color:var(--ink-mute);line-height:2.2;margin-bottom:16px;
+  }
+  .pp-content .future{
+    margin-top:32px;padding:24px;
+    background:rgba(201,169,106,.05);border-left:2px solid var(--gold);
+  }
+  .pp-content .future .label{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:8px;
+  }
+  .pp-content .future p{
+    font-family:'Shippori Mincho',serif;
+    font-size:14px;color:var(--ink);line-height:2;margin:0;
+  }
+
+  /* Gravure preview */
+  .gravure-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  }
+  .gv-box{
+    aspect-ratio:3/4;
+    background:linear-gradient(135deg,#2a2520,#1a1410);
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .gv-box::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 40%,rgba(201,169,106,.18),transparent 65%);
+  }
+  .gv-box .label{
+    position:absolute;bottom:16px;left:16px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.3em;color:var(--gold-2);
+    background:rgba(10,10,12,.7);padding:4px 10px;
+    z-index:1;
+  }
+  .gv-box .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:40px;color:rgba(201,169,106,.4);font-weight:300;
+    position:relative;z-index:1;
+  }
+  .gv-box.large{grid-column:span 2;grid-row:span 2}
+  .gv-box.large .num{font-size:80px}
+
+  /* Backnumbers */
+  .backnumbers{background:var(--bg)}
+  .filter-bar{
+    max-width:1200px;margin:0 auto 48px;
+    display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
+  }
+  .filter-btn{
+    padding:10px 20px;
+    border:1px solid var(--line);background:transparent;
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
+    transition:all .3s;
+  }
+  .filter-btn:hover{color:var(--gold-2);border-color:var(--line-strong)}
+  .filter-btn.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+  .bn-grid{
+    max-width:1300px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+  }
+  .bn-card{
+    transition:transform .4s;cursor:pointer;
+  }
+  .bn-card.hidden{display:none}
+  .bn-card:hover{transform:translateY(-6px)}
+  .bn-cover{
+    aspect-ratio:3/4;
+    background:linear-gradient(135deg,#2a1f15,#1a1410);
+    position:relative;overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+    margin-bottom:20px;
+  }
+  .bn-cover::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 35%,rgba(201,169,106,.18),transparent 60%);
+  }
+  .bn-cover-inner{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:20px 16px;
+  }
+  .bn-cover .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.4em;color:var(--gold);text-align:center;
+    font-weight:500;
+  }
+  .bn-cover .initial-big{
+    font-family:'Cormorant Garamond',serif;
+    font-size:100px;color:rgba(201,169,106,.35);font-weight:300;text-align:center;
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  }
+  .bn-cover .name-area{text-align:center}
+  .bn-cover .name-area .nm{
+    font-family:'Shippori Mincho',serif;
+    font-size:14px;letter-spacing:.15em;color:var(--ink);
+  }
+  .bn-cover .name-area .nm-en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:8px;letter-spacing:.3em;color:var(--ink-mute);margin-top:4px;
+  }
+  .bn-vol{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:8px;
+  }
+  .bn-issue{
+    font-family:'Shippori Mincho',serif;
+    font-size:16px;letter-spacing:.1em;color:var(--ink);
+    line-height:1.6;margin-bottom:8px;
+  }
+  .bn-date{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.2em;color:var(--ink-mute);margin-bottom:12px;
+  }
+  .bn-price{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;color:var(--gold-2);letter-spacing:.1em;
+  }
+  .bn-tag{
+    display:inline-block;
+    padding:2px 8px;margin-top:8px;
+    border:1px solid var(--line);
+    font-family:'Cormorant Garamond',serif;
+    font-size:9px;letter-spacing:.2em;color:var(--ink-mute);
+  }
+  .bn-tag.soldout{color:var(--ink-mute);border-color:var(--ink-mute)}
+  .bn-tag.available{color:var(--gold);border-color:var(--gold)}
+
+  /* Subscribe */
+  .subscribe{background:var(--bg-2);text-align:center}
+  .subscribe-content{max-width:680px;margin:0 auto}
+  .subscribe h3{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(22px,3vw,30px);font-weight:400;
+    letter-spacing:.2em;margin-bottom:24px;
+  }
+  .subscribe p{
+    font-size:13px;color:var(--ink-mute);line-height:2;margin-bottom:32px;
+  }
+
+  /* Modal (maintenance) */
+  .modal{
+    display:none;
+    position:fixed;inset:0;z-index:200;
+    background:rgba(10,10,12,.92);backdrop-filter:blur(8px);
+    align-items:center;justify-content:center;padding:24px;
+  }
+  .modal.show{display:flex;animation:fadeIn .3s ease}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal-box{
+    max-width:520px;width:100%;
+    background:var(--bg-2);
+    border:1px solid var(--gold);
+    padding:56px 48px;text-align:center;
+    position:relative;
+  }
+  .modal-box .icon{
+    font-family:'Cormorant Garamond',serif;
+    font-size:64px;color:var(--gold);font-weight:300;
+    margin-bottom:24px;line-height:1;
+  }
+  .modal-box .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.5em;color:var(--gold);margin-bottom:16px;
+  }
+  .modal-box h4{
+    font-family:'Shippori Mincho',serif;
+    font-size:24px;letter-spacing:.2em;color:var(--ink);margin-bottom:24px;
+  }
+  .modal-box p{font-size:13px;color:var(--ink-mute);line-height:2;margin-bottom:32px}
+  .modal-close{
+    padding:12px 32px;
+    background:transparent;border:1px solid var(--gold);
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--gold-2);
+    transition:all .3s;
+  }
+  .modal-close:hover{background:var(--gold);color:var(--bg)}
+
+  footer{
+    background:#06060a;padding:60px 48px 32px;
+    border-top:1px solid var(--line);text-align:center;
+  }
+  footer .logo{margin-bottom:24px;display:inline-block}
+  footer .links{
+    display:flex;justify-content:center;gap:32px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.3em;color:var(--ink-mute);
+    margin-bottom:24px;flex-wrap:wrap;
+  }
+  footer .links a:hover{color:var(--gold-2)}
+  footer .copyright{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
+    padding-top:24px;border-top:1px solid var(--line);
+  }
+
+  @media (max-width:1000px){
+    .bn-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:900px){
+    header{padding:16px 24px}
+    nav ul{display:none}
+    .page-hero{padding:160px 24px 60px}
+    .breadcrumb{padding:14px 24px}
+    section{padding:80px 24px}
+    .latest-grid{grid-template-columns:1fr;gap:48px}
+    .pp-grid{grid-template-columns:1fr;gap:32px}
+    .bn-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+    .gravure-grid{grid-template-columns:repeat(2,1fr)}
+    .modal-box{padding:40px 28px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    LUMINOUS ARTS
+    <small>EST. 1996 TOKYO</small>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="company.html">Company</a></li>
+      <li><a href="talents.html">Talents</a></li>
+      <li><a href="bloom-press.html" class="active">Bloom Press</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="tag">SEMI-ANNUAL MAGAZINE — SINCE 2013</div>
+  <h1>
+    BLOOM PRESS
+    <span>FROM LUMINOUS ARTS</span>
+  </h1>
+  <div class="jp">公 式 雑 誌</div>
+  <p class="desc">
+    所属タレントのみを取り上げる、半期に一度の特別な雑誌。<br>
+    インタビュー、プロフィール、写真集、そしてこれから挑戦したいこと。<br>
+    一人ひとりの「今」を、紙の上に灯します。
+  </p>
+</section>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">HOME</a>
+    <span class="sep">/</span>
+    <span class="current">BLOOM PRESS</span>
+  </div>
+</div>
+
+<!-- LATEST ISSUE -->
+<section class="latest">
+  <div class="section-head">
+    <div class="en">LATEST ISSUE</div>
+    <h2>最 新 号</h2>
+    <div class="line"></div>
+  </div>
+  <div class="latest-grid">
+    <div class="cover-wrap">
+      <div class="cover-content">
+        <div class="cover-top">
+          <div class="brand">BLOOM PRESS</div>
+          <div class="vol">Vol.27 / 2026 Spring</div>
+        </div>
+        <div class="cover-center">
+          <div class="cover-portrait">H</div>
+        </div>
+        <div class="cover-bottom">
+          <div class="feat">SPECIAL FEATURE</div>
+          <div class="name">蓮 見  詩 織</div>
+          <div class="name-en">HASUMI SHIORI</div>
+        </div>
+      </div>
+    </div>
+    <div class="latest-info">
+      <div class="tag">VOL.27 — 2026 SPRING / SUMMER</div>
+      <h3>歌 う 声 が 、<br>明 日 を 灯 す</h3>
+      <div class="meta">
+        <div class="meta-item">
+          <div class="label">RELEASE</div>
+          <div class="value">2026.04.15</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">PAGES</div>
+          <div class="value">152 pages</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">FORMAT</div>
+          <div class="value">A4 / フルカラー</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">PRICE</div>
+          <div class="value">¥2,800（税込）</div>
+        </div>
+      </div>
+      <p class="lead">
+        2026年春号は、舞台女優部門の若手実力派・蓮見詩織を巻頭48ページにわたって特集。NHK大河ドラマ『鳴神』に主演する月城凛の連載インタビュー、LUMINA✦8美園ひよりのカフェ巡り企画、声優・七瀬ことねのアトリエ訪問など、所属タレントの「素顔」を多角的に切り取ります。
+      </p>
+      <div class="latest-cta">
+        <button class="btn primary" onclick="openModal()">PURCHASE</button>
+        <a href="#preview" class="btn">VIEW PREVIEW</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section class="preview" id="preview">
+  <div class="section-head">
+    <div class="en">PREVIEW</div>
+    <h2>中 身 を 少 し だ け</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="preview-tabs">
+    <button class="tab-btn active" data-tab="interview">INTERVIEW</button>
+    <button class="tab-btn" data-tab="profile">PROFILE</button>
+    <button class="tab-btn" data-tab="gravure">GRAVURE</button>
+  </div>
+
+  <!-- Tab: Interview -->
+  <div class="tab-content active" id="tab-interview">
+    <div class="interview-block">
+      <div class="interview-head">
+        <div class="num">VOL.27 — SPECIAL INTERVIEW</div>
+        <div class="ttl">蓮 見 詩 織 が 語 る 、<br>「 歌 う 」 と い う こ と</div>
+      </div>
+      <div class="interview-qa">
+        <div class="interview-q">音楽大学のミュージカルコースを首席で卒業されました。そこに至るまでの道のりを教えてください。</div>
+        <div class="interview-a">
+          幼い頃から舞台が大好きで、母が観に連れて行ってくれた『美女と野獣』の感動が、今でも私の原点です。中学からずっと「ミュージカル俳優になる」という目標だけを持って、毎日声楽とダンスのレッスンに通っていました。大学4年間は、本当に泥臭く、ただひたすら歌い続けた4年間でした。
+        </div>
+      </div>
+      <div class="interview-qa">
+        <div class="interview-q">2024年、卒業記念公演『アイーダ』で主演を務めた時の心境はいかがでしたか？</div>
+        <div class="interview-a">
+          舞台に立った瞬間、自分が今まで積み上げてきたすべてが、たった3時間に凝縮される感覚がありました。怖くて、でも、それ以上に幸せでした。客席から拍手をいただいた時、「ああ、私はこれを一生やっていくんだ」と心から思えたんです。
+        </div>
+      </div>
+      <div class="interview-qa">
+        <div class="interview-q">最近は2.5次元舞台の出演も増えています。原作ファンの目が厳しい世界ですが、意識していることは？</div>
+        <div class="interview-a">
+          原作のキャラクターは、ファンの方一人ひとりの心の中で、すでに完成された存在です。だから私は「再現する」のではなく、「敬意を持って受け取り、自分の体を通して立ち上げる」という意識でいます。漫画やアニメを何度も読み返して、そのキャラクターが呼吸している空気感を、自分の声と体に染み込ませる作業を大切にしています。
+        </div>
+      </div>
+      <div class="preview-fade">
+        <div class="label">CONTINUED IN MAGAZINE</div>
+        <p>続きは本誌 P.018-P.065 にてお楽しみください。</p>
+        <button class="btn primary" onclick="openModal()">PURCHASE THIS ISSUE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Profile -->
+  <div class="tab-content" id="tab-profile">
+    <div class="profile-preview">
+      <div class="pp-grid">
+        <div class="pp-img"><span>H</span></div>
+        <div class="pp-content">
+          <div class="en">FEATURED PROFILE</div>
+          <h4>蓮 見  詩 織</h4>
+          <p>
+            2002年12月15日、神奈川県横浜市生まれ。音楽大学ミュージカルコースを首席で卒業し、2024年に株式会社ルミナス・アーツ舞台女優部門に所属。
+          </p>
+          <p>
+            圧倒的な声量と歌唱力、そしてキャラクターの繊細な感情を再現する演技力で、2.5次元舞台界の新星として注目を集める。趣味は舞台鑑賞、アコースティックギター、アニメ聖地巡礼。特技は声楽（ソプラノ）、ピアノ、ダンス（ジャズ・タップ）。
+          </p>
+          <div class="future">
+            <div class="label">FUTURE GOAL — これからやってみたいこと</div>
+            <p>
+              「いつか、自分の言葉で書いた歌を、自分で歌って、自分で演じるオリジナルミュージカルを作りたい。それが今の、一番遠くて、一番近い夢です。」
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="preview-fade">
+        <div class="label">CONTINUED IN MAGAZINE</div>
+        <p>本誌では他にも、月城凛・美園ひより・七瀬ことねの特別プロフィールページを掲載。</p>
+        <button class="btn primary" onclick="openModal()">PURCHASE THIS ISSUE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Gravure -->
+  <div class="tab-content" id="tab-gravure">
+    <div class="gravure-grid">
+      <div class="gv-box large">
+        <div class="num">01</div>
+        <div class="label">P.012 — COVER STORY</div>
+      </div>
+      <div class="gv-box">
+        <div class="num">02</div>
+        <div class="label">P.020 — STAGE</div>
+      </div>
+      <div class="gv-box">
+        <div class="num">03</div>
+        <div class="label">P.024 — NATURAL</div>
+      </div>
+      <div class="gv-box">
+        <div class="num">04</div>
+        <div class="label">P.028 — REHEARSAL</div>
+      </div>
+      <div class="gv-box">
+        <div class="num">05</div>
+        <div class="label">P.032 — EDITORIAL</div>
+      </div>
+      <div class="gv-box">
+        <div class="num">06</div>
+        <div class="label">P.038 — RAIN</div>
+      </div>
+    </div>
+    <div class="preview-fade">
+      <div class="label">FULL GRAVURE 48 PAGES</div>
+      <p>巻頭グラビア48ページの中から、6カットを抜粋掲載。本誌でその全貌をご覧いただけます。</p>
+      <button class="btn primary" onclick="openModal()">PURCHASE THIS ISSUE</button>
+    </div>
+  </div>
+</section>
+
+<!-- BACKNUMBERS -->
+<section class="backnumbers">
+  <div class="section-head">
+    <div class="en">BACK NUMBERS</div>
+    <h2>バ ッ ク ナ ン バ ー</h2>
+    <div class="line"></div>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-year="all">ALL</button>
+    <button class="filter-btn" data-year="2026">2026</button>
+    <button class="filter-btn" data-year="2025">2025</button>
+    <button class="filter-btn" data-year="2024">2024</button>
+    <button class="filter-btn" data-year="2023">2023</button>
+  </div>
+  <div class="bn-grid" id="bnGrid">
+    <div class="bn-card" data-year="2026" onclick="openModal()">
+      <div class="bn-cover">
+        <div class="bn-cover-inner">
+          <div class="brand">BLOOM PRESS</div>
+          <div class="name-area">
+            <div class="nm">蓮見 詩織</div>
+            <div class="nm-en">HASUMI SHIORI</div>
+          </div>
+        </div>
+        <div class="initial-big">H</div>
+      </div>
+      <div class="bn-vol">VOL.27 / SPRING</div>
+      <div class="bn-issue">歌う声が、明日を灯す</div>
+      <div class="bn-date">2026.04.15</div>
+      <div class="bn-price">¥2,800（税込）</div>
+      <span class="bn-tag available">ON SALE</span>
+    </div>
+    <div class="bn-card" data-year="2025" onclick="openModal()">
+      <div class="bn-cover">
+        <div class="bn-cover-inner">
+          <div class="brand">BLOOM PRESS</div>
+          <div class="name-area">
+            <div class="nm">月城 凛</div>
+            <div class="nm-en">TSUKISHIRO RIN</div>
+          </div>
+        </div>
+        <div class="initial-big">R</div>
+      </div>
+      <div class="bn-vol">VOL.26 / AUTUMN</div>
+      <div class="bn-issue">役を生きるということ</div>
+      <div class="bn-date">2025.10.15</div>
+      <div class="bn-price">¥2,800（税込）</div>
+      <span class="bn-tag available">ON SALE</span>
+    </div>
+    <div class="bn-card" data-year="2025" onclick="openModal()">
+      <div class="bn-cover">
+        <div class="bn-cover-inner">
+          <div class="brand">BLOOM PRESS</div>
+          <div class="name-area">
+            <div class="nm">美園 ひより</div>
+            <div class="nm-en">MISONO HIYORI</div>
+          </div>
+        </div>
+        <div class="initial-big">H</div>
+      </div>
+      <div class="bn-vol">VOL.25 / SPRING</div>
+      <div class="bn-issue">センターという名の重力</div>
+      <div class="bn-date">2025.04.15</div>
+      <div class="bn-price">¥2,600（税込）</div>
+      <span class="bn-tag soldout">SOLD OUT</span>
+    </div>
+    <div class="bn-card" data-year="2024" onclick="openModal()">
+      <div class="bn-cover">
+        <div class="bn-cover-inner">
+          <div class="brand">BLOOM PRESS</div>
+          <div class="name-area">
+            <div class="nm">神楽坂 蘭</div>
+            <div class="nm-en">KAGURAZAKA RAN</div>
+          </div>
+        </div>
+        <div class="initial-big">R</div>
+      </div>
+      <div class="bn-vol">VOL.24 / AUTUMN</div>
+      <div class="bn-issue">舞台に灯る、一滴の真実</div>
+      <div class="bn-date">2024.10.15</div>
+      <div class="bn-price">¥2,600（税込）</div>
+      <span class="bn-tag available">ON SALE</span>
+    </div>
+    <div class="bn-card" data-year="2024" onclick="openModal()">
+      <div class="bn-cover">
+        <div class="bn-cover-inner">
+          <div class="brand">BLOOM PRESS</div>
+          <div class="name-area">
+            <div class="nm">七瀬 ことね</div>
+            <div class="nm-en">NANASE KOTONE</div>
+          </div>
+        </div>
+        <div class="initial-big">K</div>
+      </div>
+      <div class="bn-vol">VOL.23 / SPRING</div>
+      <div class="bn-issue">声という、見えない衣装</div>
+      <div class="bn-date">2024.04.15</div>
+      <div class="bn-price">¥2,600（税込）</div>
+      <span class="bn-tag soldout">SOLD OUT</span>
+    </div>
+    <div class="bn-card" data-year="2023" onclick="openModal()">
+      <div class="bn-cover">
+        <div class="bn-cover-inner">
+          <div class="brand">BLOOM PRESS</div>
+          <div class="name-area">
+            <div class="nm">葵井 のあ</div>
+            <div class="nm-en">AOI NOA</div>
+          </div>
+        </div>
+        <div class="initial-big">N</div>
+      </div>
+      <div class="bn-vol">VOL.22 / AUTUMN</div>
+      <div class="bn-issue">配信の向こうの私</div>
+      <div class="bn-date">2023.10.15</div>
+      <div class="bn-price">¥2,600（税込）</div>
+      <span class="bn-tag soldout">SOLD OUT</span>
+    </div>
+    <div class="bn-card" data-year="2023" onclick="openModal()">
+      <div class="bn-cover">
+        <div class="bn-cover-inner">
+          <div class="brand">BLOOM PRESS</div>
+          <div class="name-area">
+            <div class="nm">白瀬 みお</div>
+            <div class="nm-en">SHIRASE MIO</div>
+          </div>
+        </div>
+        <div class="initial-big">M</div>
+      </div>
+      <div class="bn-vol">VOL.21 / SPRING</div>
+      <div class="bn-issue">日常という、最高の舞台</div>
+      <div class="bn-date">2023.04.15</div>
+      <div class="bn-price">¥2,400（税込）</div>
+      <span class="bn-tag soldout">SOLD OUT</span>
+    </div>
+    <div class="bn-card" data-year="2025" onclick="openModal()">
+      <div class="bn-cover">
+        <div class="bn-cover-inner">
+          <div class="brand">BLOOM PRESS — SPECIAL</div>
+          <div class="name-area">
+            <div class="nm">30周年記念号</div>
+            <div class="nm-en">30TH ANNIVERSARY</div>
+          </div>
+        </div>
+        <div class="initial-big">∞</div>
+      </div>
+      <div class="bn-vol">SPECIAL ISSUE</div>
+      <div class="bn-issue">30年、灯し続けて</div>
+      <div class="bn-date">2025.12.01</div>
+      <div class="bn-price">¥4,500（税込）</div>
+      <span class="bn-tag available">ON SALE</span>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="subscribe">
+  <div class="subscribe-content">
+    <div class="section-head">
+      <div class="en">SUBSCRIPTION</div>
+      <h2>年 間 購 読</h2>
+      <div class="line"></div>
+    </div>
+    <p>
+      年間2号（春号・秋号）を、発売日に確実にお届けします。<br>
+      30周年限定の特装ボックスケース付き。送料無料。
+    </p>
+    <button class="btn primary" onclick="openModal()">SUBSCRIBE NOW — ¥5,400 / YEAR</button>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="icon">⚙</div>
+    <div class="en">MAINTENANCE</div>
+    <h4>現 在 メ ン テ ナ ン ス 中</h4>
+    <p>
+      購入機能は現在メンテナンス中です。<br>
+      ご不便をおかけし申し訳ございません。<br><br>
+      再開まで今しばらくお待ちください。
+    </p>
+    <button class="modal-close" onclick="closeModal()">CLOSE</button>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="logo">
+    LUMINOUS ARTS
+    <small>EST. 1996 TOKYO</small>
+  </a>
+  <div class="links">
+    <a href="index.html">HOME</a>
+    <a href="company.html">COMPANY</a>
+    <a href="talents.html">TALENTS</a>
+    <a href="bloom-press.html">BLOOM PRESS</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+  <div class="copyright">© 1996—2026 LUMINOUS ARTS INC. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<script>
+  // Tab switching
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Backnumber filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const bnCards = document.querySelectorAll('.bn-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const year = btn.dataset.year;
+      bnCards.forEach(card => {
+        if(year === 'all' || card.dataset.year === year){
+          card.classList.remove('hidden');
+        }else{
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Modal
+  function openModal(){
+    document.getElementById('modal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    document.getElementById('modal').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modal').addEventListener('click', (e) => {
+    if(e.target.id === 'modal') closeModal();
+  });
+</script>
+
+</body>
+</html>
