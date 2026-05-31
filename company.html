@@ -11,49 +11,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0a0c;
-    --bg-2:#13131a;
-    --bg-3:#1a1a22;
-    --ink:#f5f1ea;
-    --ink-mute:#a8a29b;
-    --gold:#c9a96a;
-    --gold-2:#e8d4a8;
-    --line:rgba(245,241,234,.12);
-    --line-strong:rgba(245,241,234,.25);
+    --bg:#0a0a0c;--bg-2:#13131a;--bg-3:#1a1a22;--ink:#f5f1ea;
+    --ink-mute:#a8a29b;--gold:#c9a96a;--gold-2:#e8d4a8;
+    --line:rgba(245,241,234,.12);--line-strong:rgba(245,241,234,.25);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    background:var(--bg);
-    color:var(--ink);
+    background:var(--bg);color:var(--ink);
     font-family:'Noto Serif JP','Shippori Mincho',serif;
-    font-weight:300;
-    line-height:1.9;
-    letter-spacing:.04em;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    font-weight:300;line-height:1.9;letter-spacing:.04em;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
 
-  /* ---------- Header ---------- */
   header{
     position:fixed;top:0;left:0;right:0;z-index:100;
     padding:20px 48px;
     display:flex;justify-content:space-between;align-items:center;
-    background:rgba(10,10,12,.9);
-    backdrop-filter:blur(10px);
+    background:rgba(10,10,12,.9);backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
   .logo{
     font-family:'Cormorant Garamond',serif;
-    font-size:20px;font-weight:500;letter-spacing:.3em;
-    color:var(--gold-2);
+    font-size:20px;font-weight:500;letter-spacing:.3em;color:var(--gold-2);
   }
-  .logo small{
-    display:block;font-size:9px;letter-spacing:.4em;
-    color:var(--ink-mute);margin-top:2px;
-  }
+  .logo small{display:block;font-size:9px;letter-spacing:.4em;color:var(--ink-mute);margin-top:2px}
   nav ul{display:flex;gap:36px;list-style:none}
   nav a{
     font-family:'Cormorant Garamond',serif;
@@ -62,10 +46,8 @@
   }
   nav a:hover,nav a.active{color:var(--gold-2)}
 
-  /* ---------- Page Hero ---------- */
   .page-hero{
-    padding:200px 48px 100px;
-    text-align:center;
+    padding:200px 48px 100px;text-align:center;
     position:relative;overflow:hidden;
     background:
       radial-gradient(ellipse at 50% 30%,rgba(201,169,106,.15),transparent 60%),
@@ -76,35 +58,28 @@
     background-image:
       linear-gradient(rgba(245,241,234,.025) 1px,transparent 1px),
       linear-gradient(90deg,rgba(245,241,234,.025) 1px,transparent 1px);
-    background-size:80px 80px;
-    pointer-events:none;
+    background-size:80px 80px;pointer-events:none;
   }
   .page-hero > *{position:relative;z-index:1}
   .page-hero .en{
     font-family:'Cormorant Garamond',serif;
-    font-size:14px;letter-spacing:.7em;color:var(--gold);
-    margin-bottom:24px;
+    font-size:14px;letter-spacing:.7em;color:var(--gold);margin-bottom:24px;
   }
   .page-hero h1{
     font-family:'Cormorant Garamond',serif;
     font-size:clamp(56px,8vw,108px);
-    font-weight:300;letter-spacing:.05em;line-height:1;
-    color:var(--ink);
+    font-weight:300;letter-spacing:.05em;line-height:1;color:var(--ink);
   }
   .page-hero .jp{
     font-family:'Shippori Mincho',serif;
-    font-size:14px;letter-spacing:.5em;color:var(--ink-mute);
-    margin-top:32px;
+    font-size:14px;letter-spacing:.5em;color:var(--ink-mute);margin-top:32px;
   }
 
-  /* ---------- Index Nav ---------- */
   .index-nav{
     background:var(--bg-2);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
     padding:20px 48px;
-    position:sticky;top:73px;z-index:50;
-    backdrop-filter:blur(10px);
+    position:sticky;top:73px;z-index:50;backdrop-filter:blur(10px);
   }
   .index-nav-inner{
     max-width:1200px;margin:0 auto;
@@ -118,22 +93,18 @@
   }
   .index-nav a:hover{color:var(--gold-2);border-color:var(--gold)}
 
-  /* ---------- Common Section ---------- */
   section{padding:140px 48px;position:relative}
   .section-head{text-align:center;margin-bottom:80px}
   .section-head .en{
     font-family:'Cormorant Garamond',serif;
-    font-size:13px;letter-spacing:.6em;color:var(--gold);
-    margin-bottom:16px;
+    font-size:13px;letter-spacing:.6em;color:var(--gold);margin-bottom:16px;
   }
   .section-head h2{
     font-family:'Shippori Mincho',serif;
-    font-size:clamp(28px,4vw,42px);font-weight:400;
-    letter-spacing:.2em;
+    font-size:clamp(28px,4vw,42px);font-weight:400;letter-spacing:.2em;
   }
   .section-head .line{
-    width:32px;height:1px;background:var(--gold);
-    margin:28px auto 0;
+    width:32px;height:1px;background:var(--gold);margin:28px auto 0;
   }
 
   /* ---------- MESSAGE ---------- */
@@ -142,53 +113,63 @@
     max-width:1200px;margin:0 auto;
     display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:center;
   }
-  .ceo-portrait{
+
+  /* ===== EXECUTIVE PORTRAIT (image-ready) ===== */
+  .exec-portrait-img{
     aspect-ratio:3/4;
     background:linear-gradient(135deg,#2a2520 0%,#1a1410 100%);
     position:relative;overflow:hidden;
     display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);
   }
-  .ceo-portrait::before{
-    content:"";position:absolute;inset:0;
+  .exec-portrait-img img{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  /* Placeholder for when image is missing */
+  .exec-portrait-img .placeholder{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:12px;
     background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.2),transparent 60%);
   }
-  .ceo-portrait .initial{
+  .exec-portrait-img .placeholder .initial{
     font-family:'Cormorant Garamond',serif;
     font-size:160px;color:rgba(201,169,106,.32);
-    font-weight:300;position:relative;z-index:1;
+    font-weight:300;line-height:1;
   }
-  .ceo-portrait .badge{
-    position:absolute;bottom:24px;left:24px;right:24px;z-index:2;
-    padding:20px;
-    background:rgba(10,10,12,.85);
-    border-left:2px solid var(--gold);
-  }
-  .ceo-portrait .badge .role{
+  .exec-portrait-img .placeholder .ph-hint{
     font-family:'Cormorant Garamond',serif;
-    font-size:10px;letter-spacing:.4em;color:var(--gold);
-    margin-bottom:8px;
+    font-size:9px;letter-spacing:.3em;color:var(--ink-mute);opacity:.6;
   }
-  .ceo-portrait .badge .name-jp{
+  .exec-portrait-img img + .placeholder{display:none}
+
+  .exec-portrait-img .badge{
+    position:absolute;bottom:24px;left:24px;right:24px;z-index:2;
+    padding:20px;background:rgba(10,10,12,.85);border-left:2px solid var(--gold);
+  }
+  .exec-portrait-img .badge .role{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.4em;color:var(--gold);margin-bottom:8px;
+  }
+  .exec-portrait-img .badge .name-jp{
     font-family:'Shippori Mincho',serif;
     font-size:18px;letter-spacing:.15em;color:var(--ink);
   }
-  .ceo-portrait .badge .name-en{
+  .exec-portrait-img .badge .name-en{
     font-family:'Cormorant Garamond',serif;
     font-size:11px;letter-spacing:.3em;color:var(--ink-mute);margin-top:4px;
   }
+
   .message-text .lead{
     font-family:'Shippori Mincho',serif;
-    font-size:clamp(22px,2.5vw,30px);
-    line-height:2.1;letter-spacing:.12em;color:var(--ink);
-    margin-bottom:48px;font-weight:400;
+    font-size:clamp(22px,2.5vw,30px);line-height:2.1;letter-spacing:.12em;
+    color:var(--ink);margin-bottom:40px;font-weight:400;
   }
   .message-text p{
-    font-size:14px;color:var(--ink-mute);margin-bottom:24px;
-    line-height:2.2;
+    font-size:14px;color:var(--ink-mute);margin-bottom:24px;line-height:2.2;
   }
   .message-text .sign{
-    margin-top:48px;padding-top:32px;
-    border-top:1px solid var(--line);
+    margin-top:40px;padding-top:32px;border-top:1px solid var(--line);
     display:flex;justify-content:flex-end;align-items:baseline;gap:16px;
   }
   .message-text .sign-role{
@@ -202,13 +183,11 @@
 
   /* ---------- PHILOSOPHY ---------- */
   .philosophy{
-    background:var(--bg-2);
-    position:relative;overflow:hidden;
+    background:var(--bg-2);position:relative;overflow:hidden;
   }
   .philosophy::before{
     content:"PHILOSOPHY";
-    position:absolute;top:50%;left:50%;
-    transform:translate(-50%,-50%);
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
     font-family:'Cormorant Garamond',serif;
     font-size:clamp(120px,20vw,260px);font-weight:300;
     color:rgba(201,169,106,.04);letter-spacing:.1em;
@@ -220,79 +199,54 @@
   }
   .philosophy-content .motto{
     font-family:'Shippori Mincho',serif;
-    font-size:clamp(28px,4vw,44px);
-    line-height:2;letter-spacing:.25em;
+    font-size:clamp(28px,4vw,44px);line-height:2;letter-spacing:.25em;
     color:var(--gold-2);margin-bottom:48px;
   }
   .philosophy-content .motto-en{
     font-family:'Cormorant Garamond',serif;
-    font-size:18px;letter-spacing:.5em;color:var(--gold);
-    margin-bottom:64px;
+    font-size:18px;letter-spacing:.5em;color:var(--gold);margin-bottom:64px;
   }
   .philosophy-content p{
-    font-size:15px;color:var(--ink-mute);
-    line-height:2.4;letter-spacing:.1em;
+    font-size:15px;color:var(--ink-mute);line-height:2.4;letter-spacing:.1em;
     margin-bottom:24px;
   }
 
   /* ---------- COMPANY DATA ---------- */
   .company-data{background:var(--bg)}
-  .data-table-wrap{
-    max-width:1000px;margin:0 auto;
-  }
-  .data-table{
-    width:100%;border-collapse:collapse;
-  }
-  .data-table tr{
-    border-bottom:1px solid var(--line);
-  }
+  .data-table-wrap{max-width:1000px;margin:0 auto}
+  .data-table{width:100%;border-collapse:collapse}
+  .data-table tr{border-bottom:1px solid var(--line)}
   .data-table tr:first-child{border-top:1px solid var(--line)}
   .data-table th{
-    width:220px;
-    text-align:left;
-    padding:24px 0;
+    width:220px;text-align:left;padding:24px 0;
     font-family:'Cormorant Garamond',serif;
     font-size:11px;letter-spacing:.4em;color:var(--gold);
     font-weight:400;vertical-align:top;
   }
   .data-table th .jp{
-    display:block;
-    font-family:'Shippori Mincho',serif;
-    font-size:12px;color:var(--ink-mute);letter-spacing:.2em;
-    margin-top:4px;
+    display:block;font-family:'Shippori Mincho',serif;
+    font-size:12px;color:var(--ink-mute);letter-spacing:.2em;margin-top:4px;
   }
-  .data-table td{
-    padding:24px 0;
-    font-size:14px;color:var(--ink);
-    line-height:1.9;
-  }
-  .data-table td strong{
-    color:var(--gold-2);font-weight:400;
-  }
+  .data-table td{padding:24px 0;font-size:14px;color:var(--ink);line-height:1.9}
+  .data-table td strong{color:var(--gold-2);font-weight:400}
 
   /* ---------- HISTORY ---------- */
   .history{background:var(--bg-2);position:relative}
   .timeline{
     max-width:900px;margin:0 auto;
-    position:relative;
-    padding-left:32px;
+    position:relative;padding-left:32px;
   }
   .timeline::before{
     content:"";position:absolute;left:0;top:8px;bottom:8px;
     width:1px;background:var(--line);
   }
-  .timeline-item{
-    position:relative;
-    padding-bottom:48px;
-  }
+  .timeline-item{position:relative;padding-bottom:48px}
   .timeline-item:last-child{padding-bottom:0}
   .timeline-item::before{
     content:"";position:absolute;
     left:-37px;top:8px;
     width:11px;height:11px;
-    background:var(--bg-2);
-    border:1px solid var(--gold);
-    border-radius:50%;
+    background:var(--bg-2);border:1px solid var(--gold);border-radius:50%;
     transition:all .3s;
   }
   .timeline-item:hover::before{
@@ -301,70 +255,74 @@
   }
   .timeline-year{
     font-family:'Cormorant Garamond',serif;
-    font-size:24px;letter-spacing:.1em;color:var(--gold);
-    margin-bottom:8px;
+    font-size:24px;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;
   }
   .timeline-title{
     font-family:'Shippori Mincho',serif;
     font-size:17px;color:var(--ink);letter-spacing:.1em;
     margin-bottom:8px;line-height:1.7;
   }
-  .timeline-desc{
-    font-size:13px;color:var(--ink-mute);line-height:2;
-  }
+  .timeline-desc{font-size:13px;color:var(--ink-mute);line-height:2}
 
-  /* ---------- EXECUTIVES ---------- */
+  /* ---------- EXECUTIVES (image-ready) ---------- */
   .executives{background:var(--bg)}
   .exec-grid{
-    max-width:1200px;margin:0 auto;
-    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+    max-width:1300px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
   }
   .exec-card{
-    background:var(--bg-2);
-    border:1px solid var(--line);
-    padding:40px 32px;text-align:center;
-    transition:all .4s;
+    background:var(--bg-2);border:1px solid var(--line);
+    overflow:hidden;transition:all .4s;
+    display:flex;flex-direction:column;
   }
   .exec-card:hover{
-    border-color:var(--gold);
-    transform:translateY(-4px);
+    border-color:var(--gold);transform:translateY(-4px);
   }
-  .exec-portrait{
-    width:120px;height:120px;
-    border-radius:50%;
-    margin:0 auto 24px;
+  .exec-photo{
+    aspect-ratio:1/1;
     background:linear-gradient(135deg,#2a2520,#1a1410);
-    display:flex;align-items:center;justify-content:center;
     position:relative;overflow:hidden;
-    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    border-bottom:1px solid var(--line);
   }
-  .exec-portrait::before{
-    content:"";position:absolute;inset:0;
+  .exec-photo img{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  .exec-photo .placeholder{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:8px;
     background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.2),transparent 65%);
   }
-  .exec-portrait span{
+  .exec-photo .placeholder .ph-initial{
     font-family:'Cormorant Garamond',serif;
-    font-size:48px;color:rgba(201,169,106,.4);
-    font-weight:300;position:relative;z-index:1;
+    font-size:80px;color:rgba(201,169,106,.4);font-weight:300;line-height:1;
+  }
+  .exec-photo .placeholder .ph-hint{
+    font-family:'Cormorant Garamond',serif;
+    font-size:8px;letter-spacing:.3em;color:var(--ink-mute);opacity:.5;
+  }
+  .exec-photo img + .placeholder{display:none}
+
+  .exec-body{
+    padding:28px 24px 32px;text-align:center;flex:1;
+    display:flex;flex-direction:column;
   }
   .exec-role{
     font-family:'Cormorant Garamond',serif;
-    font-size:10px;letter-spacing:.4em;color:var(--gold);
-    margin-bottom:16px;
+    font-size:10px;letter-spacing:.4em;color:var(--gold);margin-bottom:14px;
   }
   .exec-name-jp{
     font-family:'Shippori Mincho',serif;
-    font-size:20px;letter-spacing:.15em;color:var(--ink);
-    margin-bottom:6px;
+    font-size:18px;letter-spacing:.15em;color:var(--ink);margin-bottom:6px;
   }
   .exec-name-en{
     font-family:'Cormorant Garamond',serif;
-    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
-    margin-bottom:24px;
+    font-size:10px;letter-spacing:.3em;color:var(--ink-mute);margin-bottom:20px;
   }
   .exec-bio{
     font-size:12px;color:var(--ink-mute);line-height:2;
-    text-align:left;padding-top:20px;border-top:1px solid var(--line);
+    text-align:left;padding-top:18px;border-top:1px solid var(--line);
   }
 
   /* ---------- ACCESS ---------- */
@@ -373,85 +331,63 @@
     max-width:1200px;margin:0 auto;
     display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;
   }
-  .access-info{
-    padding:8px 0;
-  }
+  .access-info{padding:8px 0}
   .access-block{
-    margin-bottom:40px;padding-bottom:40px;
-    border-bottom:1px solid var(--line);
+    margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--line);
   }
   .access-block:last-child{border-bottom:none}
   .access-label{
     font-family:'Cormorant Garamond',serif;
-    font-size:11px;letter-spacing:.4em;color:var(--gold);
-    margin-bottom:16px;
+    font-size:11px;letter-spacing:.4em;color:var(--gold);margin-bottom:16px;
   }
   .access-name{
     font-family:'Shippori Mincho',serif;
-    font-size:20px;letter-spacing:.15em;color:var(--ink);
-    margin-bottom:16px;
+    font-size:20px;letter-spacing:.15em;color:var(--ink);margin-bottom:16px;
   }
-  .access-addr{
-    font-size:14px;color:var(--ink);line-height:2;
-  }
+  .access-addr{font-size:14px;color:var(--ink);line-height:2}
   .access-tel{
     font-family:'Cormorant Garamond',serif;
-    font-size:18px;letter-spacing:.15em;color:var(--gold-2);
-    margin-top:16px;
+    font-size:18px;letter-spacing:.15em;color:var(--gold-2);margin-top:16px;
   }
   .access-station{
     font-size:12px;color:var(--ink-mute);margin-top:16px;line-height:2;
   }
-  /* ---------- Building Image (insertable) ---------- */
-.building-image{
-  width:100%;
-  aspect-ratio:4/3;
-  background:linear-gradient(135deg,#1f1814 0%,#0f0c0a 100%);
-  border:1px solid var(--line);
-  position:relative;overflow:hidden;
-  margin-bottom:24px;
-  transition:all .3s;
-}
-.building-image:hover{border-color:var(--gold)}
-.building-image img{
-  width:100%;height:100%;
-  object-fit:cover;display:block;
-}
-.building-placeholder{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  gap:8px;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(201,169,106,.03) 0,
-      rgba(201,169,106,.03) 2px,
-      transparent 2px,
-      transparent 12px
-    ),
-    radial-gradient(ellipse at 50% 50%,rgba(201,169,106,.08),transparent 70%);
-}
-.building-placeholder .bp-en{
-  font-family:'Cormorant Garamond',serif;
-  font-size:14px;letter-spacing:.5em;color:var(--gold);
-}
-.building-placeholder .bp-jp{
-  font-family:'Shippori Mincho',serif;
-  font-size:13px;color:var(--ink-mute);letter-spacing:.2em;
-}
-.building-placeholder .bp-hint{
-  font-family:'Cormorant Garamond',serif;
-  font-size:10px;color:var(--ink-mute);letter-spacing:.2em;
-  opacity:.6;margin-top:4px;
-}
+
+  /* Building image */
+  .building-image{
+    width:100%;aspect-ratio:4/3;
+    background:linear-gradient(135deg,#1f1814 0%,#0f0c0a 100%);
+    border:1px solid var(--line);
+    position:relative;overflow:hidden;margin-bottom:24px;transition:all .3s;
+  }
+  .building-image:hover{border-color:var(--gold)}
+  .building-image img{width:100%;height:100%;object-fit:cover;display:block}
+  .building-placeholder{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    background:
+      repeating-linear-gradient(45deg,rgba(201,169,106,.03) 0,rgba(201,169,106,.03) 2px,transparent 2px,transparent 12px),
+      radial-gradient(ellipse at 50% 50%,rgba(201,169,106,.08),transparent 70%);
+  }
+  .building-placeholder .bp-en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;letter-spacing:.5em;color:var(--gold);
+  }
+  .building-placeholder .bp-jp{
+    font-family:'Shippori Mincho',serif;
+    font-size:13px;color:var(--ink-mute);letter-spacing:.2em;
+  }
+  .building-placeholder .bp-hint{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;color:var(--ink-mute);letter-spacing:.2em;opacity:.6;margin-top:4px;
+  }
+
   .map-mock{
     aspect-ratio:4/5;
     background:
       linear-gradient(135deg,rgba(201,169,106,.05),transparent 50%),
       var(--bg-3);
-    position:relative;overflow:hidden;
-    border:1px solid var(--line);
+    position:relative;overflow:hidden;border:1px solid var(--line);
   }
   .map-mock::before{
     content:"";position:absolute;inset:0;
@@ -462,12 +398,10 @@
   }
   .map-pin{
     position:absolute;top:50%;left:50%;
-    transform:translate(-50%,-100%);z-index:2;
-    text-align:center;
+    transform:translate(-50%,-100%);z-index:2;text-align:center;
   }
   .map-pin .dot{
-    width:18px;height:18px;border-radius:50%;
-    background:var(--gold);
+    width:18px;height:18px;border-radius:50%;background:var(--gold);
     margin:0 auto 8px;
     box-shadow:0 0 0 6px rgba(201,169,106,.2),0 0 0 14px rgba(201,169,106,.08);
     animation:pulse 2s infinite;
@@ -495,29 +429,23 @@
   }
   .cta .en{
     font-family:'Cormorant Garamond',serif;
-    font-size:13px;letter-spacing:.6em;color:var(--gold);
-    margin-bottom:24px;
+    font-size:13px;letter-spacing:.6em;color:var(--gold);margin-bottom:24px;
   }
   .cta h3{
     font-family:'Shippori Mincho',serif;
-    font-size:clamp(24px,3vw,36px);font-weight:400;
-    letter-spacing:.2em;margin-bottom:48px;
+    font-size:clamp(24px,3vw,36px);font-weight:400;letter-spacing:.2em;margin-bottom:48px;
   }
-  .btn-group{
-    display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
-  }
+  .btn-group{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
   .btn{
     display:inline-block;padding:18px 48px;
     border:1px solid var(--gold);
     font-family:'Cormorant Garamond',serif;
-    font-size:13px;letter-spacing:.4em;color:var(--gold-2);
-    transition:all .3s;
+    font-size:13px;letter-spacing:.4em;color:var(--gold-2);transition:all .3s;
   }
   .btn:hover{background:var(--gold);color:var(--bg)}
   .btn.primary{background:var(--gold);color:var(--bg)}
   .btn.primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
 
-  /* ---------- Footer ---------- */
   footer{
     background:#06060a;padding:60px 48px 32px;
     border-top:1px solid var(--line);text-align:center;
@@ -536,7 +464,9 @@
     padding-top:24px;border-top:1px solid var(--line);
   }
 
-  /* ---------- Responsive ---------- */
+  @media (max-width:1200px){
+    .exec-grid{grid-template-columns:repeat(3,1fr)}
+  }
   @media (max-width:1000px){
     .exec-grid{grid-template-columns:repeat(2,1fr)}
   }
@@ -568,22 +498,20 @@
   <nav>
     <ul>
       <li><a href="company.html" class="active">Company</a></li>
-      <li><a href="index.html#divisions">Divisions</a></li>
       <li><a href="talents.html">Talents</a></li>
-      <li><a href="index.html#news">News</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="bloom-press.html">Bloom Press</a></li>
+      <li><a href="audition.html">Audition</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="en">COMPANY</div>
   <h1>About Us</h1>
   <div class="jp">企 業 情 報</div>
 </section>
 
-<!-- INDEX NAV -->
 <div class="index-nav">
   <div class="index-nav-inner">
     <a href="#message">Message</a>
@@ -603,8 +531,14 @@
     <div class="line"></div>
   </div>
   <div class="message-grid">
-    <div class="ceo-portrait">
-      <span class="initial">S</span>
+    <!-- 代表挨拶用ポートレート画像 -->
+    <div class="exec-portrait-img">
+      <img src="assets/images/executive/executive-01.jpg" alt="桐城 紗英子 ポートレート"
+           onerror="this.style.display='none'">
+      <div class="placeholder">
+        <div class="initial">S</div>
+        <div class="ph-hint">assets/images/executive/executive-01.jpg</div>
+      </div>
       <div class="badge">
         <div class="role">FOUNDER & CEO</div>
         <div class="name-jp">桐 城  紗 英 子</div>
@@ -623,7 +557,7 @@
         舞台、映画、声、歌、配信、写真。表現の手段は時代とともに増え、変容し続けてきました。けれど、ジャンルが変わっても、表現する人の「核」は変わりません。私たちが守りたいのは、その核です。
       </p>
       <p>
-        創業から30年。所属タレント30名、スタッフ48名。決して大きな組織ではありませんが、一人ひとりの声が届く距離感を保ちながら、女性表現者が「自分らしく長く輝ける」プロダクションであり続けたいと願っています。
+        2026年4月、私たちは新たにアナウンサー部門・モデル部門を立ち上げ、外部からの転籍ユニットも迎え入れました。所属タレント37名、スタッフ48名。決して大きな組織ではありませんが、一人ひとりの声が届く距離感を保ちながら、女性表現者が「自分らしく長く輝ける」プロダクションであり続けたいと願っています。
       </p>
       <p>
         私たちの灯りが、見てくださる方の心のどこかを、ほんの少しでも温められるなら。それが私たちの、何よりの誇りです。
@@ -690,10 +624,11 @@
       <tr>
         <th>BUSINESS<span class="jp">事業内容</span></th>
         <td>
-          女性タレントのマネジメント業務（女優・舞台女優・声優・アイドル・ライバー・YouTuber・グラビアアイドル）<br>
+          女性タレントのマネジメント業務（女優・舞台女優・声優・アイドル・ライバー・YouTuber・グラビアアイドル・アナウンサー・モデル）<br>
           映像・舞台コンテンツの企画・制作<br>
           配信スタジオ運営<br>
-          オーディション・人材育成事業
+          オーディション・人材育成事業<br>
+          公式雑誌『BLOOM PRESS』の編集・発行
         </td>
       </tr>
       <tr>
@@ -702,7 +637,15 @@
       </tr>
       <tr>
         <th>TALENTS<span class="jp">所属タレント</span></th>
-        <td>30名（女優6 / 舞台女優4 / 声優7 / アイドル5 / ライバー3 / YouTuber3 / グラビア2）</td>
+        <td>
+          <strong>37名 ＋ モデル部門枠</strong>（2026年4月改定）<br>
+          女優6 / 舞台女優4 / 声優7 / アイドル9（精鋭5＋転籍ユニット4）<br>
+          ライバー3 / YouTuber3 / グラビア2 / アナウンサー3 / モデル枠確保
+        </td>
+      </tr>
+      <tr>
+        <th>DIVISIONS<span class="jp">部門数</span></th>
+        <td><strong>9部門</strong>（2026年4月「アナウンサー部門」「モデル部門」新設）</td>
       </tr>
       <tr>
         <th>HEAD OFFICE<span class="jp">本社</span></th>
@@ -778,9 +721,16 @@
       <div class="timeline-desc">韓国・台湾の事務所との育成提携を締結。クロスボーダー型タレント育成プログラムを開始。</div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-year">2026</div>
+      <div class="timeline-year">2026.04</div>
+      <div class="timeline-title">運営方針改定／2部門新設・所属37名へ拡大</div>
+      <div class="timeline-desc">
+        アナウンサー部門（LMA Announce）・モデル部門（LMA Models）を新設。外部から2人組アイドルユニット2組（計4名）を転籍受入。所属タレントは31名→37名へ拡張。同時にグラビア部門の新規所属を「20歳以上限定」とする育成方針を厳格化。
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2026.10</div>
       <div class="timeline-title">創立30周年</div>
-      <div class="timeline-desc">記念ドキュメンタリー映画『Bloom』公開／全部門合同公演『LUMINOUS GALA 2026』を東京国際フォーラムにて開催。</div>
+      <div class="timeline-desc">記念ドキュメンタリー映画『Bloom』公開／新部門・転籍ユニットも合流した『LUMINOUS GALA 2026』を東京国際フォーラムにて開催。</div>
     </div>
   </div>
 </section>
@@ -793,65 +743,171 @@
     <div class="line"></div>
   </div>
   <div class="exec-grid">
+
+    <!-- 01: CEO -->
     <div class="exec-card">
-      <div class="exec-portrait"><span>S</span></div>
-      <div class="exec-role">FOUNDER / CEO</div>
-      <div class="exec-name-jp">桐城 紗英子</div>
-      <div class="exec-name-en">SAEKO KIRYU</div>
-      <div class="exec-bio">
-        1968年京都府生まれ。元舞台女優として10年のキャリアを経て、1996年に当社を創業。「女性表現者が自分らしく長く活動できる場」を理念に掲げ、業界に新たな潮流を生み出してきた。
+      <div class="exec-photo">
+        <img src="assets/images/executive/executive-01.jpg" alt="桐城 紗英子"
+             onerror="this.style.display='none'">
+        <div class="placeholder">
+          <div class="ph-initial">S</div>
+          <div class="ph-hint">executive-01.jpg</div>
+        </div>
+      </div>
+      <div class="exec-body">
+        <div class="exec-role">FOUNDER / CEO</div>
+        <div class="exec-name-jp">桐城 紗英子</div>
+        <div class="exec-name-en">SAEKO KIRYU</div>
+        <div class="exec-bio">
+          1968年京都府生まれ。元舞台女優として10年のキャリアを経て、1996年に当社を創業。「女性表現者が自分らしく長く活動できる場」を理念に掲げ、業界に新たな潮流を生み出してきた。
+        </div>
       </div>
     </div>
+
+    <!-- 02: Vice President -->
     <div class="exec-card">
-      <div class="exec-portrait"><span>M</span></div>
-      <div class="exec-role">VICE PRESIDENT / CCO</div>
-      <div class="exec-name-jp">桐城 真央</div>
-      <div class="exec-name-en">MAO KIRYU</div>
-      <div class="exec-bio">
-        1991年生まれ、創業者・紗英子の長女。慶應義塾大学卒業後、外資系広告代理店を経て2018年入社。2021年副社長就任。SNS戦略・グローバル展開を統括する。
+      <div class="exec-photo">
+        <img src="assets/images/executive/executive-02.jpg" alt="桐城 真央"
+             onerror="this.style.display='none'">
+        <div class="placeholder">
+          <div class="ph-initial">M</div>
+          <div class="ph-hint">executive-02.jpg</div>
+        </div>
+      </div>
+      <div class="exec-body">
+        <div class="exec-role">VICE PRESIDENT / CCO</div>
+        <div class="exec-name-jp">桐城 真央</div>
+        <div class="exec-name-en">MAO KIRYU</div>
+        <div class="exec-bio">
+          1991年生まれ、創業者・紗英子の長女。慶應義塾大学卒業後、外資系広告代理店を経て2018年入社。2021年副社長就任。SNS戦略・グローバル展開を統括する。
+        </div>
       </div>
     </div>
+
+    <!-- 03: Mgmt Director -->
     <div class="exec-card">
-      <div class="exec-portrait"><span>K</span></div>
-      <div class="exec-role">DIRECTOR / MGMT</div>
-      <div class="exec-name-jp">相馬 健司</div>
-      <div class="exec-name-en">KENJI SOMA</div>
-      <div class="exec-bio">
-        元大手レコード会社A&R部長。アーティスト育成・楽曲制作の現場で20年以上の経験を持つ。2015年当社入社、マネジメント本部を統括。
+      <div class="exec-photo">
+        <img src="assets/images/executive/executive-03.jpg" alt="相馬 健司"
+             onerror="this.style.display='none'">
+        <div class="placeholder">
+          <div class="ph-initial">K</div>
+          <div class="ph-hint">executive-03.jpg</div>
+        </div>
+      </div>
+      <div class="exec-body">
+        <div class="exec-role">DIRECTOR / MGMT</div>
+        <div class="exec-name-jp">相馬 健司</div>
+        <div class="exec-name-en">KENJI SOMA</div>
+        <div class="exec-bio">
+          元大手レコード会社A&R部長。アーティスト育成・楽曲制作の現場で20年以上の経験を持つ。2015年当社入社、マネジメント本部を統括。
+        </div>
       </div>
     </div>
+
+    <!-- 04: Production Director -->
     <div class="exec-card">
-      <div class="exec-portrait"><span>K</span></div>
-      <div class="exec-role">DIRECTOR / PRODUCTION</div>
-      <div class="exec-name-jp">野々村 香澄</div>
-      <div class="exec-name-en">KASUMI NONOMURA</div>
-      <div class="exec-bio">
-        舞台演出家として国内外で活動後、2017年当社入社。舞台部門の作品制作・演出をリードし、近年では映像制作にも領域を拡大している。
+      <div class="exec-photo">
+        <img src="assets/images/executive/executive-04.jpg" alt="野々村 香澄"
+             onerror="this.style.display='none'">
+        <div class="placeholder">
+          <div class="ph-initial">K</div>
+          <div class="ph-hint">executive-04.jpg</div>
+        </div>
+      </div>
+      <div class="exec-body">
+        <div class="exec-role">DIRECTOR / PRODUCTION</div>
+        <div class="exec-name-jp">野々村 香澄</div>
+        <div class="exec-name-en">KASUMI NONOMURA</div>
+        <div class="exec-bio">
+          舞台演出家として国内外で活動後、2017年当社入社。舞台部門の作品制作・演出をリードし、近年では映像制作にも領域を拡大している。
+        </div>
       </div>
     </div>
+
+    <!-- 05: Digital Exec -->
     <div class="exec-card">
-      <div class="exec-portrait"><span>T</span></div>
-      <div class="exec-role">EXECUTIVE / DIGITAL</div>
-      <div class="exec-name-jp">高梨 拓真</div>
-      <div class="exec-name-en">TAKUMA TAKANASHI</div>
-      <div class="exec-bio">
-        ITスタートアップの元CTO。2020年入社、配信事業部を立ち上げ。BLOOMスタジオの設計・運営を統括し、ライバー部門・YouTuber部門のテクノロジー基盤を支える。
+      <div class="exec-photo">
+        <img src="assets/images/executive/executive-05.jpg" alt="高梨 拓真"
+             onerror="this.style.display='none'">
+        <div class="placeholder">
+          <div class="ph-initial">T</div>
+          <div class="ph-hint">executive-05.jpg</div>
+        </div>
+      </div>
+      <div class="exec-body">
+        <div class="exec-role">EXECUTIVE / DIGITAL</div>
+        <div class="exec-name-jp">高梨 拓真</div>
+        <div class="exec-name-en">TAKUMA TAKANASHI</div>
+        <div class="exec-bio">
+          ITスタートアップの元CTO。2020年入社、配信事業部を立ち上げ。BLOOMスタジオの設計・運営を統括し、ライバー部門・YouTuber部門のテクノロジー基盤を支える。
+        </div>
       </div>
     </div>
+
+    <!-- 06: Wellness Exec -->
     <div class="exec-card">
-      <div class="exec-portrait"><span>Y</span></div>
-      <div class="exec-role">EXECUTIVE / WELLNESS</div>
-      <div class="exec-name-jp">柳沢 美咲</div>
-      <div class="exec-name-en">MISAKI YANAGISAWA</div>
-      <div class="exec-bio">
-        臨床心理士・公認心理師。所属タレント・スタッフのメンタルヘルスケアを統括。業界における心理的安全性の確立に注力している。
+      <div class="exec-photo">
+        <img src="assets/images/executive/executive-06.jpg" alt="柳沢 美咲"
+             onerror="this.style.display='none'">
+        <div class="placeholder">
+          <div class="ph-initial">M</div>
+          <div class="ph-hint">executive-06.jpg</div>
+        </div>
+      </div>
+      <div class="exec-body">
+        <div class="exec-role">EXECUTIVE / WELLNESS</div>
+        <div class="exec-name-jp">柳沢 美咲</div>
+        <div class="exec-name-en">MISAKI YANAGISAWA</div>
+        <div class="exec-bio">
+          臨床心理士・公認心理師。所属タレント・スタッフのメンタルヘルスケアを統括。業界における心理的安全性の確立に注力している。
+        </div>
       </div>
     </div>
+
+    <!-- 07: NEW - Announcer Division Head -->
+    <div class="exec-card">
+      <div class="exec-photo">
+        <img src="assets/images/executive/executive-07.jpg" alt="持田 朝美"
+             onerror="this.style.display='none'">
+        <div class="placeholder">
+          <div class="ph-initial">A</div>
+          <div class="ph-hint">executive-07.jpg</div>
+        </div>
+      </div>
+      <div class="exec-body">
+        <div class="exec-role">HEAD / ANNOUNCE DIV.</div>
+        <div class="exec-name-jp">持田 朝美</div>
+        <div class="exec-name-en">ASAMI MOCHIDA</div>
+        <div class="exec-bio">
+          元キー局アナウンサー（在局18年）。報道・情報番組のメインキャスター経験を持つ。2026年4月、新設アナウンサー部門のヘッドとして入社。次世代マルチキャスターの育成を担う。
+        </div>
+      </div>
+    </div>
+
+    <!-- 08: NEW - Models Division Head -->
+    <div class="exec-card">
+      <div class="exec-photo">
+        <img src="assets/images/executive/executive-08.jpg" alt="エミリー・ラング"
+             onerror="this.style.display='none'">
+        <div class="placeholder">
+          <div class="ph-initial">E</div>
+          <div class="ph-hint">executive-08.jpg</div>
+        </div>
+      </div>
+      <div class="exec-body">
+        <div class="exec-role">HEAD / MODELS DIV.</div>
+        <div class="exec-name-jp">エミリー・ラング</div>
+        <div class="exec-name-en">EMILY LANG</div>
+        <div class="exec-bio">
+          パリ・ミラノ・東京で活躍した元ハイファッションモデル。引退後はモデルエージェンシーのディレクターとして国内外のブランドと提携。2026年4月、新設モデル部門のヘッドに就任。
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- ACCESS -->
-<!-- File: company.html 内 ACCESS セクションの差し替え -->
 <section class="access" id="access">
   <div class="section-head">
     <div class="en">ACCESS</div>
@@ -863,9 +919,7 @@
       <div class="access-block">
         <div class="access-label">HEAD OFFICE / 本社</div>
         <div class="access-name">Luminous Arts Building</div>
-        <!-- 建物画像エリア（差し替え可能） -->
         <div class="building-image" id="buildingImageMain">
-          <!-- ここに <img src="building-main.jpg" alt="Luminous Arts Building"> を入れるだけで画像が反映されます -->
           <div class="building-placeholder">
             <div class="bp-en">PHOTO</div>
             <div class="bp-jp">assets /images/company/company-01.jpg</div>
@@ -886,7 +940,6 @@
       <div class="access-block">
         <div class="access-label">STUDIO / 第2スタジオ</div>
         <div class="access-name">LMA STUDIO BLOOM</div>
-        <!-- 第2スタジオ建物画像エリア -->
         <div class="building-image" id="buildingImageStudio">
           <div class="building-placeholder">
             <div class="bp-en">PHOTO</div>
@@ -919,24 +972,23 @@
   <div class="en">CONTACT</div>
   <h3>お 問 い 合 わ せ</h3>
   <div class="btn-group">
-    <a href="mailto:contact@luminous-arts.jp" class="btn primary">CONTACT US</a>
+    <a href="contact.html" class="btn primary">CONTACT US</a>
     <a href="talents.html" class="btn">VIEW TALENTS</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <a href="index.html" class="logo">
     LUMINOUS ARTS
     <small>EST. 1996 TOKYO</small>
   </a>
   <div class="links">
-  <a href="index.html">HOME</a>
-  <a href="company.html">COMPANY</a>
-  <a href="message.html">MESSAGE</a>
-  <a href="history.html">HISTORY</a>
-  <a href="talents.html">TALENTS</a>
-</div>
+    <a href="index.html">HOME</a>
+    <a href="company.html">COMPANY</a>
+    <a href="message.html">MESSAGE</a>
+    <a href="history.html">HISTORY</a>
+    <a href="talents.html">TALENTS</a>
+  </div>
   <div class="copyright">© 1996—2026 LUMINOUS ARTS INC. ALL RIGHTS RESERVED.</div>
 </footer>
 
