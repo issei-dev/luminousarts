@@ -1,0 +1,633 @@
+<!-- File: fanclub/lumina5.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMINA✦5 推しページ | LUMINOUS FANCLUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fff5fa;
+    --ink:#3a2a40;--ink-soft:#6a5566;
+    --pink:#ff8ac1;--pink-deep:#ff5fa8;
+    --sky:#7fc8ff;--mint:#7fdfc4;
+    --yellow:#ffd86b;--lavender:#c098ff;
+    --shadow:0 8px 24px rgba(255,138,193,.2);
+    --shadow-hover:0 12px 32px rgba(255,138,193,.3);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Zen Maru Gothic',sans-serif;
+    line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;color:inherit}
+
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(circle at 15% 20%,rgba(255,138,193,.15),transparent 40%),
+      radial-gradient(circle at 85% 70%,rgba(127,200,255,.12),transparent 40%),
+      radial-gradient(circle at 50% 90%,rgba(255,216,107,.1),transparent 40%);
+  }
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 40px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(255,245,250,.92);backdrop-filter:blur(10px);
+    border-bottom:2px solid rgba(255,138,193,.2);
+  }
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{
+    width:36px;height:36px;border-radius:50%;
+    background:linear-gradient(135deg,var(--pink),var(--lavender));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;font-size:22px;color:#fff;font-weight:700;
+    box-shadow:0 4px 12px rgba(255,138,193,.3);
+  }
+  .logo-text{font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;letter-spacing:.15em;line-height:1.2}
+  .logo-text small{display:block;font-size:9px;color:var(--pink);letter-spacing:.3em;margin-top:2px}
+  .back-nav{display:flex;gap:24px;align-items:center}
+  .back-nav a{
+    font-family:'Quicksand',sans-serif;font-size:12px;
+    letter-spacing:.2em;color:var(--ink-soft);font-weight:600;
+  }
+  .back-nav a:hover{color:var(--pink)}
+
+  /* HERO */
+  .hero{
+    min-height:90vh;padding:140px 40px 80px;
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#ffe0ee 0%,#ffd6ee 50%,#e0d9ff 100%);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle,rgba(255,255,255,.6) 2px,transparent 2px),
+      radial-gradient(circle,rgba(255,255,255,.4) 1.5px,transparent 1.5px);
+    background-size:100px 100px,140px 140px;
+    background-position:0 0,50px 70px;
+    animation:twinkle 20s linear infinite;
+  }
+  @keyframes twinkle{
+    from{background-position:0 0,50px 70px}
+    to{background-position:100px 100px,150px 170px}
+  }
+  .hero-content{
+    text-align:center;position:relative;z-index:1;max-width:900px;
+  }
+  .hero-badge{
+    display:inline-block;padding:8px 24px;border-radius:24px;
+    background:rgba(255,255,255,.85);
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.3em;color:var(--pink-deep);
+    margin-bottom:32px;border:2px solid var(--pink);
+  }
+  .hero h1{
+    font-family:'Quicksand',sans-serif;
+    font-size:clamp(64px,12vw,160px);font-weight:700;
+    line-height:.9;letter-spacing:0;color:#fff;
+    text-shadow:
+      4px 4px 0 var(--pink),
+      8px 8px 0 var(--lavender),
+      12px 12px 30px rgba(255,138,193,.4);
+    margin-bottom:16px;
+  }
+  .hero h1 .star{
+    color:var(--yellow);
+    text-shadow:
+      3px 3px 0 var(--pink-deep),
+      0 0 30px rgba(255,216,107,.6);
+    display:inline-block;animation:spin 4s linear infinite;
+  }
+  @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  .hero-sub{
+    font-family:'Caveat',cursive;font-size:clamp(32px,5vw,52px);
+    color:var(--pink-deep);font-weight:500;margin-top:24px;
+    transform:rotate(-2deg);
+  }
+  .hero-jp{
+    margin-top:32px;
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:clamp(14px,1.8vw,18px);letter-spacing:.3em;color:var(--ink);
+  }
+
+  /* Members - 5 color circles */
+  .members{padding:120px 40px;background:#fff}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head .badge{
+    display:inline-block;padding:6px 18px;border-radius:20px;
+    background:rgba(255,138,193,.15);
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.3em;color:var(--pink-deep);margin-bottom:16px;
+  }
+  .section-head h2{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:clamp(28px,4vw,42px);font-weight:900;
+    color:var(--ink);letter-spacing:.05em;margin-bottom:14px;
+  }
+  .section-head h2 .accent{color:var(--pink-deep)}
+  .section-head p{font-size:14px;color:var(--ink-soft)}
+
+  .member-grid{
+    max-width:1200px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(5,1fr);gap:20px;
+  }
+  .member-card{
+    text-align:center;
+    transition:transform .3s;cursor:pointer;
+  }
+  .member-card:hover{transform:translateY(-8px)}
+  .member-circle{
+    width:140px;height:140px;border-radius:50%;
+    margin:0 auto 18px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:48px;color:#fff;
+    box-shadow:var(--shadow);
+    border:4px solid #fff;
+    position:relative;
+  }
+  .member-circle::after{
+    content:"";position:absolute;top:-4px;left:-4px;right:-4px;bottom:-4px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--pink),var(--lavender));
+    z-index:-1;opacity:0;transition:opacity .3s;
+  }
+  .member-card:hover .member-circle::after{opacity:1}
+  .member-1 .member-circle{background:linear-gradient(135deg,#ff8ac1,#ff5fa8)}
+  .member-2 .member-circle{background:linear-gradient(135deg,#7fc8ff,#5fa8ff)}
+  .member-3 .member-circle{background:linear-gradient(135deg,#7fdfc4,#5fc4a8)}
+  .member-4 .member-circle{background:linear-gradient(135deg,#ffd86b,#ffa55c)}
+  .member-5 .member-circle{background:linear-gradient(135deg,#c098ff,#9a6dff)}
+  .member-color{
+    font-family:'Caveat',cursive;font-size:18px;
+    margin-bottom:6px;
+  }
+  .member-1 .member-color{color:#ff5fa8}
+  .member-2 .member-color{color:#5fa8ff}
+  .member-3 .member-color{color:#5fc4a8}
+  .member-4 .member-color{color:#ffa55c}
+  .member-5 .member-color{color:#9a6dff}
+  .member-name{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:17px;color:var(--ink);letter-spacing:.1em;margin-bottom:4px;
+  }
+  .member-role{
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:10px;letter-spacing:.25em;color:var(--ink-soft);
+  }
+
+  /* Concept message */
+  .concept{
+    padding:100px 40px;
+    background:linear-gradient(180deg,var(--bg) 0%,#ffeef7 100%);
+    text-align:center;
+  }
+  .concept-content{
+    max-width:780px;margin:0 auto;
+    background:#fff;border-radius:40px;
+    padding:64px 48px;box-shadow:var(--shadow);
+    position:relative;
+  }
+  .concept-content::before{
+    content:"♡♡♡";position:absolute;top:-20px;left:50%;transform:translateX(-50%);
+    background:#fff;padding:0 20px;color:var(--pink);font-size:22px;
+    letter-spacing:.3em;
+  }
+  .concept-content .lead{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:900;
+    font-size:clamp(24px,3vw,34px);color:var(--ink);
+    letter-spacing:.1em;line-height:1.7;margin-bottom:28px;
+  }
+  .concept-content .lead .pink{color:var(--pink-deep)}
+  .concept-content p{
+    font-size:14px;color:var(--ink-soft);line-height:2.2;
+  }
+
+  /* Benefits */
+  .benefits{padding:120px 40px;background:#fff}
+  .benefit-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  }
+  .benefit-card{
+    background:linear-gradient(180deg,#fff 0%,#ffeef7 100%);
+    border-radius:28px;padding:40px 28px;text-align:center;
+    box-shadow:var(--shadow);transition:transform .3s;
+    border:2px solid transparent;
+  }
+  .benefit-card:hover{transform:translateY(-6px);border-color:var(--pink)}
+  .benefit-icon{
+    width:72px;height:72px;border-radius:50%;
+    margin:0 auto 20px;font-size:32px;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--pink),var(--lavender));
+    box-shadow:0 6px 16px rgba(255,138,193,.3);
+  }
+  .benefit-card:nth-child(2) .benefit-icon{background:linear-gradient(135deg,var(--sky),var(--mint))}
+  .benefit-card:nth-child(3) .benefit-icon{background:linear-gradient(135deg,var(--yellow),var(--pink))}
+  .benefit-card:nth-child(4) .benefit-icon{background:linear-gradient(135deg,var(--mint),var(--sky))}
+  .benefit-card:nth-child(5) .benefit-icon{background:linear-gradient(135deg,var(--lavender),var(--pink))}
+  .benefit-card:nth-child(6) .benefit-icon{background:linear-gradient(135deg,var(--pink),var(--yellow))}
+  .benefit-card h3{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:900;
+    font-size:17px;letter-spacing:.08em;color:var(--ink);margin-bottom:14px;
+  }
+  .benefit-card p{font-size:13px;color:var(--ink-soft);line-height:1.95}
+
+  /* Pricing */
+  .pricing{
+    padding:120px 40px;
+    background:linear-gradient(135deg,#fff5fa 0%,#f0e8ff 100%);
+  }
+  .pricing-card{
+    max-width:540px;margin:0 auto;
+    background:#fff;border-radius:32px;
+    padding:56px 44px;text-align:center;
+    box-shadow:0 16px 40px rgba(255,138,193,.25);
+    border:3px solid var(--pink);
+    position:relative;
+  }
+  .pricing-ribbon{
+    position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+    padding:8px 24px;border-radius:18px;
+    background:linear-gradient(135deg,var(--pink),var(--lavender));
+    color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.25em;
+    box-shadow:0 4px 12px rgba(255,138,193,.4);
+  }
+  .pricing-tag{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.3em;color:var(--pink-deep);margin-bottom:14px;
+  }
+  .pricing-card h3{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:900;
+    font-size:26px;color:var(--ink);letter-spacing:.1em;margin-bottom:8px;
+  }
+  .pricing-card .en{
+    font-family:'Caveat',cursive;font-size:20px;color:var(--pink);margin-bottom:32px;
+  }
+  .price-display{
+    padding:32px 0;
+    border-top:2px dashed rgba(255,138,193,.3);
+    border-bottom:2px dashed rgba(255,138,193,.3);
+    margin-bottom:36px;
+  }
+  .price-display .num{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:64px;line-height:1;color:var(--pink-deep);
+  }
+  .price-display .yen{font-size:36px;margin-right:4px}
+  .price-display .unit{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:500;
+    font-size:14px;color:var(--ink-soft);margin-left:8px;
+  }
+  .price-display .note{
+    margin-top:10px;font-size:12px;color:var(--ink-soft);letter-spacing:.1em;
+  }
+  .btn-join{
+    display:inline-block;padding:20px 60px;border-radius:32px;
+    background:linear-gradient(135deg,var(--pink),var(--pink-deep));
+    color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:14px;letter-spacing:.25em;
+    box-shadow:0 8px 20px rgba(255,95,168,.4);
+    transition:all .3s;border:none;cursor:pointer;
+  }
+  .btn-join:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(255,95,168,.5)}
+  .pricing-note{
+    margin-top:24px;font-size:11px;color:var(--ink-soft);line-height:1.9;
+  }
+
+  /* What you can do */
+  .can-do{padding:120px 40px;background:#fff}
+  .can-do-list{
+    max-width:900px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+  }
+  .can-do-item{
+    background:linear-gradient(135deg,#fff 0%,#fff0f7 100%);
+    border-radius:20px;padding:24px 24px 24px 64px;
+    position:relative;transition:all .3s;
+    border:2px solid transparent;
+  }
+  .can-do-item:hover{border-color:var(--pink);transform:translateX(4px)}
+  .can-do-item::before{
+    content:"✦";position:absolute;left:24px;top:50%;transform:translateY(-50%);
+    width:28px;height:28px;border-radius:50%;
+    background:linear-gradient(135deg,var(--pink),var(--lavender));
+    color:#fff;font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .can-do-item h4{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:15px;color:var(--ink);margin-bottom:4px;
+  }
+  .can-do-item p{font-size:12px;color:var(--ink-soft);line-height:1.8}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg,#ff8ac1 0%,#c098ff 100%);
+    text-align:center;padding:120px 40px;color:#fff;
+    position:relative;overflow:hidden;
+  }
+  .final-cta::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle,rgba(255,255,255,.2) 2px,transparent 2px);
+    background-size:80px 80px;animation:twinkle 15s linear infinite;
+  }
+  .final-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
+  .final-cta h3{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:900;
+    font-size:clamp(26px,4vw,40px);letter-spacing:.1em;
+    line-height:1.7;margin-bottom:24px;
+  }
+  .final-cta p{font-size:15px;line-height:2.2;margin-bottom:40px}
+  .btn-white{
+    background:#fff;color:var(--pink-deep);
+    padding:20px 56px;border-radius:32px;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:14px;letter-spacing:.2em;border:none;cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,.15);transition:all .3s;
+  }
+  .btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+
+  footer{
+    background:#fff;padding:48px 40px 28px;text-align:center;
+    border-top:2px solid rgba(255,138,193,.15);
+  }
+  footer .logo{justify-content:center;margin-bottom:20px}
+  footer .copyright{
+    margin-top:28px;padding-top:20px;
+    border-top:1px dashed rgba(255,138,193,.2);
+    font-family:'Quicksand',sans-serif;font-size:11px;
+    letter-spacing:.2em;color:var(--ink-soft);
+  }
+
+  /* Modal */
+  .modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(58,42,64,.6);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px}
+  .modal.show{display:flex;animation:fadeIn .3s}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal-box{max-width:440px;width:100%;background:#fff;border-radius:32px;padding:48px 36px;text-align:center;animation:popIn .4s}
+  @keyframes popIn{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-icon{width:72px;height:72px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(135deg,var(--yellow),var(--pink));display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff}
+  .modal-box h4{font-size:20px;font-weight:900;margin-bottom:12px;letter-spacing:.1em}
+  .modal-box p{font-size:13px;color:var(--ink-soft);line-height:2;margin-bottom:24px}
+  .modal-close{padding:12px 32px;border-radius:24px;background:linear-gradient(135deg,var(--pink),var(--pink-deep));color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;font-size:12px;letter-spacing:.2em;border:none;cursor:pointer}
+
+  @media (max-width:900px){
+    .member-grid{grid-template-columns:repeat(2,1fr);gap:24px;max-width:480px}
+    .benefit-grid{grid-template-columns:1fr;max-width:440px}
+    .can-do-list{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    header{padding:14px 20px}
+    section{padding:80px 20px}
+    .pricing-card{padding:44px 28px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">
+      LUMINOUS FANCLUB
+      <small>OFFICIAL</small>
+    </div>
+  </a>
+  <div class="back-nav">
+    <a href="index.html">← BACK</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✦ PREMIUM PLAN — IDOL DIVISION ✦</div>
+    <h1>LUMINA<span class="star">✦</span>5</h1>
+    <div class="hero-sub">5 sparkles, one stage ♡</div>
+    <div class="hero-jp">5 つ の き ら め き が 、ひ と つ の ス テ ー ジ に 。</div>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section class="members">
+  <div class="section-head">
+    <div class="badge">5 MEMBERS</div>
+    <h2>5人の<span class="accent">いろ</span></h2>
+    <p>それぞれのカラーで、ステージを彩る精鋭5人</p>
+  </div>
+  <div class="member-grid">
+    <div class="member-card member-1">
+      <div class="member-circle">H</div>
+      <div class="member-color">Pink</div>
+      <div class="member-name">美園 ひより</div>
+      <div class="member-role">CENTER</div>
+    </div>
+    <div class="member-card member-2">
+      <div class="member-circle">R</div>
+      <div class="member-color">Sky</div>
+      <div class="member-name">百瀬 凛花</div>
+      <div class="member-role">LEAD VOCAL</div>
+    </div>
+    <div class="member-card member-3">
+      <div class="member-circle">L</div>
+      <div class="member-color">Mint</div>
+      <div class="member-name">高峰 るな</div>
+      <div class="member-role">LEAD DANCE</div>
+    </div>
+    <div class="member-card member-4">
+      <div class="member-circle">M</div>
+      <div class="member-color">Yellow</div>
+      <div class="member-name">梓 めい</div>
+      <div class="member-role">SUB CENTER</div>
+    </div>
+    <div class="member-card member-5">
+      <div class="member-circle">Y</div>
+      <div class="member-color">Lavender</div>
+      <div class="member-name">星川 柚月</div>
+      <div class="member-role">SUB VOCAL</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept">
+  <div class="concept-content">
+    <div class="lead">
+      毎日が、<span class="pink">きらきらの本番</span>。
+    </div>
+    <p>
+      LUMINA✦5の魅力は、5人それぞれの「色」が混ざり合うこと。<br>
+      Pink、Sky、Mint、Yellow、Lavender ——<br>
+      個性豊かな5つのカラーが集まると、いつも特別な何かが生まれます。<br><br>
+      推しメンが叶えてくれる毎日のときめきを、<br>
+      ファンクラブ限定の特等席から覗いてみませんか？
+    </p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="section-head">
+    <div class="badge">SPECIAL BENEFITS</div>
+    <h2>会員<span class="accent">特典</span></h2>
+    <p>プレミアム会員だけの、6つのスペシャル</p>
+  </div>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">♡</div>
+      <h3>週1の限定生配信</h3>
+      <p>メンバー全員 or 個人配信。リアルタイムでコメントもキャッチ！</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✿</div>
+      <h3>月1ファンミ抽選</h3>
+      <p>少人数だから距離が近い。デジタルファンミーティングに月1で挑戦！</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">★</div>
+      <h3>毎月のデジフォト</h3>
+      <p>毎月5枚以上、メンバーごとの新作デジタル写真をマイページでGET。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">♪</div>
+      <h3>音声メッセージ</h3>
+      <p>月替わりで、メンバーから会員だけへの限定ボイスレターが届きます。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✦</div>
+      <h3>誕生月特典</h3>
+      <p>あなたの誕生月に、推しからの特別バースデーメッセージ動画をお届け。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">●</div>
+      <h3>ライブ優先抽選</h3>
+      <p>全国ライブツアー・単独公演の優先抽選枠。最前列を狙える特権。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="section-head">
+    <div class="badge">JOIN NOW</div>
+    <h2>プレミアム<span class="accent">プラン</span></h2>
+    <p>推しの毎日に、もっと近づこう</p>
+  </div>
+  <div class="pricing-card">
+    <div class="pricing-ribbon">★ LUMINA✦5 PREMIUM ★</div>
+    <div class="pricing-tag">PREMIUM MEMBERSHIP</div>
+    <h3>LUMINA✦5 推しプラン</h3>
+    <div class="en">Pick Your Color ♡</div>
+    <div class="price-display">
+      <div class="num"><span class="yen">¥</span>3,300<span class="unit">/ 月</span></div>
+      <div class="note">税込・自動継続課金</div>
+    </div>
+    <button class="btn-join" onclick="openModal()">新規登録する ♡</button>
+    <p class="pricing-note">
+      ※グループ全体プランです。<br>
+      個人推しプラン・複数推しプランも追加可能！
+    </p>
+  </div>
+</section>
+
+<!-- WHAT YOU CAN DO -->
+<section class="can-do">
+  <div class="section-head">
+    <div class="badge">YOU CAN ENJOY</div>
+    <h2>入会するとこんな<span class="accent">こと</span>♡</h2>
+    <p>あなたの推し活が、もっとカラフルに</p>
+  </div>
+  <div class="can-do-list">
+    <div class="can-do-item">
+      <h4>朝の挨拶ボイスで目覚める</h4>
+      <p>週替わりで届く、メンバーのおはようボイス。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>推しの素顔に密着</h4>
+      <p>カメラを切ったあとの、素のメンバーが垣間見える限定配信。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>リクエスト企画に参加</h4>
+      <p>「次の配信で◯◯やって！」会員投票で企画決定。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>新曲をいちばん早く聴ける</h4>
+      <p>リリース1週間前のフライング先行試聴会つき。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>限定スタンプ・壁紙</h4>
+      <p>毎月更新のメンバー個別デジタル壁紙＆絵文字。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>応援ランキング上位特典</h4>
+      <p>あなたの応援度が、特別グッズ抽選チャンスに！</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-content">
+    <h3>5色の光が、あなたを待ってます ♡</h3>
+    <p>
+      Pink、Sky、Mint、Yellow、Lavender ——<br>
+      推しメンの色を見つけて、今日からLUMINA✦5の家族に。
+    </p>
+    <button class="btn-white" onclick="openModal()">プレミアム登録する</button>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">
+      LUMINOUS FANCLUB
+      <small>OFFICIAL</small>
+    </div>
+  </div>
+  <div><a href="index.html" style="font-family:'Quicksand',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ink-soft);font-weight:600">← BACK TO FANCLUB</a></div>
+  <div class="copyright">© 2026 LUMINOUS ARTS INC. — FANCLUB DIVISION</div>
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon">♡</div>
+    <h4>入 会 規 制 中</h4>
+    <p>
+      ただいま新規入会は規制中です。<br>
+      会員数の急増により、サービス品質維持のため<br>
+      一時的に受付を停止しております。<br>
+      再開までもう少々お待ちください！
+    </p>
+    <button class="modal-close" onclick="closeModal()">閉じる</button>
+  </div>
+</div>
+
+<script>
+  function openModal(){
+    document.getElementById('modal').classList.add('show');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    document.getElementById('modal').classList.remove('show');
+    document.body.style.overflow='';
+  }
+  document.getElementById('modal').addEventListener('click',(e)=>{
+    if(e.target.id==='modal') closeModal();
+  });
+</script>
+
+</body>
+</html>
