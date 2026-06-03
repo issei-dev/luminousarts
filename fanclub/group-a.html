@@ -1,0 +1,603 @@
+<!-- File: fanclub/group-a.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumière Duo 推しページ | LUMINOUS FANCLUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Cormorant+Garamond:wght@400;500;600&family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f0fa;
+    --ink:#2e2740;--ink-soft:#615570;
+    --violet:#9a7ad1;--violet-deep:#7a5dc4;
+    --dusk:#b8a8d9;--moon:#e8d9f5;
+    --rose:#d4a5c5;--gold-soft:#d4b878;
+    --shadow:0 10px 30px rgba(122,93,196,.18);
+    --shadow-hover:0 14px 36px rgba(122,93,196,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Zen Maru Gothic',sans-serif;
+    line-height:1.95;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;color:inherit}
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 20%,rgba(154,122,209,.15),transparent 45%),
+      radial-gradient(ellipse at 80% 70%,rgba(212,165,197,.12),transparent 45%);
+  }
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 40px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(245,240,250,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(154,122,209,.2);
+  }
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{
+    width:36px;height:36px;border-radius:50%;
+    background:linear-gradient(135deg,var(--violet),var(--rose));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;font-size:22px;color:#fff;font-weight:700;
+    box-shadow:0 4px 12px rgba(122,93,196,.3);
+  }
+  .logo-text{font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;letter-spacing:.15em;line-height:1.2}
+  .logo-text small{display:block;font-size:9px;color:var(--violet);letter-spacing:.3em;margin-top:2px}
+  .back-nav a{font-family:'Quicksand',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ink-soft);font-weight:600}
+  .back-nav a:hover{color:var(--violet)}
+
+  /* HERO */
+  .hero{
+    min-height:90vh;padding:160px 40px 100px;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#e8d9f5 0%,#d4c4ee 50%,#c8b5e0 100%);
+  }
+  .hero::before{
+    content:"";position:absolute;
+    top:30%;left:50%;transform:translate(-50%,-50%);
+    width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.4) 0%,transparent 70%);
+    filter:blur(20px);
+  }
+  .hero::after{
+    content:"♪";position:absolute;font-family:'Cormorant Garamond',serif;
+    font-size:600px;color:rgba(255,255,255,.08);font-weight:400;font-style:italic;
+    bottom:-100px;right:-50px;line-height:1;transform:rotate(-10deg);
+  }
+  .hero-content{position:relative;z-index:2;text-align:center;max-width:880px}
+  .hero-badge{
+    display:inline-block;padding:8px 24px;border-radius:20px;
+    background:rgba(255,255,255,.7);backdrop-filter:blur(6px);
+    border:1px solid var(--violet);
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:11px;letter-spacing:.4em;color:var(--violet-deep);
+    margin-bottom:40px;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(56px,10vw,128px);font-weight:500;
+    color:#fff;letter-spacing:.04em;line-height:1;
+    text-shadow:0 6px 30px rgba(122,93,196,.4);
+    margin-bottom:24px;font-style:italic;
+  }
+  .hero h1 .ampersand{color:var(--gold-soft);font-style:italic}
+  .hero-sub{
+    font-family:'Caveat',cursive;
+    font-size:clamp(28px,4vw,42px);color:#fff;font-weight:500;
+    opacity:.95;margin-bottom:28px;
+  }
+  .hero-jp{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:500;
+    font-size:clamp(14px,1.8vw,18px);letter-spacing:.5em;color:#fff;
+  }
+
+  /* Section common */
+  section{padding:120px 40px;position:relative}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head .badge{
+    display:inline-block;padding:6px 18px;border-radius:16px;
+    background:rgba(154,122,209,.15);
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:11px;letter-spacing:.35em;color:var(--violet-deep);margin-bottom:18px;
+  }
+  .section-head h2{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(32px,4.5vw,48px);font-weight:500;
+    color:var(--ink);letter-spacing:.05em;margin-bottom:12px;
+  }
+  .section-head .sub-h{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:18px;color:var(--violet-deep);letter-spacing:.2em;margin-bottom:14px;
+  }
+  .section-head p{font-size:14px;color:var(--ink-soft);letter-spacing:.1em}
+
+  /* Members duo */
+  .members{background:#fff}
+  .duo-grid{
+    max-width:900px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;
+  }
+  .duo-card{text-align:center;transition:transform .4s}
+  .duo-card:hover{transform:translateY(-8px)}
+  .duo-photo{
+    aspect-ratio:3/4;border-radius:24px;
+    background:linear-gradient(135deg,#c5a3e8,#9a7ad1);
+    position:relative;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;margin-bottom:24px;
+    box-shadow:var(--shadow);
+  }
+  .duo-card:nth-child(2) .duo-photo{
+    background:linear-gradient(135deg,#d4a5c5,#b8a8d9);
+  }
+  .duo-photo::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.3),transparent 70%);
+  }
+  .duo-photo .ph{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:120px;color:#fff;font-weight:500;
+    text-shadow:0 4px 12px rgba(0,0,0,.15);
+  }
+  .duo-name{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:32px;font-weight:500;color:var(--ink);margin-bottom:6px;
+  }
+  .duo-name-jp{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:18px;color:var(--ink);letter-spacing:.15em;margin-bottom:12px;
+  }
+  .duo-role{
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:11px;letter-spacing:.35em;color:var(--violet-deep);
+  }
+
+  /* Concept */
+  .concept{
+    background:linear-gradient(180deg,var(--bg) 0%,#ede4f5 100%);
+    text-align:center;
+  }
+  .concept-content{
+    max-width:760px;margin:0 auto;padding:0 20px;
+  }
+  .concept-quote{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(20px,3vw,28px);color:var(--violet-deep);
+    line-height:2;letter-spacing:.05em;margin-bottom:40px;
+  }
+  .concept-quote::before,.concept-quote::after{
+    color:var(--gold-soft);font-size:48px;line-height:0;vertical-align:-12px;
+  }
+  .concept-quote::before{content:"\"";margin-right:8px}
+  .concept-quote::after{content:"\"";margin-left:8px}
+  .concept-content p{
+    font-size:15px;color:var(--ink-soft);line-height:2.4;
+  }
+
+  /* Benefits */
+  .benefits{background:#fff}
+  .benefit-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .benefit-card{
+    background:linear-gradient(180deg,#fff 0%,#f5eef5 100%);
+    border-radius:24px;padding:44px 32px;text-align:center;
+    border:1px solid rgba(154,122,209,.15);
+    box-shadow:var(--shadow);transition:all .3s;
+  }
+  .benefit-card:hover{
+    transform:translateY(-6px);border-color:var(--violet);
+    box-shadow:var(--shadow-hover);
+  }
+  .benefit-icon{
+    width:64px;height:64px;border-radius:50%;
+    margin:0 auto 24px;font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:28px;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--violet),var(--violet-deep));
+    box-shadow:0 6px 16px rgba(122,93,196,.3);
+  }
+  .benefit-card:nth-child(2) .benefit-icon{background:linear-gradient(135deg,var(--rose),var(--dusk))}
+  .benefit-card:nth-child(3) .benefit-icon{background:linear-gradient(135deg,var(--dusk),var(--violet))}
+  .benefit-card:nth-child(4) .benefit-icon{background:linear-gradient(135deg,var(--gold-soft),var(--rose))}
+  .benefit-card:nth-child(5) .benefit-icon{background:linear-gradient(135deg,var(--violet),var(--gold-soft))}
+  .benefit-card:nth-child(6) .benefit-icon{background:linear-gradient(135deg,var(--rose),var(--violet-deep))}
+  .benefit-card h3{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:22px;font-weight:500;color:var(--ink);margin-bottom:8px;
+  }
+  .benefit-card .h3-jp{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:14px;color:var(--violet-deep);letter-spacing:.15em;margin-bottom:16px;
+  }
+  .benefit-card p{font-size:13px;color:var(--ink-soft);line-height:2}
+
+  /* Pricing */
+  .pricing{
+    background:linear-gradient(135deg,#e8d9f5 0%,#d4c4ee 100%);
+  }
+  .pricing-card{
+    max-width:520px;margin:0 auto;
+    background:#fff;border-radius:32px;
+    padding:60px 44px;text-align:center;
+    box-shadow:0 20px 50px rgba(122,93,196,.25);
+    position:relative;
+  }
+  .pricing-card::before{
+    content:"♪";position:absolute;
+    top:-22px;left:50%;transform:translateX(-50%);
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,var(--violet),var(--rose));
+    color:#fff;font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:28px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(122,93,196,.4);
+  }
+  .pricing-tag{
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:11px;letter-spacing:.4em;color:var(--violet-deep);margin-bottom:14px;
+  }
+  .pricing-card h3{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:30px;font-weight:500;color:var(--ink);margin-bottom:6px;
+  }
+  .pricing-card .en{
+    font-family:'Caveat',cursive;font-size:22px;color:var(--violet);margin-bottom:32px;
+  }
+  .price-display{
+    padding:32px 0;
+    border-top:1px solid rgba(154,122,209,.2);
+    border-bottom:1px solid rgba(154,122,209,.2);
+    margin-bottom:36px;
+  }
+  .price-display .num{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:64px;line-height:1;color:var(--violet-deep);font-weight:500;
+  }
+  .price-display .yen{font-size:32px;margin-right:6px}
+  .price-display .unit{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:500;
+    font-style:normal;font-size:14px;color:var(--ink-soft);margin-left:8px;
+  }
+  .price-display .note{margin-top:10px;font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+  .btn-join{
+    display:inline-block;padding:20px 60px;border-radius:32px;
+    background:linear-gradient(135deg,var(--violet),var(--violet-deep));
+    color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:14px;letter-spacing:.3em;
+    box-shadow:0 8px 20px rgba(122,93,196,.4);
+    transition:all .3s;border:none;cursor:pointer;
+  }
+  .btn-join:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(122,93,196,.5)}
+
+  /* Can do */
+  .can-do{background:#fff}
+  .can-do-list{
+    max-width:900px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+  }
+  .can-do-item{
+    background:linear-gradient(135deg,#fff 0%,#f5eef5 100%);
+    border-radius:18px;padding:24px 24px 24px 60px;
+    border:1px solid rgba(154,122,209,.12);
+    position:relative;transition:all .3s;
+  }
+  .can-do-item:hover{
+    border-color:var(--violet);transform:translateX(4px);
+    box-shadow:var(--shadow);
+  }
+  .can-do-item::before{
+    content:"♪";position:absolute;left:22px;top:50%;transform:translateY(-50%);
+    width:28px;height:28px;border-radius:50%;
+    background:linear-gradient(135deg,var(--violet),var(--rose));color:#fff;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .can-do-item h4{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:14px;color:var(--ink);margin-bottom:4px;letter-spacing:.05em;
+  }
+  .can-do-item p{font-size:12px;color:var(--ink-soft);line-height:1.9}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg,#9a7ad1 0%,#d4a5c5 100%);
+    text-align:center;padding:140px 40px;color:#fff;
+    position:relative;overflow:hidden;
+  }
+  .final-cta::before{
+    content:"♪";position:absolute;font-family:'Cormorant Garamond',serif;
+    font-size:500px;color:rgba(255,255,255,.06);font-style:italic;
+    bottom:-100px;left:-50px;line-height:1;
+  }
+  .final-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
+  .final-cta h3{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(28px,4vw,42px);font-weight:500;
+    line-height:1.7;margin-bottom:12px;
+  }
+  .final-cta .sub-jp{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:16px;letter-spacing:.3em;margin-bottom:32px;
+  }
+  .final-cta p{font-size:15px;line-height:2.2;margin-bottom:40px}
+  .btn-white{
+    background:#fff;color:var(--violet-deep);
+    padding:20px 56px;border-radius:32px;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:14px;letter-spacing:.25em;border:none;cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,.2);transition:all .3s;
+  }
+  .btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+
+  footer{
+    background:#fff;padding:48px 40px 28px;text-align:center;
+    border-top:1px solid rgba(154,122,209,.15);
+  }
+  footer .logo{justify-content:center;margin-bottom:20px}
+  footer .copyright{
+    margin-top:28px;padding-top:20px;border-top:1px dashed rgba(154,122,209,.2);
+    font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--ink-soft);
+  }
+
+  /* Modal */
+  .modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(46,39,64,.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px}
+  .modal.show{display:flex;animation:fadeIn .3s}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal-box{max-width:440px;width:100%;background:#fff;border-radius:28px;padding:48px 36px;text-align:center;animation:popIn .4s}
+  @keyframes popIn{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-icon{width:72px;height:72px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(135deg,var(--violet),var(--rose));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:#fff}
+  .modal-box h4{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;font-weight:500;margin-bottom:12px}
+  .modal-box .ttl-jp{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:16px;letter-spacing:.2em;color:var(--violet-deep);margin-bottom:18px}
+  .modal-box p{font-size:13px;color:var(--ink-soft);line-height:2;margin-bottom:24px}
+  .modal-close{padding:12px 32px;border-radius:24px;background:linear-gradient(135deg,var(--violet),var(--violet-deep));color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;font-size:12px;letter-spacing:.2em;border:none;cursor:pointer}
+
+  @media (max-width:900px){
+    .duo-grid{grid-template-columns:1fr;max-width:340px;gap:32px}
+    .benefit-grid{grid-template-columns:1fr;max-width:440px}
+    .can-do-list{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    header{padding:14px 20px}
+    section{padding:80px 20px}
+    .pricing-card{padding:44px 28px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">
+      LUMINOUS FANCLUB
+      <small>OFFICIAL</small>
+    </div>
+  </a>
+  <div class="back-nav"><a href="index.html">← BACK</a></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">PREMIUM PLAN · IDOL UNIT · TRANSFER</div>
+    <h1>Lumière <span class="ampersand">&</span> Duo</h1>
+    <div class="hero-sub">— soft & moody, just for you —</div>
+    <div class="hero-jp">月 灯 り の よ う な 2 人 組</div>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section class="members">
+  <div class="section-head">
+    <div class="badge">2 MEMBERS</div>
+    <h2>The Duo</h2>
+    <div class="sub-h">2 人 の 物 語</div>
+    <p>静かに、けれど確かに灯る、二つの歌声</p>
+  </div>
+  <div class="duo-grid">
+    <div class="duo-card">
+      <div class="duo-photo"><div class="ph">L</div></div>
+      <div class="duo-name">Lila</div>
+      <div class="duo-name-jp">夕凪 りら</div>
+      <div class="duo-role">LEAD VOCAL · WRITER</div>
+    </div>
+    <div class="duo-card">
+      <div class="duo-photo"><div class="ph">M</div></div>
+      <div class="duo-name">Miel</div>
+      <div class="duo-name-jp">月白 みえる</div>
+      <div class="duo-role">HARMONY · GUITAR</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept">
+  <div class="concept-content">
+    <div class="section-head">
+      <div class="badge">CONCEPT</div>
+      <h2>About Us</h2>
+      <div class="sub-h">2 人 の 世 界 観</div>
+    </div>
+    <div class="concept-quote">
+      Music is the moonlight,<br>
+      and we are the words that float in it.
+    </div>
+    <p>
+      Lumière Duoは、外部から転籍してきた女性2人組ユニット。<br>
+      アコースティックを基調とした優しい音色と、ささやくような歌声で、<br>
+      夜にそっと寄り添う音楽を紡ぎ続けています。<br><br>
+      派手じゃないけれど、確かに心の奥に届く ——<br>
+      そんな2人の世界を、ファンクラブで独占体験してください。
+    </p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="section-head">
+    <div class="badge">BENEFITS</div>
+    <h2>Your Privileges</h2>
+    <div class="sub-h">プ レ ミ ア ム 特 典</div>
+    <p>2人だけの世界を、いちばん近くで</p>
+  </div>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">♪</div>
+      <h3>Acoustic Live</h3>
+      <div class="h3-jp">アコースティック生配信</div>
+      <p>週1回のお部屋ライブ配信。本当に2人だけの空間でお届けする、特別な音楽の時間。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✦</div>
+      <h3>Demo Tracks</h3>
+      <div class="h3-jp">未発表デモ音源</div>
+      <p>月1で届く、未発表曲のデモトラック。リリース前のラフな2人の声が聴けるのは会員だけ。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">♡</div>
+      <h3>Whisper Note</h3>
+      <div class="h3-jp">手書きの月報</div>
+      <p>2人が交代で書く、月1のデジタル手紙。日常の小さなトピックや音楽のことを綴ります。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">●</div>
+      <h3>Backstage</h3>
+      <div class="h3-jp">レコーディング密着</div>
+      <p>新曲制作の現場に密着した映像コンテンツ。歌詞ができるまでの過程も独占公開。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">∞</div>
+      <h3>Photo Diary</h3>
+      <div class="h3-jp">月替わりフォト</div>
+      <p>2人のお気に入りの場所で撮影された、月替わりのデジタルフォトをお届け。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">★</div>
+      <h3>Priority Ticket</h3>
+      <div class="h3-jp">ライブ最優先</div>
+      <p>ワンマンライブ・対バンライブのチケット最優先抽選枠。最前ブロック確約も。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="section-head">
+    <div class="badge">JOIN NOW</div>
+    <h2 style="color:#fff">Premium Plan</h2>
+    <div class="sub-h" style="color:rgba(255,255,255,.9)">プ レ ミ ア ム プ ラ ン</div>
+  </div>
+  <div class="pricing-card">
+    <div class="pricing-tag">LUMIÈRE DUO PREMIUM</div>
+    <h3>Lumière Duo Plan</h3>
+    <div class="en">— soft & moody —</div>
+    <div class="price-display">
+      <div class="num"><span class="yen">¥</span>3,300<span class="unit">/ 月</span></div>
+      <div class="note">税込・自動継続課金</div>
+    </div>
+    <button class="btn-join" onclick="openModal()">JOIN THE DUO</button>
+  </div>
+</section>
+
+<!-- CAN DO -->
+<section class="can-do">
+  <div class="section-head">
+    <div class="badge">YOU CAN ENJOY</div>
+    <h2>What You'll Find</h2>
+    <div class="sub-h">入 会 す る と こ ん な こ と</div>
+  </div>
+  <div class="can-do-list">
+    <div class="can-do-item">
+      <h4>夜眠れない日の、お供に</h4>
+      <p>「眠れない夜のためのプレイリスト」を月替わりで2人が選曲。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>2人の本棚を覗ける</h4>
+      <p>歌詞に影響を受けた本や音楽を、コメント付きでシェア。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>歌詞の制作過程を共有</h4>
+      <p>制作中の歌詞ノートの一部を、会員向けに先行公開。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>レアなカバー音源</h4>
+      <p>2人がリクエストに応えてカバーする曲を月1で公開。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>制作中の歌詞リクエスト</h4>
+      <p>「次の曲のテーマ」を会員投票で決める参加型企画。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>ライブ前夜のメッセージ</h4>
+      <p>ツアー前夜、2人から会員だけに届く特別ボイスメッセージ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-content">
+    <h3>Stay in our moonlight ♡</h3>
+    <div class="sub-jp">月 灯 り の 中 へ 、ど う ぞ 。</div>
+    <p>
+      静かな夜に、寄り添う音楽がほしい。<br>
+      そんなあなたを、Lumière Duoがお待ちしています。
+    </p>
+    <button class="btn-white" onclick="openModal()">JOIN PREMIUM PLAN</button>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">
+      LUMINOUS FANCLUB
+      <small>OFFICIAL</small>
+    </div>
+  </div>
+  <div><a href="index.html" style="font-family:'Quicksand',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ink-soft);font-weight:600">← BACK TO FANCLUB</a></div>
+  <div class="copyright">© 2026 LUMINOUS ARTS INC. — FANCLUB DIVISION</div>
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon">♪</div>
+    <h4>Registration Closed</h4>
+    <div class="ttl-jp">入 会 規 制 中</div>
+    <p>
+      ただいま新規入会は規制中です。<br>
+      会員数の急増により、サービス品質維持のため<br>
+      一時的に受付を停止しております。<br>
+      再開までもう少々お待ちください。
+    </p>
+    <button class="modal-close" onclick="closeModal()">閉じる</button>
+  </div>
+</div>
+
+<script>
+  function openModal(){
+    document.getElementById('modal').classList.add('show');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    document.getElementById('modal').classList.remove('show');
+    document.body.style.overflow='';
+  }
+  document.getElementById('modal').addEventListener('click',(e)=>{
+    if(e.target.id==='modal') closeModal();
+  });
+</script>
+
+</body>
+</html>
