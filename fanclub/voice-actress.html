@@ -1,0 +1,691 @@
+<!-- File: fanclub/voice-actress.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七瀬ことね 推しページ | LUMINOUS FANCLUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fdf7f0;
+    --bg-2:#f7ebde;
+    --ink:#4a3a30;--ink-soft:#7a6655;
+    --peach:#ffb898;--peach-deep:#ff9166;
+    --cream:#ffe8d2;--milk:#fff2e2;
+    --soft-pink:#ffc8d2;--mocha:#a8856a;
+    --shadow:0 8px 28px rgba(255,145,102,.18);
+    --shadow-hover:0 14px 36px rgba(255,145,102,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:400;
+    line-height:2;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;color:inherit}
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(circle at 20% 20%,rgba(255,184,152,.18),transparent 45%),
+      radial-gradient(circle at 80% 80%,rgba(255,200,210,.12),transparent 40%);
+  }
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 40px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(253,247,240,.93);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,145,102,.18);
+  }
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{
+    width:36px;height:36px;border-radius:50%;
+    background:linear-gradient(135deg,var(--peach),var(--soft-pink));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;font-size:22px;color:#fff;font-weight:700;
+    box-shadow:0 4px 12px rgba(255,145,102,.3);
+  }
+  .logo-text{font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;letter-spacing:.15em;line-height:1.2}
+  .logo-text small{display:block;font-size:9px;color:var(--peach-deep);letter-spacing:.3em;margin-top:2px}
+  .back-nav a{font-family:'Quicksand',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ink-soft);font-weight:600}
+  .back-nav a:hover{color:var(--peach-deep)}
+
+  /* HERO - Radio booth atmosphere */
+  .hero{
+    min-height:90vh;padding:160px 40px 100px;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 30% 40%,rgba(255,232,210,.9),transparent 60%),
+      linear-gradient(135deg,#fff2e2 0%,#ffd8be 100%);
+  }
+  /* Sound waves */
+  .hero::before{
+    content:"";position:absolute;
+    top:50%;left:50%;transform:translate(-50%,-50%);
+    width:600px;height:600px;border-radius:50%;
+    border:2px solid rgba(255,145,102,.2);
+    animation:pulse-wave 4s ease-in-out infinite;
+  }
+  .hero::after{
+    content:"";position:absolute;
+    top:50%;left:50%;transform:translate(-50%,-50%);
+    width:800px;height:800px;border-radius:50%;
+    border:2px solid rgba(255,145,102,.15);
+    animation:pulse-wave 4s ease-in-out infinite .8s;
+  }
+  @keyframes pulse-wave{
+    0%,100%{opacity:.3;transform:translate(-50%,-50%) scale(.95)}
+    50%{opacity:.6;transform:translate(-50%,-50%) scale(1.05)}
+  }
+
+  .hero-content{position:relative;z-index:2;text-align:center;max-width:900px}
+  .hero-badge{
+    display:inline-block;padding:8px 24px;border-radius:20px;
+    background:#fff;border:1px solid var(--peach);
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:11px;letter-spacing:.4em;color:var(--peach-deep);
+    margin-bottom:36px;
+    box-shadow:var(--shadow);
+  }
+  .hero h1{
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:clamp(48px,8vw,108px);
+    color:var(--ink);letter-spacing:.02em;line-height:1.05;margin-bottom:12px;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(135deg,var(--peach-deep),var(--soft-pink));
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero-jp{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:clamp(20px,3vw,32px);letter-spacing:.3em;color:var(--ink);
+    margin-bottom:32px;
+  }
+  .hero-sub{
+    font-family:'Caveat',cursive;
+    font-size:clamp(28px,4vw,40px);color:var(--peach-deep);font-weight:600;
+  }
+  /* On-air decoration */
+  .on-air{
+    margin-top:48px;display:inline-flex;align-items:center;gap:14px;
+    padding:14px 28px;border-radius:32px;
+    background:rgba(255,255,255,.85);backdrop-filter:blur(8px);
+    border:1px solid var(--peach);
+    box-shadow:var(--shadow);
+  }
+  .on-air .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--peach-deep);
+    animation:blink 1.5s ease-in-out infinite;
+    box-shadow:0 0 12px rgba(255,145,102,.6);
+  }
+  @keyframes blink{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.3;transform:scale(.85)}
+  }
+  .on-air .text{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.4em;color:var(--peach-deep);
+  }
+
+  /* Section common */
+  section{padding:120px 40px;position:relative}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head .badge{
+    display:inline-block;padding:6px 18px;border-radius:16px;
+    background:rgba(255,145,102,.15);
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:11px;letter-spacing:.35em;color:var(--peach-deep);margin-bottom:18px;
+  }
+  .section-head h2{
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:clamp(28px,4vw,42px);color:var(--ink);letter-spacing:.02em;margin-bottom:14px;
+  }
+  .section-head h2 .accent{color:var(--peach-deep)}
+  .section-head .sub-jp{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:16px;color:var(--peach-deep);letter-spacing:.2em;margin-bottom:12px;
+  }
+  .section-head p{font-size:14px;color:var(--ink-soft);letter-spacing:.05em}
+
+  /* About */
+  .about{background:#fff}
+  .about-grid{
+    max-width:1000px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;
+  }
+  .about-portrait{
+    aspect-ratio:3/4;border-radius:32px;overflow:hidden;
+    background:linear-gradient(135deg,var(--peach),var(--soft-pink));
+    position:relative;display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow);
+  }
+  .about-portrait::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.3),transparent 60%);
+  }
+  .about-portrait .ph{
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:160px;color:#fff;line-height:1;
+    text-shadow:0 6px 20px rgba(255,145,102,.4);
+  }
+  .about-portrait .mic-icon{
+    position:absolute;bottom:24px;right:24px;
+    width:56px;height:56px;border-radius:50%;
+    background:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:24px;color:var(--peach-deep);
+    box-shadow:0 6px 16px rgba(0,0,0,.15);
+  }
+  .about-body .label{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.4em;color:var(--peach-deep);margin-bottom:18px;
+  }
+  .about-body h3{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:clamp(28px,3.5vw,38px);color:var(--ink);
+    letter-spacing:.1em;margin-bottom:8px;line-height:1.5;
+  }
+  .about-body .en-name{
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:15px;letter-spacing:.3em;color:var(--peach-deep);margin-bottom:24px;
+  }
+  .about-body .lead{
+    font-family:'Caveat',cursive;
+    font-size:24px;color:var(--peach-deep);margin-bottom:24px;
+  }
+  .about-body p{
+    font-size:14px;color:var(--ink-soft);line-height:2.3;margin-bottom:16px;
+  }
+
+  /* Voice samples */
+  .samples{
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);
+  }
+  .sample-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .sample-card{
+    background:#fff;border-radius:24px;padding:36px 28px;
+    border:1px solid rgba(255,145,102,.15);
+    box-shadow:var(--shadow);transition:all .3s;
+    position:relative;overflow:hidden;
+  }
+  .sample-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+  .sample-card .play-btn{
+    width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(135deg,var(--peach),var(--peach-deep));
+    color:#fff;font-size:20px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;
+    box-shadow:0 6px 16px rgba(255,145,102,.4);
+    transition:transform .3s;
+  }
+  .sample-card:hover .play-btn{transform:scale(1.1)}
+  .sample-card .duration{
+    position:absolute;top:24px;right:24px;
+    padding:4px 12px;border-radius:14px;
+    background:rgba(255,145,102,.12);color:var(--peach-deep);
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.2em;
+  }
+  .sample-card h4{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:18px;color:var(--ink);margin-bottom:8px;letter-spacing:.05em;
+  }
+  .sample-card .h4-en{
+    font-family:'Caveat',cursive;font-size:18px;color:var(--peach-deep);margin-bottom:14px;
+  }
+  .sample-card p{font-size:13px;color:var(--ink-soft);line-height:1.95}
+  /* Waveform */
+  .waveform{
+    margin-top:18px;display:flex;align-items:center;gap:3px;height:32px;
+  }
+  .waveform span{
+    flex:1;background:linear-gradient(180deg,var(--peach),var(--peach-deep));
+    border-radius:2px;
+  }
+  .waveform span:nth-child(1){height:30%}.waveform span:nth-child(2){height:60%}
+  .waveform span:nth-child(3){height:90%}.waveform span:nth-child(4){height:50%}
+  .waveform span:nth-child(5){height:80%}.waveform span:nth-child(6){height:40%}
+  .waveform span:nth-child(7){height:70%}.waveform span:nth-child(8){height:55%}
+  .waveform span:nth-child(9){height:85%}.waveform span:nth-child(10){height:35%}
+  .waveform span:nth-child(11){height:65%}.waveform span:nth-child(12){height:45%}
+
+  /* Benefits */
+  .benefits{background:#fff}
+  .benefit-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .benefit-card{
+    background:var(--milk);border-radius:24px;padding:40px 28px;text-align:center;
+    transition:all .3s;
+    border:1px solid rgba(255,145,102,.15);
+  }
+  .benefit-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--peach)}
+  .benefit-icon{
+    width:64px;height:64px;border-radius:50%;
+    margin:0 auto 20px;font-size:28px;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--peach),var(--peach-deep));
+    box-shadow:0 4px 12px rgba(255,145,102,.3);
+  }
+  .benefit-card:nth-child(2) .benefit-icon{background:linear-gradient(135deg,var(--soft-pink),var(--peach))}
+  .benefit-card:nth-child(3) .benefit-icon{background:linear-gradient(135deg,var(--mocha),var(--peach-deep))}
+  .benefit-card:nth-child(4) .benefit-icon{background:linear-gradient(135deg,var(--peach-deep),var(--soft-pink))}
+  .benefit-card:nth-child(5) .benefit-icon{background:linear-gradient(135deg,var(--cream),var(--peach))}
+  .benefit-card:nth-child(6) .benefit-icon{background:linear-gradient(135deg,var(--peach),var(--mocha))}
+  .benefit-card h3{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:17px;color:var(--ink);margin-bottom:6px;letter-spacing:.08em;
+  }
+  .benefit-card .h3-en{
+    font-family:'Caveat',cursive;font-size:15px;color:var(--peach-deep);margin-bottom:14px;
+  }
+  .benefit-card p{font-size:13px;color:var(--ink-soft);line-height:1.95}
+
+  /* Pricing */
+  .pricing{
+    background:linear-gradient(135deg,#fff2e2 0%,#ffd8be 100%);
+  }
+  .pricing-card{
+    max-width:520px;margin:0 auto;
+    background:#fff;border-radius:36px;
+    padding:60px 44px;text-align:center;
+    box-shadow:0 16px 40px rgba(255,145,102,.25);
+    border:2px solid var(--peach);
+    position:relative;
+  }
+  .pricing-card::before{
+    content:"♡";position:absolute;
+    top:-22px;left:50%;transform:translateX(-50%);
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,var(--peach),var(--peach-deep));
+    color:#fff;font-size:24px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(255,145,102,.4);
+  }
+  .pricing-tag{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.4em;color:var(--peach-deep);margin-bottom:14px;
+  }
+  .pricing-card h3{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:26px;color:var(--ink);letter-spacing:.1em;margin-bottom:6px;
+  }
+  .pricing-card .en{
+    font-family:'Caveat',cursive;font-size:22px;color:var(--peach-deep);margin-bottom:32px;
+  }
+  .price-display{
+    padding:32px 0;
+    border-top:1px dashed rgba(255,145,102,.3);
+    border-bottom:1px dashed rgba(255,145,102,.3);
+    margin-bottom:36px;
+  }
+  .price-display .num{
+    font-family:'Quicksand',sans-serif;font-weight:600;
+    font-size:60px;line-height:1;color:var(--peach-deep);
+  }
+  .price-display .yen{font-size:32px;margin-right:6px}
+  .price-display .unit{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:500;
+    font-size:14px;color:var(--ink-soft);margin-left:8px;
+  }
+  .price-display .note{margin-top:10px;font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+  .btn-join{
+    display:inline-block;padding:20px 60px;border-radius:32px;
+    background:linear-gradient(135deg,var(--peach),var(--peach-deep));
+    color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:14px;letter-spacing:.3em;
+    box-shadow:0 8px 24px rgba(255,145,102,.4);
+    transition:all .3s;border:none;cursor:pointer;
+  }
+  .btn-join:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(255,145,102,.5)}
+
+  /* Can do */
+  .can-do{background:#fff}
+  .can-do-list{
+    max-width:900px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+  }
+  .can-do-item{
+    background:var(--milk);border-radius:20px;
+    padding:24px 24px 24px 64px;
+    border:1px solid transparent;
+    position:relative;transition:all .3s;
+  }
+  .can-do-item:hover{border-color:var(--peach);transform:translateX(4px);box-shadow:var(--shadow)}
+  .can-do-item::before{
+    content:"♪";position:absolute;left:22px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;
+    background:linear-gradient(135deg,var(--peach),var(--peach-deep));color:#fff;
+    font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .can-do-item h4{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:15px;color:var(--ink);margin-bottom:4px;letter-spacing:.05em;
+  }
+  .can-do-item p{font-size:12px;color:var(--ink-soft);line-height:1.9}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg,#ffb898 0%,#ffc8d2 100%);
+    text-align:center;padding:140px 40px;color:#fff;
+    position:relative;overflow:hidden;
+  }
+  .final-cta::before{
+    content:"";position:absolute;
+    top:50%;left:50%;transform:translate(-50%,-50%);
+    width:800px;height:800px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.3),transparent 70%);
+  }
+  .final-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
+  .final-cta h3{
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:clamp(26px,4vw,40px);letter-spacing:.15em;
+    line-height:1.7;margin-bottom:14px;
+  }
+  .final-cta .sub{
+    font-family:'Caveat',cursive;font-size:32px;font-weight:600;
+    margin-bottom:32px;opacity:.95;
+  }
+  .final-cta p{font-size:15px;line-height:2.2;margin-bottom:40px}
+  .btn-white{
+    background:#fff;color:var(--peach-deep);
+    padding:20px 56px;border-radius:32px;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:14px;letter-spacing:.2em;border:none;cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,.2);transition:all .3s;
+    display:inline-block;
+  }
+  .btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+
+  footer{
+    background:#fff;padding:48px 40px 28px;text-align:center;
+    border-top:1px solid rgba(255,145,102,.18);
+  }
+  footer .logo{justify-content:center;margin-bottom:20px}
+  footer .copyright{
+    margin-top:28px;padding-top:20px;border-top:1px dashed rgba(255,145,102,.2);
+    font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--ink-soft);
+  }
+
+  /* Modal */
+  .modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(74,58,48,.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px}
+  .modal.show{display:flex;animation:fadeIn .3s}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal-box{max-width:440px;width:100%;background:#fff;border-radius:28px;padding:48px 36px;text-align:center;animation:popIn .4s}
+  @keyframes popIn{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-icon{width:72px;height:72px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(135deg,var(--peach),var(--peach-deep));display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff}
+  .modal-box h4{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:22px;letter-spacing:.15em;margin-bottom:14px;color:var(--ink)}
+  .modal-box p{font-size:13px;color:var(--ink-soft);line-height:2;margin-bottom:24px}
+  .modal-close{padding:12px 32px;border-radius:24px;background:linear-gradient(135deg,var(--peach),var(--peach-deep));color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;font-size:12px;letter-spacing:.2em;border:none;cursor:pointer}
+
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr;gap:40px}
+    .about-portrait{max-width:340px;margin:0 auto}
+    .sample-grid,.benefit-grid{grid-template-columns:1fr;max-width:440px}
+    .can-do-list{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    header{padding:14px 20px}
+    section{padding:80px 20px}
+    .pricing-card{padding:48px 28px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">
+      LUMINOUS FANCLUB
+      <small>OFFICIAL</small>
+    </div>
+  </a>
+  <div class="back-nav"><a href="index.html">← BACK</a></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">PREMIUM PLAN · VOICE ACTRESS</div>
+    <h1>Nanase <span class="accent">Kotone</span></h1>
+    <div class="hero-jp">七 瀬  こ と ね</div>
+    <div class="hero-sub">— let me read for you ♡ —</div>
+    <div class="on-air">
+      <span class="dot"></span>
+      <span class="text">ON AIR — KOTONE'S ROOM</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-grid">
+    <div class="about-portrait">
+      <div class="ph">K</div>
+      <div class="mic-icon">♪</div>
+    </div>
+    <div class="about-body">
+      <div class="label">ABOUT KOTONE</div>
+      <h3>耳元で、そっと囁く声を</h3>
+      <div class="en-name">NANASE KOTONE / 七瀬 ことね</div>
+      <div class="lead">Will you listen tonight, too?</div>
+      <p>
+        深夜アニメ・乙女ゲームを中心に活動する、人気声優・七瀬ことね。透き通るような高音と、心の奥に届く低音 ——2つの声色を自在に操る表現力で、多くのファンを魅了しています。
+      </p>
+      <p>
+        ファンクラブでは、彼女の素の声、リラックスした朗読、ASMR、ラジオドラマなど ——本業では聴けない、特別な音を独占的にお届け。
+      </p>
+      <p>
+        眠れない夜、疲れた日。彼女の声が、あなたに寄り添います。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE SAMPLES -->
+<section class="samples">
+  <div class="section-head">
+    <div class="badge">LISTEN PREVIEW</div>
+    <h2>Kotone's <span class="accent">Voice Library</span></h2>
+    <div class="sub-jp">こ と ね の 声 を 試 聴</div>
+    <p>会員限定コンテンツのほんの一部を、サンプルで。</p>
+  </div>
+  <div class="sample-grid">
+    <div class="sample-card">
+      <div class="duration">02:30</div>
+      <div class="play-btn">▶</div>
+      <h4>おはようボイス</h4>
+      <div class="h4-en">Good Morning ♡</div>
+      <p>会員限定毎朝6時に届く、ことねからの目覚ましボイス。月替わりの新作も。</p>
+      <div class="waveform"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="sample-card">
+      <div class="duration">15:00</div>
+      <div class="play-btn">▶</div>
+      <h4>朗読ライブ</h4>
+      <div class="h4-en">Bedtime Story</div>
+      <p>週1配信、ことねが選ぶ短編を朗読。眠る前のあなたに、優しい物語を届けます。</p>
+      <div class="waveform"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="sample-card">
+      <div class="duration">30:00</div>
+      <div class="play-btn">▶</div>
+      <h4>ASMR配信</h4>
+      <div class="h4-en">Whisper Time</div>
+      <p>月2回、本格的なASMRコンテンツ。両耳バイノーラル録音、寝落ち保証つき。</p>
+      <div class="waveform"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="section-head">
+    <div class="badge">SPECIAL BENEFITS</div>
+    <h2>会員<span class="accent">特典</span></h2>
+    <div class="sub-jp">こ と ね だ け の 6 つ の 体 験</div>
+    <p>耳で味わう、上質な時間を毎月</p>
+  </div>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">♪</div>
+      <h3>毎朝のボイス</h3>
+      <div class="h3-en">Morning Greeting</div>
+      <p>月替わりで届く、毎朝6時のおはようボイス。週末は少し甘めの特別バージョン。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">♡</div>
+      <h3>週1朗読配信</h3>
+      <div class="h3-en">Story Time</div>
+      <p>ことねセレクトの短編・絵本・詩を朗読。寝る前のあなたへ、優しい言葉を。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">∞</div>
+      <h3>月2ASMR</h3>
+      <div class="h3-en">Whisper Sessions</div>
+      <p>本格バイノーラル録音のASMR。耳元で囁く、上質な睡眠導入コンテンツ。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">★</div>
+      <h3>限定キャラボイス</h3>
+      <div class="h3-en">Character Voice</div>
+      <p>ことねが演じる、ファンクラブ限定オリジナルキャラ。月替わりでシリーズ展開。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">●</div>
+      <h3>誕生日ボイス</h3>
+      <div class="h3-en">Birthday Voice</div>
+      <p>あなたの誕生日に届く、名前入り特別ボイスメッセージ。年に1度の特別な贈り物。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">♬</div>
+      <h3>制作裏話ラジオ</h3>
+      <div class="h3-en">Behind the Booth</div>
+      <p>アニメ収録の裏側、声優としての日常を語る、月1の独占ラジオコンテンツ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="section-head">
+    <div class="badge">JOIN NOW</div>
+    <h2>Premium <span class="accent">Plan</span></h2>
+    <div class="sub-jp">プ レ ミ ア ム プ ラ ン</div>
+  </div>
+  <div class="pricing-card">
+    <div class="pricing-tag">KOTONE PREMIUM</div>
+    <h3>ことね 推しプラン</h3>
+    <div class="en">Listen to her every day ♡</div>
+    <div class="price-display">
+      <div class="num"><span class="yen">¥</span>3,300<span class="unit">/ 月</span></div>
+      <div class="note">税込・自動継続課金</div>
+    </div>
+    <button class="btn-join" onclick="openModal()">JOIN HER ROOM</button>
+  </div>
+</section>
+
+<!-- CAN DO -->
+<section class="can-do">
+  <div class="section-head">
+    <div class="badge">YOU CAN ENJOY</div>
+    <h2>入会するとこんな<span class="accent">時間</span>♡</h2>
+    <div class="sub-jp">耳 が 喜 ぶ 毎 日 を</div>
+  </div>
+  <div class="can-do-list">
+    <div class="can-do-item">
+      <h4>毎日の通勤に、彼女の声</h4>
+      <p>電車・バス時間にちょうど良い長さのボイスコンテンツを配信。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>眠れない夜の、お薬</h4>
+      <p>ASMRと朗読の組み合わせで、睡眠の質が変わる、と評判。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>ファンレターに返信が来る</h4>
+      <p>月1の「お便り読みコーナー」で、選ばれた方に直接返信。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>セリフリクエスト企画</h4>
+      <p>「こんなセリフ聞きたい」を投票で。会員投票で次回コンテンツ決定。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>収録現場の貴重な音</h4>
+      <p>アニメ・ゲームの収録ブースで撮った、舞台裏トークも独占公開。</p>
+    </div>
+    <div class="can-do-item">
+      <h4>ライブイベント優先抽選</h4>
+      <p>朗読ライブ・トークイベントの優先抽選＆ファンミ抽選枠つき。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-content">
+    <h3>今 夜 も 、聴 い て く れ ま す か ？</h3>
+    <div class="sub">Will you listen tonight, too?</div>
+    <p>
+      眠れない夜の、疲れた帰り道の、誰にも会いたくない朝の。<br>
+      ことねの声が、いつでもそばにあります。
+    </p>
+    <button class="btn-white" onclick="openModal()">JOIN PREMIUM PLAN</button>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">
+      LUMINOUS FANCLUB
+      <small>OFFICIAL</small>
+    </div>
+  </div>
+  <div><a href="index.html" style="font-family:'Quicksand',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ink-soft);font-weight:600">← BACK TO FANCLUB</a></div>
+  <div class="copyright">© 2026 LUMINOUS ARTS INC. — FANCLUB DIVISION</div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon">♡</div>
+    <h4>入 会 規 制 中</h4>
+    <p>
+      ただいま新規入会は規制中です。<br>
+      会員数の急増により、サービス品質維持のため<br>
+      一時的に受付を停止しております。<br>
+      再開までもう少々お待ちください。
+    </p>
+    <button class="modal-close" onclick="closeModal()">閉じる</button>
+  </div>
+</div>
+
+<script>
+  function openModal(){
+    document.getElementById('modal').classList.add('show');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    document.getElementById('modal').classList.remove('show');
+    document.body.style.overflow='';
+  }
+  document.getElementById('modal').addEventListener('click',(e)=>{
+    if(e.target.id==='modal') closeModal();
+  });
+</script>
+
+</body>
+</html>
