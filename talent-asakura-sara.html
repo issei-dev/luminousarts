@@ -1,0 +1,485 @@
+<!-- File: talent-asakura-sara.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>朝倉 紗良 ASAKURA SARA | Luminous Arts Inc.</title>
+<meta name="description" content="朝倉 紗良（あさくら さら）。声優部門 / ライバー部門 クロスキャスト所属。等身大の演技と癒しの母性ボイスで支持を集める実力派。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0c;--bg-2:#13131a;--ink:#f5f1ea;
+    --ink-mute:#a8a29b;--gold:#c9a96a;--gold-2:#e8d4a8;
+    --line:rgba(245,241,234,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Noto Serif JP','Shippori Mincho',serif;
+    font-weight:300;line-height:1.8;letter-spacing:.04em;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:20px 48px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(10,10,12,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;font-weight:500;letter-spacing:.3em;color:var(--gold-2);
+  }
+  .back-link{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.3em;color:var(--ink-mute);
+  }
+  .back-link:hover{color:var(--gold-2)}
+
+  .talent-hero{
+    height:100vh;min-height:760px;
+    position:relative;display:flex;align-items:flex-end;
+    padding:80px 48px;overflow:hidden;
+  }
+  .talent-hero-bg{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg,rgba(10,10,12,.3) 0%,rgba(10,10,12,.95) 100%),
+      linear-gradient(135deg,#2a1f15 0%,#1a1410 50%,#0a0a0c 100%);
+  }
+  .talent-hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at 70% 40%,rgba(201,169,106,.2),transparent 60%);
+  }
+  .talent-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
+  .talent-hero .tag{
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.5em;color:var(--gold);
+    margin-bottom:24px;
+  }
+  .talent-hero .catchphrase{
+    font-family:'Shippori Mincho',serif;
+    font-size:13px;letter-spacing:.3em;color:var(--gold-2);
+    margin-bottom:24px;font-style:italic;
+    border-left:1px solid var(--gold);padding-left:16px;
+    max-width:480px;
+  }
+  .talent-hero .name-en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(56px,9vw,128px);font-weight:300;
+    letter-spacing:.04em;line-height:1;color:var(--ink);
+  }
+  .talent-hero .name-jp{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(20px,2.5vw,28px);letter-spacing:.4em;
+    color:var(--gold-2);margin-top:24px;
+  }
+  .talent-hero .meta{
+    display:flex;gap:48px;margin-top:48px;
+    padding-top:32px;border-top:1px solid var(--line);
+    max-width:600px;flex-wrap:wrap;
+  }
+  .talent-hero .meta div{font-size:13px}
+  .talent-hero .meta .label{
+    font-family:'Cormorant Garamond',serif;
+    font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:6px;
+  }
+
+  section{padding:120px 48px}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head .en{
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.6em;color:var(--gold);margin-bottom:14px;
+  }
+  .section-head h2{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(24px,3vw,34px);font-weight:400;letter-spacing:.2em;
+  }
+  .section-head .line{width:32px;height:1px;background:var(--gold);margin:24px auto 0}
+
+  .profile{background:var(--bg-2)}
+  .profile-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:center;
+  }
+  .profile-portrait{
+    aspect-ratio:3/4;
+    background:linear-gradient(135deg,#2a2520,#1a1410);
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .profile-portrait::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.2),transparent 60%);
+  }
+  .profile-portrait span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:140px;color:rgba(201,169,106,.25);font-weight:300;
+    position:relative;z-index:1;
+  }
+  .profile-table{width:100%;border-collapse:collapse}
+  .profile-table tr{border-bottom:1px solid var(--line)}
+  .profile-table th{
+    width:140px;text-align:left;padding:18px 0;
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--gold);font-weight:400;
+  }
+  .profile-table td{padding:18px 0;font-size:14px;color:var(--ink)}
+  .bio{
+    margin-top:40px;font-size:14px;color:var(--ink-mute);line-height:2.2;
+  }
+
+  /* Story section */
+  .story{background:var(--bg)}
+  .story-content{
+    max-width:880px;margin:0 auto;
+  }
+  .story-chapter{
+    margin-bottom:64px;padding-bottom:48px;
+    border-bottom:1px solid var(--line);
+  }
+  .story-chapter:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .story-chapter .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;letter-spacing:.5em;color:var(--gold);
+    margin-bottom:12px;
+  }
+  .story-chapter h3{
+    font-family:'Shippori Mincho',serif;
+    font-size:24px;font-weight:400;color:var(--ink);
+    letter-spacing:.15em;margin-bottom:24px;line-height:1.7;
+  }
+  .story-chapter p{
+    font-size:14px;color:var(--ink-mute);line-height:2.3;margin-bottom:16px;
+  }
+
+  .gallery{background:var(--bg-2)}
+  .gallery-mosaic{
+    max-width:1400px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:180px;gap:12px;
+  }
+  .ph-box{
+    background:linear-gradient(135deg,#2a2520,#1a1410);
+    position:relative;overflow:hidden;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .5s ease;
+  }
+  .ph-box::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 40%,rgba(201,169,106,.18),transparent 65%);
+  }
+  .ph-box span{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;color:rgba(201,169,106,.4);font-weight:300;
+    position:relative;z-index:1;
+  }
+  .ph-box:hover{transform:scale(1.02)}
+  .ph-1{grid-column:span 3;grid-row:span 2}
+  .ph-2{grid-column:span 3;grid-row:span 1}
+  .ph-3{grid-column:span 2;grid-row:span 1}
+  .ph-4{grid-column:span 1;grid-row:span 1}
+  .ph-5{grid-column:span 2;grid-row:span 2}
+  .ph-6{grid-column:span 2;grid-row:span 1}
+  .ph-7{grid-column:span 2;grid-row:span 2}
+  .ph-8{grid-column:span 2;grid-row:span 1}
+  .ph-9{grid-column:span 4;grid-row:span 2}
+  .ph-10{grid-column:span 2;grid-row:span 1}
+  .ph-11{grid-column:span 3;grid-row:span 1}
+  .ph-12{grid-column:span 3;grid-row:span 1}
+
+  .editorial{padding:0;background:var(--bg)}
+  .editorial-img{
+    width:100%;height:80vh;min-height:600px;
+    background:
+      linear-gradient(180deg,rgba(10,10,12,.4),rgba(10,10,12,.7)),
+      linear-gradient(135deg,#2a1f15,#1a1410 60%,#0a0a0c);
+    position:relative;display:flex;align-items:center;justify-content:center;
+  }
+  .editorial-img::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 50%,rgba(201,169,106,.15),transparent 60%);
+  }
+  .editorial-quote{
+    position:relative;z-index:2;text-align:center;padding:0 24px;
+    max-width:800px;
+  }
+  .editorial-quote p{
+    font-family:'Shippori Mincho',serif;
+    font-size:clamp(20px,2.5vw,32px);line-height:2.2;
+    letter-spacing:.15em;color:var(--ink);
+  }
+  .editorial-quote .author{
+    margin-top:32px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;letter-spacing:.4em;color:var(--gold);
+  }
+
+  .works{background:var(--bg-2)}
+  .works-list{max-width:1000px;margin:0 auto}
+  .work-row{
+    display:grid;grid-template-columns:90px 100px 1fr 1fr;gap:32px;
+    padding:28px 0;border-bottom:1px solid var(--line);align-items:center;
+  }
+  .work-year{
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;color:var(--gold);letter-spacing:.1em;
+  }
+  .work-cat{
+    font-size:10px;letter-spacing:.3em;color:var(--ink-mute);
+    border:1px solid var(--line);padding:6px 10px;text-align:center;
+  }
+  .work-title{font-size:15px;color:var(--ink);font-family:'Shippori Mincho',serif}
+  .work-role{font-size:12px;color:var(--ink-mute)}
+
+  .contact-cta{
+    background:var(--bg);text-align:center;padding:120px 48px;
+  }
+  .contact-cta p{
+    font-size:14px;color:var(--ink-mute);margin-bottom:32px;letter-spacing:.2em;
+  }
+  .btn{
+    display:inline-block;padding:18px 56px;
+    border:1px solid var(--gold);
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;letter-spacing:.4em;color:var(--gold-2);
+    transition:all .3s;
+  }
+  .btn:hover{background:var(--gold);color:var(--bg)}
+
+  footer{
+    background:#06060a;padding:48px;border-top:1px solid var(--line);
+    text-align:center;
+  }
+  footer .copyright{
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;letter-spacing:.3em;color:var(--ink-mute);
+  }
+
+  @media (max-width:900px){
+    header{padding:16px 24px}
+    section{padding:80px 24px}
+    .talent-hero{padding:80px 24px}
+    .profile-grid{grid-template-columns:1fr;gap:40px}
+    .gallery-mosaic{
+      grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;
+    }
+    .ph-1,.ph-2,.ph-3,.ph-4,.ph-5,.ph-6,.ph-7,.ph-8,.ph-9,.ph-10,.ph-11,.ph-12{
+      grid-column:span 1;grid-row:span 1;
+    }
+    .ph-1,.ph-5,.ph-9{grid-column:span 2;grid-row:span 2}
+    .work-row{grid-template-columns:1fr 1fr;gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">LUMINOUS ARTS</a>
+  <a href="talents.html" class="back-link">← BACK TO TALENTS</a>
+</header>
+
+<section class="talent-hero">
+  <div class="talent-hero-bg"></div>
+  <div class="talent-hero-content">
+    <div class="tag">VOICE / LIVER — CROSS CAST</div>
+    <div class="catchphrase">作らない声と、母性のあたたかさ。<br>大人たちの“駆け込み寺”。</div>
+    <h1 class="name-en">ASAKURA<br>SARA</h1>
+    <div class="name-jp">朝 倉  紗 良</div>
+    <div class="meta">
+      <div>
+        <div class="label">BIRTH</div>
+        <div>1995.10.30</div>
+      </div>
+      <div>
+        <div class="label">HEIGHT</div>
+        <div>161 cm</div>
+      </div>
+      <div>
+        <div class="label">BLOOD</div>
+        <div>A</div>
+      </div>
+      <div>
+        <div class="label">FROM</div>
+        <div>Kanagawa, Japan</div>
+      </div>
+      <div>
+        <div class="label">DEBUT</div>
+        <div>2017</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile">
+  <div class="section-head">
+    <div class="en">PROFILE</div>
+    <h2>プ ロ フ ィ ー ル</h2>
+    <div class="line"></div>
+  </div>
+  <div class="profile-grid">
+    <div class="profile-portrait"><span>S</span></div>
+    <div>
+      <table class="profile-table">
+        <tr><th>NAME</th><td>朝倉 紗良 / Asakura Sara</td></tr>
+        <tr><th>BIRTHDAY</th><td>1995年10月30日（31歳）</td></tr>
+        <tr><th>HEIGHT</th><td>161cm</td></tr>
+        <tr><th>BIRTHPLACE</th><td>神奈川県</td></tr>
+        <tr><th>HOBBY</th><td>朗読、ハーブティーのブレンド、ひとり旅</td></tr>
+        <tr><th>SKILL</th><td>朗読、ナレーション、ASMR、即興トーク、ハーブブレンド</td></tr>
+        <tr><th>DIVISION</th><td>声優部門（VOICE）／ ライバー部門（LIVER）<br>※クロスキャスト（兼任）</td></tr>
+        <tr><th>VOICE TYPE</th><td>癒し系・母性系・ナチュラル中音域</td></tr>
+      </table>
+      <p class="bio">
+        神奈川県出身。幼少期から「落ち着く声」「大人びている」と言われて育つ。朗読が好きで、言葉で誰かの心を動かす職業に憧れ20代前半で声優デビューを果たす。長い下積みを経て、28歳でルミナス・アーツへ移籍。「作らない自然体な声」と「母性を感じる温かさ」が再評価され、現在では女性向け乙女ゲームの主人公役を中心に活躍。仕事で疲れた大人たちの“駆け込み寺”と称される自社配信番組は、深夜帯にもかかわらず驚異的な同接数を誇る。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="section-head">
+    <div class="en">HER STORY</div>
+    <h2>歩 ん で き た 道</h2>
+    <div class="line"></div>
+  </div>
+  <div class="story-content">
+    <div class="story-chapter">
+      <div class="num">— I —</div>
+      <h3>声に憧れた少女時代</h3>
+      <p>
+        神奈川県の住宅街で育った彼女は、幼少期から「落ち着く声」「大人びている」と周囲に言われていた。同級生から「ラジオみたいだね」と笑われたあの日から、彼女は「自分の声で誰かに何かを届ける」ことに、漠然とした憧れを抱くようになる。
+      </p>
+      <p>
+        高校時代、文化祭で偶然頼まれた校内放送のアナウンスをきっかけに、「言葉で人の心を動かす」職業の存在を意識し始める。卒業後、迷うことなく声優養成所の門を叩いた。
+      </p>
+    </div>
+    <div class="story-chapter">
+      <div class="num">— II —</div>
+      <h3>苦悩の20代、企業VPと名もなきモブ</h3>
+      <p>
+        20代前半でデビューしたものの、当時の業界は「派手で特徴的なアニメ声」「ハイテンションな演技」が求められる時代の真っ只中。彼女の「落ち着いた声」は、オーディションでは「地味すぎる」「華がない」と評価され、書類審査で落とされる日々が続いた。
+      </p>
+      <p>
+        数年間は、企業VP（ビデオパッケージ）のナレーション、名もなきモブキャラクターの収録、深夜帯の通販番組ナレーションで食いつなぐ生活。「自分は本当に声優を続けていいのだろうか」と何度も自問した、長い暗夜だった。
+      </p>
+    </div>
+    <div class="story-chapter">
+      <div class="num">— III —</div>
+      <h3>転機、そして“癒し系ボイス”として</h3>
+      <p>
+        28歳の時、ルミナス・アーツへの移籍を機に転機が訪れる。事務所のディレクターが「彼女の声には、作らない温度がある」と評価し、当時新作開発中だった乙女ゲーム『月夜のノクターン』の主人公役にキャスティング。プレイヤーが自分自身を投影しやすい等身大の演技と、包み込むような「癒し系ボイス」が、SNSで爆発的な話題を呼んだ。
+      </p>
+      <p>
+        以降、女性向けゲーム・乙女ゲームのヒロイン役で次々と起用される人気声優に。同時にライバー部門にも参画し、中目黒の「LMA STUDIO BLOOM」から週2回配信される『紗良のミッドナイト・ラウンジ』は、深夜帯にもかかわらず常に同接1万人超を記録。仕事に疲れた大人たちの“駆け込み寺”として愛され続けている。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-head">
+    <div class="en">GALLERY</div>
+    <h2>フ ォ ト ギ ャ ラ リ ー</h2>
+    <div class="line"></div>
+  </div>
+  <div class="gallery-mosaic">
+    <div class="ph-box ph-1"><span>01</span></div>
+    <div class="ph-box ph-2"><span>02</span></div>
+    <div class="ph-box ph-3"><span>03</span></div>
+    <div class="ph-box ph-4"><span>04</span></div>
+    <div class="ph-box ph-5"><span>05</span></div>
+    <div class="ph-box ph-6"><span>06</span></div>
+    <div class="ph-box ph-7"><span>07</span></div>
+    <div class="ph-box ph-8"><span>08</span></div>
+    <div class="ph-box ph-9"><span>09</span></div>
+    <div class="ph-box ph-10"><span>10</span></div>
+    <div class="ph-box ph-11"><span>11</span></div>
+    <div class="ph-box ph-12"><span>12</span></div>
+  </div>
+</section>
+
+<section class="editorial">
+  <div class="editorial-img">
+    <div class="editorial-quote">
+      <p>「 遠 回 り の 道 だ け が 、<br>本 当 の 声 を 教 え て く れ る 。 」</p>
+      <div class="author">— ASAKURA SARA</div>
+    </div>
+  </div>
+</section>
+
+<section class="works">
+  <div class="section-head">
+    <div class="en">WORKS</div>
+    <h2>主 な 出 演 ・ 活 動</h2>
+    <div class="line"></div>
+  </div>
+  <div class="works-list">
+    <div class="work-row">
+      <div class="work-year">2026</div>
+      <div class="work-cat">STREAMING</div>
+      <div class="work-title">自社配信番組『紗良のミッドナイト・ラウンジ』</div>
+      <div class="work-role">MC / 週2回配信中</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2026</div>
+      <div class="work-cat">GAME</div>
+      <div class="work-title">乙女ゲーム『月夜のノクターン Encore』</div>
+      <div class="work-role">主人公・逢坂 紬 役（続編）</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2025</div>
+      <div class="work-cat">AUDIO</div>
+      <div class="work-title">睡眠導入ASMR・朗読シリーズ『雨音とブランケット』</div>
+      <div class="work-role">朗読・パーソナリティ</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2025</div>
+      <div class="work-cat">CM</div>
+      <div class="work-title">SHISEIDO / KOSE 美容コスメブランドTVCM</div>
+      <div class="work-role">メインナレーション</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2024</div>
+      <div class="work-cat">NARRATION</div>
+      <div class="work-title">コニカミノルタプラネタリウム 星空ガイド</div>
+      <div class="work-role">公式ナレーター</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2023</div>
+      <div class="work-cat">GAME</div>
+      <div class="work-title">大ヒット乙女ゲーム『月夜のノクターン』</div>
+      <div class="work-role">主人公・逢坂 紬 役（出世作）</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2023</div>
+      <div class="work-cat">TRANSFER</div>
+      <div class="work-title">ルミナス・アーツへ移籍</div>
+      <div class="work-role">声優部門所属（28歳）</div>
+    </div>
+    <div class="work-row">
+      <div class="work-year">2017</div>
+      <div class="work-cat">DEBUT</div>
+      <div class="work-title">声優デビュー</div>
+      <div class="work-role">企業VP / モブキャラクター収録</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-cta">
+  <p>お 仕 事 の ご 依 頼 は こ ち ら</p>
+  <a href="contact.html" class="btn">CONTACT FOR BOOKING</a>
+</section>
+
+<footer>
+  <div class="copyright">© 1996—2026 LUMINOUS ARTS INC.</div>
+</footer>
+
+</body>
+</html>
