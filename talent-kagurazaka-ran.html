@@ -47,15 +47,29 @@
     position:relative;display:flex;align-items:flex-end;
     padding:80px 48px;overflow:hidden;
   }
-  .talent-hero-bg{
+  .talent-hero-bg{position:absolute;inset:0;overflow:hidden}
+  .talent-hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
+  .talent-hero-bg .placeholder{
     position:absolute;inset:0;
     background:
       linear-gradient(180deg,rgba(10,10,12,.3) 0%,rgba(10,10,12,.95) 100%),
       linear-gradient(135deg,#2a1f15 0%,#1a1410 50%,#0a0a0c 100%);
   }
-  .talent-hero-bg::after{
+  .talent-hero-bg .placeholder::after{
     content:"";position:absolute;inset:0;
     background:radial-gradient(ellipse at 70% 40%,rgba(201,169,106,.2),transparent 60%);
+  }
+  .talent-hero-bg img + .placeholder{display:none}
+  .talent-hero::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(10,10,12,.2) 0%,rgba(10,10,12,.9) 100%);
+    pointer-events:none;
+  }
+  .ph-hint{
+    position:absolute;bottom:8px;left:8px;z-index:3;
+    font-family:'Cormorant Garamond',serif;
+    font-size:9px;letter-spacing:.2em;color:rgba(245,241,234,.3);
+    background:rgba(10,10,12,.5);padding:3px 8px;
   }
   .talent-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
   .talent-hero .tag{
@@ -109,20 +123,21 @@
     display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:center;
   }
   .profile-portrait{
-    aspect-ratio:3/4;
+    aspect-ratio:3/4;position:relative;overflow:hidden;
     background:linear-gradient(135deg,#2a2520,#1a1410);
-    position:relative;overflow:hidden;
-    display:flex;align-items:center;justify-content:center;
   }
-  .profile-portrait::before{
-    content:"";position:absolute;inset:0;
+  .profile-portrait img{width:100%;height:100%;object-fit:cover;display:block}
+  .profile-portrait .placeholder{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
     background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.2),transparent 60%);
   }
-  .profile-portrait span{
+  .profile-portrait .placeholder .initial{
     font-family:'Cormorant Garamond',serif;
-    font-size:140px;color:rgba(201,169,106,.25);font-weight:300;
-    position:relative;z-index:1;
+    font-size:140px;color:rgba(201,169,106,.25);font-weight:300;line-height:1;
   }
+  .profile-portrait img + .placeholder{display:none}
+
   .profile-table{width:100%;border-collapse:collapse}
   .profile-table tr{border-bottom:1px solid var(--line)}
   .profile-table th{
@@ -142,20 +157,21 @@
     grid-auto-rows:180px;gap:12px;
   }
   .ph-box{
-    background:linear-gradient(135deg,#2a2520,#1a1410);
     position:relative;overflow:hidden;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#2a2520,#1a1410);
     transition:transform .5s ease;
   }
-  .ph-box::before{
-    content:"";position:absolute;inset:0;
+  .ph-box img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-box .placeholder{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
     background:radial-gradient(circle at 50% 40%,rgba(201,169,106,.18),transparent 65%);
   }
-  .ph-box span{
+  .ph-box .placeholder .ph-num{
     font-family:'Cormorant Garamond',serif;
     font-size:32px;color:rgba(201,169,106,.4);font-weight:300;
-    position:relative;z-index:1;
   }
+  .ph-box img + .placeholder{display:none}
   .ph-box:hover{transform:scale(1.02)}
   .ph-1{grid-column:span 3;grid-row:span 2}
   .ph-2{grid-column:span 3;grid-row:span 1}
@@ -170,17 +186,30 @@
   .ph-11{grid-column:span 3;grid-row:span 1}
   .ph-12{grid-column:span 3;grid-row:span 1}
 
-  .editorial{padding:0;background:var(--bg)}
+  .editorial{padding:0;background:var(--bg);position:relative}
   .editorial-img{
     width:100%;height:80vh;min-height:600px;
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .editorial-img > img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;display:block;z-index:0;
+  }
+  .editorial-img .placeholder{
+    position:absolute;inset:0;z-index:0;
     background:
       linear-gradient(180deg,rgba(10,10,12,.4),rgba(10,10,12,.7)),
       linear-gradient(135deg,#2a1f15,#1a1410 60%,#0a0a0c);
-    position:relative;display:flex;align-items:center;justify-content:center;
   }
-  .editorial-img::before{
+  .editorial-img .placeholder::after{
     content:"";position:absolute;inset:0;
     background:radial-gradient(circle at 50% 50%,rgba(201,169,106,.15),transparent 60%);
+  }
+  .editorial-img > img + .placeholder{display:none}
+  .editorial-img::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(10,10,12,.35),rgba(10,10,12,.65));
   }
   .editorial-quote{
     position:relative;z-index:2;text-align:center;padding:0 24px;
@@ -197,7 +226,7 @@
     font-size:12px;letter-spacing:.4em;color:var(--gold);
   }
 
-  /* Awards section */
+  /* Awards */
   .awards{background:var(--bg-2)}
   .awards-list{
     max-width:900px;margin:0 auto;
@@ -270,9 +299,7 @@
     section{padding:80px 24px}
     .talent-hero{padding:80px 24px}
     .profile-grid{grid-template-columns:1fr;gap:40px}
-    .gallery-mosaic{
-      grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;
-    }
+    .gallery-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
     .ph-1,.ph-2,.ph-3,.ph-4,.ph-5,.ph-6,.ph-7,.ph-8,.ph-9,.ph-10,.ph-11,.ph-12{
       grid-column:span 1;grid-row:span 1;
     }
@@ -290,7 +317,13 @@
 </header>
 
 <section class="talent-hero">
-  <div class="talent-hero-bg"></div>
+  <div class="talent-hero-bg">
+    <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-hero.png"
+         alt="神楽坂 蘭 ヒーローイメージ" onerror="this.style.display='none'">
+    <div class="placeholder">
+      <span class="ph-hint">kagurazaka-ran-hero.png</span>
+    </div>
+  </div>
   <div class="talent-hero-content">
     <div class="tag">STAGE — LMA STAGE</div>
     <div class="catchphrase">古典を破壊し、魂を再構築する。<br>現代演劇界の特異点。</div>
@@ -328,7 +361,14 @@
     <div class="line"></div>
   </div>
   <div class="profile-grid">
-    <div class="profile-portrait"><span>R</span></div>
+    <div class="profile-portrait">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-portrait.png"
+           alt="神楽坂 蘭 ポートレート" onerror="this.style.display='none'">
+      <div class="placeholder">
+        <span class="initial">R</span>
+        <span class="ph-hint">kagurazaka-ran-portrait.png</span>
+      </div>
+    </div>
     <div>
       <table class="profile-table">
         <tr><th>NAME</th><td>神楽坂 蘭 / Kagurazaka Ran</td></tr>
@@ -353,23 +393,64 @@
     <div class="line"></div>
   </div>
   <div class="gallery-mosaic">
-    <div class="ph-box ph-1"><span>01</span></div>
-    <div class="ph-box ph-2"><span>02</span></div>
-    <div class="ph-box ph-3"><span>03</span></div>
-    <div class="ph-box ph-4"><span>04</span></div>
-    <div class="ph-box ph-5"><span>05</span></div>
-    <div class="ph-box ph-6"><span>06</span></div>
-    <div class="ph-box ph-7"><span>07</span></div>
-    <div class="ph-box ph-8"><span>08</span></div>
-    <div class="ph-box ph-9"><span>09</span></div>
-    <div class="ph-box ph-10"><span>10</span></div>
-    <div class="ph-box ph-11"><span>11</span></div>
-    <div class="ph-box ph-12"><span>12</span></div>
+    <div class="ph-box ph-1">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-01.png" alt="神楽坂 蘭 01" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">01</span><span class="ph-hint">kagurazaka-ran-01.png</span></div>
+    </div>
+    <div class="ph-box ph-2">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-02.png" alt="神楽坂 蘭 02" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">02</span><span class="ph-hint">kagurazaka-ran-02.png</span></div>
+    </div>
+    <div class="ph-box ph-3">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-03.png" alt="神楽坂 蘭 03" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">03</span><span class="ph-hint">kagurazaka-ran-03.png</span></div>
+    </div>
+    <div class="ph-box ph-4">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-04.png" alt="神楽坂 蘭 04" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">04</span><span class="ph-hint">kagurazaka-ran-04.png</span></div>
+    </div>
+    <div class="ph-box ph-5">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-05.png" alt="神楽坂 蘭 05" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">05</span><span class="ph-hint">kagurazaka-ran-05.png</span></div>
+    </div>
+    <div class="ph-box ph-6">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-06.png" alt="神楽坂 蘭 06" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">06</span><span class="ph-hint">kagurazaka-ran-06.png</span></div>
+    </div>
+    <div class="ph-box ph-7">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-07.png" alt="神楽坂 蘭 07" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">07</span><span class="ph-hint">kagurazaka-ran-07.png</span></div>
+    </div>
+    <div class="ph-box ph-8">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-08.png" alt="神楽坂 蘭 08" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">08</span><span class="ph-hint">kagurazaka-ran-08.png</span></div>
+    </div>
+    <div class="ph-box ph-9">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-09.png" alt="神楽坂 蘭 09" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">09</span><span class="ph-hint">kagurazaka-ran-09.png</span></div>
+    </div>
+    <div class="ph-box ph-10">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-10.png" alt="神楽坂 蘭 10" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">10</span><span class="ph-hint">kagurazaka-ran-10.png</span></div>
+    </div>
+    <div class="ph-box ph-11">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-11.png" alt="神楽坂 蘭 11" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">11</span><span class="ph-hint">kagurazaka-ran-11.png</span></div>
+    </div>
+    <div class="ph-box ph-12">
+      <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-12.png" alt="神楽坂 蘭 12" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">12</span><span class="ph-hint">kagurazaka-ran-12.png</span></div>
+    </div>
   </div>
 </section>
 
 <section class="editorial">
   <div class="editorial-img">
+    <img src="assets/images/talents/kagurazaka-ran/kagurazaka-ran-editorial.png"
+         alt="神楽坂 蘭 エディトリアル" onerror="this.style.display='none'">
+    <div class="placeholder">
+      <span class="ph-hint">kagurazaka-ran-editorial.png</span>
+    </div>
     <div class="editorial-quote">
       <p>「 古 典 を 壊 さ ね ば 、<br>新 し い 魂 は 生 ま れ な い 。 」</p>
       <div class="author">— KAGURAZAKA RAN</div>
