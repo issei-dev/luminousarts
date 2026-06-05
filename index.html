@@ -218,21 +218,31 @@
     position:relative;overflow:hidden;cursor:pointer;
     aspect-ratio:3/4;background:#1a1a20;
   }
-  .talent-card .ph{
-    width:100%;height:100%;
-    background:linear-gradient(135deg,#2a2520 0%,#1a1410 100%);
-    display:flex;align-items:center;justify-content:center;
-    transition:transform .8s ease;
-  }
-  .talent-card:hover .ph{transform:scale(1.05)}
-  .talent-card .ph::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.15),transparent 60%);
-  }
-  .talent-card .ph span{
-    font-family:'Cormorant Garamond',serif;
-    font-size:80px;color:rgba(201,169,106,.3);font-weight:300;
-  }
+  /* index.html .ph 周辺の更新 */
+.pick-card .ph,
+.talent-card .ph{
+  width:100%;height:100%;
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#2a2520 0%,#1a1410 100%);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .8s ease;
+}
+.talent-card .ph img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .8s ease;
+}
+.talent-card .ph .placeholder{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.18),transparent 60%);
+}
+.talent-card .ph .placeholder .initial{
+  font-family:'Cormorant Garamond',serif;
+  font-size:80px;color:rgba(201,169,106,.3);font-weight:300;
+}
+.talent-card .ph img + .placeholder{display:none}
+.talent-card:hover .ph img,
+.talent-card:hover .ph{transform:scale(1.05)}
   .talent-info{
     position:absolute;left:0;right:0;bottom:0;
     padding:24px;
