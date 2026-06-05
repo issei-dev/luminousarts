@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>朝倉 紗良 ASAKURA SARA | Luminous Arts Inc.</title>
-<meta name="description" content="朝倉 紗良（あさくら さら）。声優部門 / ライバー部門 クロスキャスト所属。等身大の演技と癒しの母性ボイスで支持を集める実力派。">
+<meta name="description" content="朝倉 紗良(あさくら さら)。声優部門 / ライバー部門 クロスキャスト所属。等身大の演技と癒しの母性ボイスで支持を集める実力派。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
@@ -47,15 +47,29 @@
     position:relative;display:flex;align-items:flex-end;
     padding:80px 48px;overflow:hidden;
   }
-  .talent-hero-bg{
+  .talent-hero-bg{position:absolute;inset:0;overflow:hidden}
+  .talent-hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
+  .talent-hero-bg .placeholder{
     position:absolute;inset:0;
     background:
       linear-gradient(180deg,rgba(10,10,12,.3) 0%,rgba(10,10,12,.95) 100%),
       linear-gradient(135deg,#2a1f15 0%,#1a1410 50%,#0a0a0c 100%);
   }
-  .talent-hero-bg::after{
+  .talent-hero-bg .placeholder::after{
     content:"";position:absolute;inset:0;
     background:radial-gradient(ellipse at 70% 40%,rgba(201,169,106,.2),transparent 60%);
+  }
+  .talent-hero-bg img + .placeholder{display:none}
+  .talent-hero::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(10,10,12,.2) 0%,rgba(10,10,12,.9) 100%);
+    pointer-events:none;
+  }
+  .ph-hint{
+    position:absolute;bottom:8px;left:8px;z-index:3;
+    font-family:'Cormorant Garamond',serif;
+    font-size:9px;letter-spacing:.2em;color:rgba(245,241,234,.3);
+    background:rgba(10,10,12,.5);padding:3px 8px;
   }
   .talent-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
   .talent-hero .tag{
@@ -109,20 +123,21 @@
     display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:center;
   }
   .profile-portrait{
-    aspect-ratio:3/4;
+    aspect-ratio:3/4;position:relative;overflow:hidden;
     background:linear-gradient(135deg,#2a2520,#1a1410);
-    position:relative;overflow:hidden;
-    display:flex;align-items:center;justify-content:center;
   }
-  .profile-portrait::before{
-    content:"";position:absolute;inset:0;
+  .profile-portrait img{width:100%;height:100%;object-fit:cover;display:block}
+  .profile-portrait .placeholder{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
     background:radial-gradient(circle at 50% 30%,rgba(201,169,106,.2),transparent 60%);
   }
-  .profile-portrait span{
+  .profile-portrait .placeholder .initial{
     font-family:'Cormorant Garamond',serif;
-    font-size:140px;color:rgba(201,169,106,.25);font-weight:300;
-    position:relative;z-index:1;
+    font-size:140px;color:rgba(201,169,106,.25);font-weight:300;line-height:1;
   }
+  .profile-portrait img + .placeholder{display:none}
+
   .profile-table{width:100%;border-collapse:collapse}
   .profile-table tr{border-bottom:1px solid var(--line)}
   .profile-table th{
@@ -131,15 +146,11 @@
     font-size:11px;letter-spacing:.3em;color:var(--gold);font-weight:400;
   }
   .profile-table td{padding:18px 0;font-size:14px;color:var(--ink)}
-  .bio{
-    margin-top:40px;font-size:14px;color:var(--ink-mute);line-height:2.2;
-  }
+  .bio{margin-top:40px;font-size:14px;color:var(--ink-mute);line-height:2.2}
 
   /* Story section */
   .story{background:var(--bg)}
-  .story-content{
-    max-width:880px;margin:0 auto;
-  }
+  .story-content{max-width:880px;margin:0 auto}
   .story-chapter{
     margin-bottom:64px;padding-bottom:48px;
     border-bottom:1px solid var(--line);
@@ -166,20 +177,21 @@
     grid-auto-rows:180px;gap:12px;
   }
   .ph-box{
-    background:linear-gradient(135deg,#2a2520,#1a1410);
     position:relative;overflow:hidden;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#2a2520,#1a1410);
     transition:transform .5s ease;
   }
-  .ph-box::before{
-    content:"";position:absolute;inset:0;
+  .ph-box img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-box .placeholder{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
     background:radial-gradient(circle at 50% 40%,rgba(201,169,106,.18),transparent 65%);
   }
-  .ph-box span{
+  .ph-box .placeholder .ph-num{
     font-family:'Cormorant Garamond',serif;
     font-size:32px;color:rgba(201,169,106,.4);font-weight:300;
-    position:relative;z-index:1;
   }
+  .ph-box img + .placeholder{display:none}
   .ph-box:hover{transform:scale(1.02)}
   .ph-1{grid-column:span 3;grid-row:span 2}
   .ph-2{grid-column:span 3;grid-row:span 1}
@@ -194,17 +206,30 @@
   .ph-11{grid-column:span 3;grid-row:span 1}
   .ph-12{grid-column:span 3;grid-row:span 1}
 
-  .editorial{padding:0;background:var(--bg)}
+  .editorial{padding:0;background:var(--bg);position:relative}
   .editorial-img{
     width:100%;height:80vh;min-height:600px;
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .editorial-img > img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;display:block;z-index:0;
+  }
+  .editorial-img .placeholder{
+    position:absolute;inset:0;z-index:0;
     background:
       linear-gradient(180deg,rgba(10,10,12,.4),rgba(10,10,12,.7)),
       linear-gradient(135deg,#2a1f15,#1a1410 60%,#0a0a0c);
-    position:relative;display:flex;align-items:center;justify-content:center;
   }
-  .editorial-img::before{
+  .editorial-img .placeholder::after{
     content:"";position:absolute;inset:0;
     background:radial-gradient(circle at 50% 50%,rgba(201,169,106,.15),transparent 60%);
+  }
+  .editorial-img > img + .placeholder{display:none}
+  .editorial-img::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(10,10,12,.35),rgba(10,10,12,.65));
   }
   .editorial-quote{
     position:relative;z-index:2;text-align:center;padding:0 24px;
@@ -267,9 +292,7 @@
     section{padding:80px 24px}
     .talent-hero{padding:80px 24px}
     .profile-grid{grid-template-columns:1fr;gap:40px}
-    .gallery-mosaic{
-      grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;
-    }
+    .gallery-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
     .ph-1,.ph-2,.ph-3,.ph-4,.ph-5,.ph-6,.ph-7,.ph-8,.ph-9,.ph-10,.ph-11,.ph-12{
       grid-column:span 1;grid-row:span 1;
     }
@@ -286,10 +309,16 @@
 </header>
 
 <section class="talent-hero">
-  <div class="talent-hero-bg"></div>
+  <div class="talent-hero-bg">
+    <img src="assets/images/talents/asakura-sara/asakura-sara-portrait.png"
+         alt="朝倉 紗良 ヒーローイメージ" onerror="this.style.display='none'">
+    <div class="placeholder">
+      <span class="ph-hint">asakura-sara-portrait.png</span>
+    </div>
+  </div>
   <div class="talent-hero-content">
     <div class="tag">VOICE / LIVER — CROSS CAST</div>
-    <div class="catchphrase">作らない声と、母性のあたたかさ。<br>大人たちの“駆け込み寺”。</div>
+    <div class="catchphrase">作らない声と、母性のあたたかさ。<br>大人たちの"駆け込み寺"。</div>
     <h1 class="name-en">ASAKURA<br>SARA</h1>
     <div class="name-jp">朝 倉  紗 良</div>
     <div class="meta">
@@ -324,20 +353,27 @@
     <div class="line"></div>
   </div>
   <div class="profile-grid">
-    <div class="profile-portrait"><span>S</span></div>
+    <div class="profile-portrait">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-portrait.png"
+           alt="朝倉 紗良 ポートレート" onerror="this.style.display='none'">
+      <div class="placeholder">
+        <span class="initial">S</span>
+        <span class="ph-hint">asakura-sara-portrait.png</span>
+      </div>
+    </div>
     <div>
       <table class="profile-table">
         <tr><th>NAME</th><td>朝倉 紗良 / Asakura Sara</td></tr>
-        <tr><th>BIRTHDAY</th><td>1995年10月30日（31歳）</td></tr>
+        <tr><th>BIRTHDAY</th><td>1995年10月30日(31歳)</td></tr>
         <tr><th>HEIGHT</th><td>161cm</td></tr>
         <tr><th>BIRTHPLACE</th><td>神奈川県</td></tr>
         <tr><th>HOBBY</th><td>朗読、ハーブティーのブレンド、ひとり旅</td></tr>
         <tr><th>SKILL</th><td>朗読、ナレーション、ASMR、即興トーク、ハーブブレンド</td></tr>
-        <tr><th>DIVISION</th><td>声優部門（VOICE）／ ライバー部門（LIVER）<br>※クロスキャスト（兼任）</td></tr>
+        <tr><th>DIVISION</th><td>声優部門(VOICE)／ ライバー部門(LIVER)<br>※クロスキャスト(兼任)</td></tr>
         <tr><th>VOICE TYPE</th><td>癒し系・母性系・ナチュラル中音域</td></tr>
       </table>
       <p class="bio">
-        神奈川県出身。幼少期から「落ち着く声」「大人びている」と言われて育つ。朗読が好きで、言葉で誰かの心を動かす職業に憧れ20代前半で声優デビューを果たす。長い下積みを経て、28歳でルミナス・アーツへ移籍。「作らない自然体な声」と「母性を感じる温かさ」が再評価され、現在では女性向け乙女ゲームの主人公役を中心に活躍。仕事で疲れた大人たちの“駆け込み寺”と称される自社配信番組は、深夜帯にもかかわらず驚異的な同接数を誇る。
+        神奈川県出身。幼少期から「落ち着く声」「大人びている」と言われて育つ。朗読が好きで、言葉で誰かの心を動かす職業に憧れ20代前半で声優デビューを果たす。長い下積みを経て、28歳でルミナス・アーツへ移籍。「作らない自然体な声」と「母性を感じる温かさ」が再評価され、現在では女性向け乙女ゲームの主人公役を中心に活躍。仕事で疲れた大人たちの"駆け込み寺"と称される自社配信番組は、深夜帯にもかかわらず驚異的な同接数を誇る。
       </p>
     </div>
   </div>
@@ -367,17 +403,17 @@
         20代前半でデビューしたものの、当時の業界は「派手で特徴的なアニメ声」「ハイテンションな演技」が求められる時代の真っ只中。彼女の「落ち着いた声」は、オーディションでは「地味すぎる」「華がない」と評価され、書類審査で落とされる日々が続いた。
       </p>
       <p>
-        数年間は、企業VP（ビデオパッケージ）のナレーション、名もなきモブキャラクターの収録、深夜帯の通販番組ナレーションで食いつなぐ生活。「自分は本当に声優を続けていいのだろうか」と何度も自問した、長い暗夜だった。
+        数年間は、企業VP(ビデオパッケージ)のナレーション、名もなきモブキャラクターの収録、深夜帯の通販番組ナレーションで食いつなぐ生活。「自分は本当に声優を続けていいのだろうか」と何度も自問した、長い暗夜だった。
       </p>
     </div>
     <div class="story-chapter">
       <div class="num">— III —</div>
-      <h3>転機、そして“癒し系ボイス”として</h3>
+      <h3>転機、そして"癒し系ボイス"として</h3>
       <p>
         28歳の時、ルミナス・アーツへの移籍を機に転機が訪れる。事務所のディレクターが「彼女の声には、作らない温度がある」と評価し、当時新作開発中だった乙女ゲーム『月夜のノクターン』の主人公役にキャスティング。プレイヤーが自分自身を投影しやすい等身大の演技と、包み込むような「癒し系ボイス」が、SNSで爆発的な話題を呼んだ。
       </p>
       <p>
-        以降、女性向けゲーム・乙女ゲームのヒロイン役で次々と起用される人気声優に。同時にライバー部門にも参画し、中目黒の「LMA STUDIO BLOOM」から週2回配信される『紗良のミッドナイト・ラウンジ』は、深夜帯にもかかわらず常に同接1万人超を記録。仕事に疲れた大人たちの“駆け込み寺”として愛され続けている。
+        以降、女性向けゲーム・乙女ゲームのヒロイン役で次々と起用される人気声優に。同時にライバー部門にも参画し、中目黒の「LMA STUDIO BLOOM」から週2回配信される『紗良のミッドナイト・ラウンジ』は、深夜帯にもかかわらず常に同接1万人超を記録。仕事に疲れた大人たちの"駆け込み寺"として愛され続けている。
       </p>
     </div>
   </div>
@@ -390,23 +426,64 @@
     <div class="line"></div>
   </div>
   <div class="gallery-mosaic">
-    <div class="ph-box ph-1"><span>01</span></div>
-    <div class="ph-box ph-2"><span>02</span></div>
-    <div class="ph-box ph-3"><span>03</span></div>
-    <div class="ph-box ph-4"><span>04</span></div>
-    <div class="ph-box ph-5"><span>05</span></div>
-    <div class="ph-box ph-6"><span>06</span></div>
-    <div class="ph-box ph-7"><span>07</span></div>
-    <div class="ph-box ph-8"><span>08</span></div>
-    <div class="ph-box ph-9"><span>09</span></div>
-    <div class="ph-box ph-10"><span>10</span></div>
-    <div class="ph-box ph-11"><span>11</span></div>
-    <div class="ph-box ph-12"><span>12</span></div>
+    <div class="ph-box ph-1">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-01.png" alt="朝倉 紗良 01" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">01</span><span class="ph-hint">asakura-sara-01.png</span></div>
+    </div>
+    <div class="ph-box ph-2">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-02.png" alt="朝倉 紗良 02" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">02</span><span class="ph-hint">asakura-sara-02.png</span></div>
+    </div>
+    <div class="ph-box ph-3">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-03.png" alt="朝倉 紗良 03" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">03</span><span class="ph-hint">asakura-sara-03.png</span></div>
+    </div>
+    <div class="ph-box ph-4">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-04.png" alt="朝倉 紗良 04" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">04</span><span class="ph-hint">asakura-sara-04.png</span></div>
+    </div>
+    <div class="ph-box ph-5">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-05.png" alt="朝倉 紗良 05" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">05</span><span class="ph-hint">asakura-sara-05.png</span></div>
+    </div>
+    <div class="ph-box ph-6">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-06.png" alt="朝倉 紗良 06" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">06</span><span class="ph-hint">asakura-sara-06.png</span></div>
+    </div>
+    <div class="ph-box ph-7">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-07.png" alt="朝倉 紗良 07" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">07</span><span class="ph-hint">asakura-sara-07.png</span></div>
+    </div>
+    <div class="ph-box ph-8">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-08.png" alt="朝倉 紗良 08" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">08</span><span class="ph-hint">asakura-sara-08.png</span></div>
+    </div>
+    <div class="ph-box ph-9">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-09.png" alt="朝倉 紗良 09" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">09</span><span class="ph-hint">asakura-sara-09.png</span></div>
+    </div>
+    <div class="ph-box ph-10">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-10.png" alt="朝倉 紗良 10" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">10</span><span class="ph-hint">asakura-sara-10.png</span></div>
+    </div>
+    <div class="ph-box ph-11">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-11.png" alt="朝倉 紗良 11" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">11</span><span class="ph-hint">asakura-sara-11.png</span></div>
+    </div>
+    <div class="ph-box ph-12">
+      <img src="assets/images/talents/asakura-sara/asakura-sara-12.png" alt="朝倉 紗良 12" onerror="this.style.display='none'">
+      <div class="placeholder"><span class="ph-num">12</span><span class="ph-hint">asakura-sara-12.png</span></div>
+    </div>
   </div>
 </section>
 
 <section class="editorial">
   <div class="editorial-img">
+    <img src="assets/images/talents/asakura-sara/asakura-sara-editorial.png"
+         alt="朝倉 紗良 エディトリアル" onerror="this.style.display='none'">
+    <div class="placeholder">
+      <span class="ph-hint">asakura-sara-editorial.png</span>
+    </div>
     <div class="editorial-quote">
       <p>「 遠 回 り の 道 だ け が 、<br>本 当 の 声 を 教 え て く れ る 。 」</p>
       <div class="author">— ASAKURA SARA</div>
@@ -431,7 +508,7 @@
       <div class="work-year">2026</div>
       <div class="work-cat">GAME</div>
       <div class="work-title">乙女ゲーム『月夜のノクターン Encore』</div>
-      <div class="work-role">主人公・逢坂 紬 役（続編）</div>
+      <div class="work-role">主人公・逢坂 紬 役(続編)</div>
     </div>
     <div class="work-row">
       <div class="work-year">2025</div>
@@ -455,13 +532,13 @@
       <div class="work-year">2023</div>
       <div class="work-cat">GAME</div>
       <div class="work-title">大ヒット乙女ゲーム『月夜のノクターン』</div>
-      <div class="work-role">主人公・逢坂 紬 役（出世作）</div>
+      <div class="work-role">主人公・逢坂 紬 役(出世作)</div>
     </div>
     <div class="work-row">
       <div class="work-year">2023</div>
       <div class="work-cat">TRANSFER</div>
       <div class="work-title">ルミナス・アーツへ移籍</div>
-      <div class="work-role">声優部門所属（28歳）</div>
+      <div class="work-role">声優部門所属(28歳)</div>
     </div>
     <div class="work-row">
       <div class="work-year">2017</div>
